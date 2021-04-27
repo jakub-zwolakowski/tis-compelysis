@@ -1,0 +1,33 @@
+language: c
+
+os:
+  - linux
+
+compiler:
+  - gcc
+  - clang
+
+branches:
+  only:
+  - main
+  - test
+  - coverity_scan
+
+env:
+  global:
+   # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
+   #   via the "travis encrypt" command using the project repo's public key
+   - secure: "HlVfw9yUHj4A/eywDDouSP0dO7Y9OKPYsdYwoayhPnhf3eZXqyYIK2YChS9pwLSyeBjn8NDzsCE9puiyIkumKfjfJNHTg7A1tGEsKrlJh8/WnbKtNx977/y4dkRXZNk/0W2YrllkWDw+cI/DtSSuT8JI8UhW5Dt6CgJotjLItxECJkb/0Buo/W9KGhzM9PADdQ67mGsAKuPeCF0XhxT2Vuo8fUtUdEd3VzJQFAvhYP90yew+osgrVzBCbg5MJ/8Co/ksyt8iwuS9C+Fp1HeD6Q8RFazUnHjFik9MP9GItRIRWR6LO3vygKdtOmZOIjFgWdTYJRWLU5KitgDVQFb+Fcg0ifWYIGW10uiyUTu/vLcGPyuu2Yyqe2lkXmPV9a+4j0pyEZQ3xGWRgnydGcg7hcy+3e9QOHXOueL2tql47boZotcg0xFkFZ8qntgh5Mbcdk3FSugbMAhNzi5m4QzsLaN6Snis0KPvpA7xx8Qv1Hrs9fzMXVaXjfwGhw3smz62FxtiYyp1+xXNTC7BCHtTOAmC+C+qG/dUYYOqVZYfdg3EUKi9Ci4/CAWqpxksEne8JvzRVyff/wfpEqeQsWMjTTmUS/UFqUCk9vI9p/UViLDRRNEtqBtWf4JbpHR9ESUzlckrdr88HbgaKI9b6CDTJrYieRgpkHeoevEm6KG5SWY="
+
+before_install:
+  - echo -n | openssl s_client -connect https://scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
+
+addons:
+  coverity_scan:
+    project:
+      name: "super-dev-6000/tis-compelysis"
+      description: "TIS Competition Analysis"
+    notification_email: kubulozaurus.rex@gmail.com
+    build_command_prepend: "./configure"
+    build_command: "make"
+    branch_pattern: main

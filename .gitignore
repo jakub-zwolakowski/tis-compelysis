@@ -1,0 +1,13 @@
+cov-int
+myproject.tgz
+*.out
+a.out
+*.test-result
+*.gcc-result
+*.clang-result
+*.UBSan-out
+*.UBSan-run
+*.valgrind-run
+.scannerwork
+.vscode
+build_wrapper_output_directory
