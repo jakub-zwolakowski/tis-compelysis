@@ -39,26 +39,26 @@ int
 ```
 ### Valgrind
 ```
-==10394== Memcheck, a memory error detector
-==10394== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==10394== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
-==10394== Command: ./strlen.out
-==10394== 
-==10394== Invalid write of size 4
-==10394==    at 0x108812: f_noncompliant (strlen.c:13)
-==10394==    by 0x108900: main (strlen.c:35)
-==10394==  Address 0x522f0bc is 10 bytes after a block of size 2 alloc'd
-==10394==    at 0x4C31B0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==10394==    by 0x1087F8: f_noncompliant (strlen.c:7)
-==10394==    by 0x108900: main (strlen.c:35)
-==10394== 
-==10394== 
-==10394== HEAP SUMMARY:
-==10394==     in use at exit: 0 bytes in 0 blocks
-==10394==   total heap usage: 2 allocs, 2 frees, 46 bytes allocated
-==10394== 
-==10394== All heap blocks were freed -- no leaks are possible
-==10394== 
-==10394== For counts of detected and suppressed errors, rerun with: -v
-==10394== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==4787== Memcheck, a memory error detector
+==4787== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==4787== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==4787== Command: ./strlen.out
+==4787== 
+==4787== Invalid write of size 4
+==4787==    at 0x108812: f_noncompliant (strlen.c:13)
+==4787==    by 0x108900: main (strlen.c:35)
+==4787==  Address 0x522f0bc is 10 bytes after a block of size 2 alloc'd
+==4787==    at 0x4C31B0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==4787==    by 0x1087F8: f_noncompliant (strlen.c:7)
+==4787==    by 0x108900: main (strlen.c:35)
+==4787== 
+==4787== 
+==4787== HEAP SUMMARY:
+==4787==     in use at exit: 0 bytes in 0 blocks
+==4787==   total heap usage: 2 allocs, 2 frees, 46 bytes allocated
+==4787== 
+==4787== All heap blocks were freed -- no leaks are possible
+==4787== 
+==4787== For counts of detected and suppressed errors, rerun with: -v
+==4787== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
 ```

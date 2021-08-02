@@ -43,20 +43,20 @@ i = 0.
 ```
 ### Valgrind
 ```
-==30512== Memcheck, a memory error detector
-==30512== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==30512== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
-==30512== Command: ./example.out
-==30512== 
+==7421== Memcheck, a memory error detector
+==7421== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==7421== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==7421== Command: ./example.out
+==7421== 
 i = 0.
 i = 0.
-==30512== 
-==30512== HEAP SUMMARY:
-==30512==     in use at exit: 0 bytes in 0 blocks
-==30512==   total heap usage: 1 allocs, 1 frees, 4,096 bytes allocated
-==30512== 
-==30512== All heap blocks were freed -- no leaks are possible
-==30512== 
-==30512== For counts of detected and suppressed errors, rerun with: -v
-==30512== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==7421== 
+==7421== HEAP SUMMARY:
+==7421==     in use at exit: 0 bytes in 0 blocks
+==7421==   total heap usage: 1 allocs, 1 frees, 4,096 bytes allocated
+==7421== 
+==7421== All heap blocks were freed -- no leaks are possible
+==7421== 
+==7421== For counts of detected and suppressed errors, rerun with: -v
+==7421== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 ```

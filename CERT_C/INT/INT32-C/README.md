@@ -39,18 +39,18 @@ SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior Addition.c:4:25 in
 ```
 ### Valgrind
 ```
-==1691== Memcheck, a memory error detector
-==1691== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==1691== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
-==1691== Command: ./Addition.out
-==1691== 
-==1691== 
-==1691== HEAP SUMMARY:
-==1691==     in use at exit: 0 bytes in 0 blocks
-==1691==   total heap usage: 0 allocs, 0 frees, 0 bytes allocated
-==1691== 
-==1691== All heap blocks were freed -- no leaks are possible
-==1691== 
-==1691== For counts of detected and suppressed errors, rerun with: -v
-==1691== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==5766== Memcheck, a memory error detector
+==5766== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==5766== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==5766== Command: ./Addition.out
+==5766== 
+==5766== 
+==5766== HEAP SUMMARY:
+==5766==     in use at exit: 0 bytes in 0 blocks
+==5766==   total heap usage: 0 allocs, 0 frees, 0 bytes allocated
+==5766== 
+==5766== All heap blocks were freed -- no leaks are possible
+==5766== 
+==5766== For counts of detected and suppressed errors, rerun with: -v
+==5766== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 ```

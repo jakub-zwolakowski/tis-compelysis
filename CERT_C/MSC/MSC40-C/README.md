@@ -46,18 +46,18 @@ int
 ```
 ### Valgrind
 ```
-==4676== Memcheck, a memory error detector
-==4676== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==4676== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
-==4676== Command: ./Inline_Internal_Linkage.out
-==4676== 
-==4676== 
-==4676== HEAP SUMMARY:
-==4676==     in use at exit: 0 bytes in 0 blocks
-==4676==   total heap usage: 0 allocs, 0 frees, 0 bytes allocated
-==4676== 
-==4676== All heap blocks were freed -- no leaks are possible
-==4676== 
-==4676== For counts of detected and suppressed errors, rerun with: -v
-==4676== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==5619== Memcheck, a memory error detector
+==5619== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==5619== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==5619== Command: ./Inline_Internal_Linkage.out
+==5619== 
+==5619== 
+==5619== HEAP SUMMARY:
+==5619==     in use at exit: 0 bytes in 0 blocks
+==5619==   total heap usage: 0 allocs, 0 frees, 0 bytes allocated
+==5619== 
+==5619== All heap blocks were freed -- no leaks are possible
+==5619== 
+==5619== For counts of detected and suppressed errors, rerun with: -v
+==5619== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 ```
