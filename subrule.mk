@@ -39,7 +39,7 @@ gcc_results = $(patsubst %.out, %.gcc-result, $(executables))
 	@echo ""
 	@echo "--- gcc '$<' ---"
 	@echo ""
-	-gcc -Wall -Wpedantic -g -O0 -I. $< -lm > $@ 2>&1
+	-gcc -Wall -Wpedantic -g -O0 -I. $< $(other_C_files) -lm > $@ 2>&1
 
 gcc: $(gcc_results)
 
@@ -52,7 +52,7 @@ clang_results = $(patsubst %.out, %.clang-result, $(executables))
 	@echo ""
 	@echo "--- clang '$<' ---"
 	@echo ""
-	-clang -Wall -Wpedantic -g -O0 -I. $< -lm > $@ 2>&1
+	-clang -Wall -Wpedantic -g -O0 -I. $< $(other_C_files) -lm > $@ 2>&1
 
 clang: $(clang_results)
 
