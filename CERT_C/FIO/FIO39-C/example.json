@@ -1,0 +1,38 @@
+[
+    {
+        "name": "FIO39-C",
+        "files": [ "test_FIO39-C.c" ],
+        "filesystem": {
+            "files": [
+                {
+                    "name": "test_FIO39-C_file",
+                    "from": "test_FIO39-C_file"
+                }
+            ]
+        }
+    },
+    {
+        "name": "FIO39-C compliant",
+        "files": [ "test_FIO39-C_compliant.c" ],
+        "filesystem": {
+            "files": [
+                {
+                    "name": "test_FIO39-C_file",
+                    "from": "test_FIO39-C_file"
+                }
+            ]
+        }
+    },
+    {
+        "name": "FIO39-C noncompliant",
+        "files": [ "test_FIO39-C_noncompliant.c" ],
+        "filesystem": {
+            "files": [
+                {
+                    "name": "test_FIO39-C_file",
+                    "from": "test_FIO39-C_file"
+                }
+            ]
+        }
+    }
+]
