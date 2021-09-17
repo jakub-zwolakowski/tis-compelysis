@@ -15,7 +15,7 @@ executables = $(patsubst %.c, %.out, $(main_C_files))
 all: $(executables)
 
 %.out: %.c
-	-gcc -g -O0 -I. $< $(other_C_files) -lm -o $@
+	-gcc -g -O0 -I. $< $(other_C_files) -lm -lpthread -o $@
 
 # -- Tests --
 
