@@ -1,4 +1,4 @@
-toptargets = all clean test ubsan valgrind tis markdown
+toptargets = all clean test gcc clang ubsan valgrind tis markdown
 
 subdirs := code-samples demo-caesar CERT_C
 

@@ -1,1 +1,1 @@
-include ../rule.mk
+include ../../rule.mk
