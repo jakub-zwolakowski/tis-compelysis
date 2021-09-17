@@ -25,18 +25,18 @@ int
 ```
 ### Valgrind
 ```
-==6738== Memcheck, a memory error detector
-==6738== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==6738== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
-==6738== Command: ./example_calloc.out
-==6738== 
-==6738== 
-==6738== HEAP SUMMARY:
-==6738==     in use at exit: 0 bytes in 0 blocks
-==6738==   total heap usage: 2 allocs, 2 frees, 2,688 bytes allocated
-==6738== 
-==6738== All heap blocks were freed -- no leaks are possible
-==6738== 
-==6738== For counts of detected and suppressed errors, rerun with: -v
-==6738== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==851== Memcheck, a memory error detector
+==851== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==851== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==851== Command: ./example_calloc.out
+==851== 
+==851== 
+==851== HEAP SUMMARY:
+==851==     in use at exit: 0 bytes in 0 blocks
+==851==   total heap usage: 2 allocs, 2 frees, 2,688 bytes allocated
+==851== 
+==851== All heap blocks were freed -- no leaks are possible
+==851== 
+==851== For counts of detected and suppressed errors, rerun with: -v
+==851== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 ```

@@ -40,26 +40,26 @@ int
 ```
 ### Valgrind
 ```
-==4787== Memcheck, a memory error detector
-==4787== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==4787== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
-==4787== Command: ./strlen.out
-==4787== 
-==4787== Invalid write of size 4
-==4787==    at 0x108812: f_noncompliant (strlen.c:13)
-==4787==    by 0x108900: main (strlen.c:35)
-==4787==  Address 0x522f0bc is 10 bytes after a block of size 2 alloc'd
-==4787==    at 0x4C31B0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==4787==    by 0x1087F8: f_noncompliant (strlen.c:7)
-==4787==    by 0x108900: main (strlen.c:35)
-==4787== 
-==4787== 
-==4787== HEAP SUMMARY:
-==4787==     in use at exit: 0 bytes in 0 blocks
-==4787==   total heap usage: 2 allocs, 2 frees, 46 bytes allocated
-==4787== 
-==4787== All heap blocks were freed -- no leaks are possible
-==4787== 
-==4787== For counts of detected and suppressed errors, rerun with: -v
-==4787== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==26901== Memcheck, a memory error detector
+==26901== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==26901== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==26901== Command: ./strlen.out
+==26901== 
+==26901== Invalid write of size 4
+==26901==    at 0x108812: f_noncompliant (strlen.c:13)
+==26901==    by 0x108900: main (strlen.c:35)
+==26901==  Address 0x522f0bc is 10 bytes after a block of size 2 alloc'd
+==26901==    at 0x4C31B0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==26901==    by 0x1087F8: f_noncompliant (strlen.c:7)
+==26901==    by 0x108900: main (strlen.c:35)
+==26901== 
+==26901== 
+==26901== HEAP SUMMARY:
+==26901==     in use at exit: 0 bytes in 0 blocks
+==26901==   total heap usage: 2 allocs, 2 frees, 46 bytes allocated
+==26901== 
+==26901== All heap blocks were freed -- no leaks are possible
+==26901== 
+==26901== For counts of detected and suppressed errors, rerun with: -v
+==26901== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
 ```

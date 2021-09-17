@@ -38,18 +38,18 @@ SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior Left_Shift_Unsigned_Type
 ```
 ### Valgrind
 ```
-==5983== Memcheck, a memory error detector
-==5983== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==5983== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
-==5983== Command: ./Left_Shift_Unsigned_Type.out
-==5983== 
-==5983== 
-==5983== HEAP SUMMARY:
-==5983==     in use at exit: 0 bytes in 0 blocks
-==5983==   total heap usage: 0 allocs, 0 frees, 0 bytes allocated
-==5983== 
-==5983== All heap blocks were freed -- no leaks are possible
-==5983== 
-==5983== For counts of detected and suppressed errors, rerun with: -v
-==5983== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==32490== Memcheck, a memory error detector
+==32490== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==32490== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==32490== Command: ./Left_Shift_Unsigned_Type.out
+==32490== 
+==32490== 
+==32490== HEAP SUMMARY:
+==32490==     in use at exit: 0 bytes in 0 blocks
+==32490==   total heap usage: 0 allocs, 0 frees, 0 bytes allocated
+==32490== 
+==32490== All heap blocks were freed -- no leaks are possible
+==32490== 
+==32490== For counts of detected and suppressed errors, rerun with: -v
+==32490== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 ```

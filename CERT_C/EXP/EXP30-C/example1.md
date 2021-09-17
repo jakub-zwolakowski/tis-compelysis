@@ -32,18 +32,18 @@ int
 42, 141, 1```
 ### Valgrind
 ```
-==8114== Memcheck, a memory error detector
-==8114== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==8114== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
-==8114== Command: ./example1.out
-==8114== 
-42, 142, 1==8114== 
-==8114== HEAP SUMMARY:
-==8114==     in use at exit: 0 bytes in 0 blocks
-==8114==   total heap usage: 1 allocs, 1 frees, 4,096 bytes allocated
-==8114== 
-==8114== All heap blocks were freed -- no leaks are possible
-==8114== 
-==8114== For counts of detected and suppressed errors, rerun with: -v
-==8114== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==2990== Memcheck, a memory error detector
+==2990== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2990== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==2990== Command: ./example1.out
+==2990== 
+42, 142, 1==2990== 
+==2990== HEAP SUMMARY:
+==2990==     in use at exit: 0 bytes in 0 blocks
+==2990==   total heap usage: 1 allocs, 1 frees, 4,096 bytes allocated
+==2990== 
+==2990== All heap blocks were freed -- no leaks are possible
+==2990== 
+==2990== For counts of detected and suppressed errors, rerun with: -v
+==2990== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 ```

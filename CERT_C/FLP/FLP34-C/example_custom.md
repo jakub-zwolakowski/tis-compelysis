@@ -37,7 +37,7 @@ example_custom.c:7:13: warning: implicit conversion from 'long' to 'float' chang
 example_custom.c:14:11: warning: implicit conversion from 'int' to 'float' changes value from 2147483647 to 2147483648 [-Wimplicit-const-int-float-conversion]
   if (f < INT_MAX)
         ~ ^~~~~~~
-/home/qba/tis/installs/default/lib/clang/11.0.0/include/limits.h:46:19: note: expanded from macro 'INT_MAX'
+/home/qba/tis/deps/llvm/12.0.0/build/lib/clang/12.0.0/include/limits.h:46:19: note: expanded from macro 'INT_MAX'
 #define INT_MAX   __INT_MAX__
                   ^~~~~~~~~~~
 <built-in>:36:21: note: expanded from here
@@ -64,18 +64,18 @@ SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior example_custom.c:8:11 in
 ```
 ### Valgrind
 ```
-==12117== Memcheck, a memory error detector
-==12117== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==12117== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
-==12117== Command: ./example_custom.out
-==12117== 
-==12117== 
-==12117== HEAP SUMMARY:
-==12117==     in use at exit: 0 bytes in 0 blocks
-==12117==   total heap usage: 0 allocs, 0 frees, 0 bytes allocated
-==12117== 
-==12117== All heap blocks were freed -- no leaks are possible
-==12117== 
-==12117== For counts of detected and suppressed errors, rerun with: -v
-==12117== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==9598== Memcheck, a memory error detector
+==9598== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==9598== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==9598== Command: ./example_custom.out
+==9598== 
+==9598== 
+==9598== HEAP SUMMARY:
+==9598==     in use at exit: 0 bytes in 0 blocks
+==9598==   total heap usage: 0 allocs, 0 frees, 0 bytes allocated
+==9598== 
+==9598== All heap blocks were freed -- no leaks are possible
+==9598== 
+==9598== For counts of detected and suppressed errors, rerun with: -v
+==9598== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 ```
