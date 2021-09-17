@@ -8,14 +8,14 @@ struct multi_threaded_flags {
  
 struct multi_threaded_flags flags_noncompliant;
 
-int thread1_noncompliant(void *arg) {
+void *thread1_noncompliant(void *arg) {
   flags_noncompliant.flag1 = 1;
-  return 0;
+  return NULL;
 }
  
-int thread2_noncompliant(void *arg) {
+void *thread2_noncompliant(void *arg) {
   flags_noncompliant.flag2 = 2;
-  return 0;
+  return NULL;
 }
 
 int main_noncompliant(void) {
@@ -34,7 +34,7 @@ struct mtf_mutex {
  
 struct mtf_mutex flags_compliant;
 
-int thread1_compliant(void *arg) {
+void *thread1_compliant(void *arg) {
   if (0 != pthread_mutex_lock(&flags_compliant.mutex)) {
     /* Handle error */
     return NULL;
@@ -44,10 +44,10 @@ int thread1_compliant(void *arg) {
     /* Handle error */
     return NULL;
   }
-  return 0;
+  return NULL;
 }
   
-int thread2_compliant(void *arg) {
+void *thread2_compliant(void *arg) {
   if (0 != pthread_mutex_lock(&flags_compliant.mutex)) {
     /* Handle error */
     return NULL;
@@ -57,7 +57,7 @@ int thread2_compliant(void *arg) {
     /* Handle error */
     return NULL;
   }
-  return 0;
+  return NULL;
 }
 
 int main_compliant(void) {

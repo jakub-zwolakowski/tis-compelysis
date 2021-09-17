@@ -13,7 +13,7 @@ struct mtf_mutex {
  
 struct mtf_mutex flags;
 
-int thread1(void *arg) {
+void *thread1(void *arg) {
   if (0 != pthread_mutex_lock(&flags.mutex)) {
     /* Handle error */
     return NULL;
@@ -23,10 +23,10 @@ int thread1(void *arg) {
     /* Handle error */
     return NULL;
   }
-  return 0;
+  return NULL;
 }
   
-int thread2(void *arg) {
+void *thread2(void *arg) {
   if (0 != pthread_mutex_lock(&flags.mutex)) {
     /* Handle error */
     return NULL;
@@ -36,7 +36,7 @@ int thread2(void *arg) {
     /* Handle error */
     return NULL;
   }
-  return 0;
+  return NULL;
 }
 
 int main(void) {

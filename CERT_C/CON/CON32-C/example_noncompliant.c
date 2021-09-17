@@ -8,14 +8,14 @@ struct multi_threaded_flags {
  
 struct multi_threaded_flags flags;
 
-int thread1(void *arg) {
+void *thread1(void *arg) {
   flags.flag1 = 1;
-  return 0;
+  return NULL;
 }
  
-int thread2(void *arg) {
+void *thread2(void *arg) {
   flags.flag2 = 2;
-  return 0;
+  return NULL;
 }
 
 int main(void) {
