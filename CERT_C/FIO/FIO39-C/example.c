@@ -43,23 +43,28 @@ void func_compliant(const char *file_name) {
   file = fopen(file_name, "a+");
   if (file == NULL) {
     /* Handle error */
+    return;
   }
  
   initialize_data(append_data, BUFFERSIZE);
   if (fwrite(append_data, BUFFERSIZE, 1, file) != BUFFERSIZE) {
     /* Handle error */
+    return;
   }
  
   if (fseek(file, 0L, SEEK_SET) != 0) {
     /* Handle error */
+    return;
   }
  
   if (fread(data, BUFFERSIZE, 1, file) != 0) {
     /* Handle there not being data */
+    return;
   }
  
   if (fclose(file) == EOF) {
     /* Handle error */
+    return;
   }
 }
 
