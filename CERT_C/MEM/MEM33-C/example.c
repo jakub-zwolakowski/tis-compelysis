@@ -28,6 +28,7 @@ void func_compliant(void) {
     + sizeof(int) * array_size);
   if (flex_struct == NULL) {
     /* Handle error */
+    return;
   }
  
   /* Initialize structure */
