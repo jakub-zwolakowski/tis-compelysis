@@ -45,7 +45,7 @@ int main_compliant(void) {
   return 0;
 }
 
-int main_noncompliant(void) {
+int main(void) {
   main_compliant();
   main_noncompliant();
   return 0;
