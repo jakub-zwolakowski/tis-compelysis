@@ -36,7 +36,7 @@ void func(const char *file_name) {
 }
 
 int main(void) {
-  func("test_FIO39-C_file");
+  func("example_file");
   return 0;
 }
 

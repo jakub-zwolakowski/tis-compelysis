@@ -64,8 +64,8 @@ void func_compliant(const char *file_name) {
 }
 
 int main(void) {
-  func_compliant("test_FIO39-C_file");
-  func_noncompliant("test_FIO39-C_file");
+  func_compliant("example_file");
+  func_noncompliant("example_file");
   return 0;
 }
 
