@@ -2,6 +2,8 @@
 #include <time.h>
 
 /*
+https://cigix.me/c17#7.27.1.p4
+
 The tm structure shall contain at least the following members, in any order. The semantics of the
 members and their normal ranges are expressed in the comments.
 
@@ -51,9 +53,9 @@ exceeds four digits or is less than the year 1000, the behavior is undefined.
 
 int main(void) {
   struct tm time_tm = {
-    .tm_sec = 82,
-    .tm_min = 42,
-    .tm_hour = 1,
+    .tm_sec = 99,
+    .tm_min = 99,
+    .tm_hour = 99,
     .tm_mday = 19,
     .tm_mon = 3,
     .tm_year = 86,
@@ -66,4 +68,4 @@ int main(void) {
   return 0;
 }
 
-// tis-analyzer -cpp-extra-args=" -DTIS_DETERMINISTIC_LIBC" --interpreter test.c ~/git/tis-analyzer/tis-analyzer/share/libc/langinfo.c
+// tis-analyzer -cpp-extra-args=" -DTIS_DETERMINISTIC_LIBC" --interpreter test.c $TIS_HOME/share/tis-kernel/libc/langinfo.c
