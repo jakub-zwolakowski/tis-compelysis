@@ -73,9 +73,9 @@ int f_noncompliant(int argc, const char *argv[]) {
 ### UBSan
 ```
 UndefinedBehaviorSanitizer:DEADLYSIGNAL
-==23383==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x000000000000 (pc 0x7f3c4bb31cf1 bp 0xffffffffffffff90 sp 0x7fffadf3ad30 T23383)
-==23383==The signal is caused by a READ memory access.
-==23383==Hint: address points to the zero page.
+==12345==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x000000000000 (pc 0x7f3c4bb31cf1 bp 0xffffffffffffff90 sp 0x7fffadf3ad30 T23383)
+==12345==The signal is caused by a READ memory access.
+==12345==Hint: address points to the zero page.
     #0 0x7f3c4bb31cf1 in free /build/glibc-S9d2JN/glibc-2.27/malloc/malloc.c:3133
     #1 0x424458 in f_noncompliant (/home/qba/git/tis-compelysis/CERT_C/MEM/MEM34-C/example.UBSan-out+0x424458)
     #2 0x4247fc in main (/home/qba/git/tis-compelysis/CERT_C/MEM/MEM34-C/example.UBSan-out+0x4247fc)
@@ -84,30 +84,30 @@ UndefinedBehaviorSanitizer:DEADLYSIGNAL
 
 UndefinedBehaviorSanitizer can not provide additional info.
 SUMMARY: UndefinedBehaviorSanitizer: SEGV /build/glibc-S9d2JN/glibc-2.27/malloc/malloc.c:3133 in free
-==23383==ABORTING
+==12345==ABORTING
 ```
 ### Valgrind
 ```
-==23390== Memcheck, a memory error detector
-==23390== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==23390== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
-==23390== Command: ./example.out
-==23390== 
-==23390== Invalid free() / delete / delete[] / realloc()
-==23390==    at 0x4C32D3B: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==23390==    by 0x10886F: f_noncompliant (example.c:27)
-==23390==    by 0x10898E: main (example.c:62)
-==23390==  Address 0x108a34 is in a r-x mapped file /home/qba/git/tis-compelysis/CERT_C/MEM/MEM34-C/example.out segment
-==23390== 
+==12345== Memcheck, a memory error detector
+==12345== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==12345== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==12345== Command: ./example.out
+==12345== 
+==12345== Invalid free() / delete / delete[] / realloc()
+==12345==    at 0x4C32D3B: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12345==    by 0x10886F: f_noncompliant (example.c:27)
+==12345==    by 0x10898E: main (example.c:62)
+==12345==  Address 0x108a34 is in a r-x mapped file /home/qba/git/tis-compelysis/CERT_C/MEM/MEM34-C/example.out segment
+==12345== 
 usage: $>a.exe [string]
 usage: $>a.exe [string]
-==23390== 
-==23390== HEAP SUMMARY:
-==23390==     in use at exit: 0 bytes in 0 blocks
-==23390==   total heap usage: 3 allocs, 4 frees, 4,104 bytes allocated
-==23390== 
-==23390== All heap blocks were freed -- no leaks are possible
-==23390== 
-==23390== For counts of detected and suppressed errors, rerun with: -v
-==23390== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==12345== 
+==12345== HEAP SUMMARY:
+==12345==     in use at exit: 0 bytes in 0 blocks
+==12345==   total heap usage: 3 allocs, 4 frees, 4,104 bytes allocated
+==12345== 
+==12345== All heap blocks were freed -- no leaks are possible
+==12345== 
+==12345== For counts of detected and suppressed errors, rerun with: -v
+==12345== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
 ```

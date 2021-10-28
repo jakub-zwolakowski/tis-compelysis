@@ -54,39 +54,39 @@ int
 ```
 ### Valgrind
 ```
-==3530== Memcheck, a memory error detector
-==3530== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==3530== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
-==3530== Command: ./example.out
-==3530== 
-==3530== valgrind: Unrecognised instruction at address 0x10870c.
-==3530==    at 0x10870C: func_noncompliant (example.c:8)
-==3530==    by 0x108748: f_noncompliant (example.c:16)
-==3530==    by 0x108881: main (example.c:36)
-==3530== Your program just tried to execute an instruction that Valgrind
-==3530== did not recognise.  There are two possible reasons for this.
-==3530== 1. Your program has a bug and erroneously jumped to a non-code
-==3530==    location.  If you are running Memcheck and you just saw a
-==3530==    warning about a bad jump, it's probably your program's fault.
-==3530== 2. The instruction is legitimate but Valgrind doesn't handle it,
-==3530==    i.e. it's Valgrind's fault.  If you think this is the case or
-==3530==    you are not sure, please let us know and we'll try to fix it.
-==3530== Either way, Valgrind will now raise a SIGILL signal which will
-==3530== probably kill your program.
-==3530== 
-==3530== Process terminating with default action of signal 4 (SIGILL)
-==3530==  Illegal opcode at address 0x10870C
-==3530==    at 0x10870C: func_noncompliant (example.c:8)
-==3530==    by 0x108748: f_noncompliant (example.c:16)
-==3530==    by 0x108881: main (example.c:36)
-==3530== 
-==3530== HEAP SUMMARY:
-==3530==     in use at exit: 0 bytes in 0 blocks
-==3530==   total heap usage: 0 allocs, 0 frees, 0 bytes allocated
-==3530== 
-==3530== All heap blocks were freed -- no leaks are possible
-==3530== 
-==3530== For counts of detected and suppressed errors, rerun with: -v
-==3530== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==12345== Memcheck, a memory error detector
+==12345== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==12345== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==12345== Command: ./example.out
+==12345== 
+==12345== valgrind: Unrecognised instruction at address 0x10870c.
+==12345==    at 0x10870C: func_noncompliant (example.c:8)
+==12345==    by 0x108748: f_noncompliant (example.c:16)
+==12345==    by 0x108881: main (example.c:36)
+==12345== Your program just tried to execute an instruction that Valgrind
+==12345== did not recognise.  There are two possible reasons for this.
+==12345== 1. Your program has a bug and erroneously jumped to a non-code
+==12345==    location.  If you are running Memcheck and you just saw a
+==12345==    warning about a bad jump, it's probably your program's fault.
+==12345== 2. The instruction is legitimate but Valgrind doesn't handle it,
+==12345==    i.e. it's Valgrind's fault.  If you think this is the case or
+==12345==    you are not sure, please let us know and we'll try to fix it.
+==12345== Either way, Valgrind will now raise a SIGILL signal which will
+==12345== probably kill your program.
+==12345== 
+==12345== Process terminating with default action of signal 4 (SIGILL)
+==12345==  Illegal opcode at address 0x10870C
+==12345==    at 0x10870C: func_noncompliant (example.c:8)
+==12345==    by 0x108748: f_noncompliant (example.c:16)
+==12345==    by 0x108881: main (example.c:36)
+==12345== 
+==12345== HEAP SUMMARY:
+==12345==     in use at exit: 0 bytes in 0 blocks
+==12345==   total heap usage: 0 allocs, 0 frees, 0 bytes allocated
+==12345== 
+==12345== All heap blocks were freed -- no leaks are possible
+==12345== 
+==12345== For counts of detected and suppressed errors, rerun with: -v
+==12345== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 Illegal instruction (core dumped)
 ```

@@ -25,26 +25,26 @@ int
 ```
 ### Valgrind
 ```
-==24574== Memcheck, a memory error detector
-==24574== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==24574== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
-==24574== Command: ./Integer.out
-==24574== 
-==24574== Invalid write of size 8
-==24574==    at 0x1086EA: f_noncompliant (Integer.c:17)
-==24574==    by 0x1087AD: main (Integer.c:42)
-==24574==  Address 0x522f278 is 0 bytes after a block of size 168 alloc'd
-==24574==    at 0x4C31B0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==24574==    by 0x1086BC: f_noncompliant (Integer.c:10)
-==24574==    by 0x1087AD: main (Integer.c:42)
-==24574== 
-==24574== 
-==24574== HEAP SUMMARY:
-==24574==     in use at exit: 0 bytes in 0 blocks
-==24574==   total heap usage: 2 allocs, 2 frees, 504 bytes allocated
-==24574== 
-==24574== All heap blocks were freed -- no leaks are possible
-==24574== 
-==24574== For counts of detected and suppressed errors, rerun with: -v
-==24574== ERROR SUMMARY: 21 errors from 1 contexts (suppressed: 0 from 0)
+==12345== Memcheck, a memory error detector
+==12345== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==12345== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==12345== Command: ./Integer.out
+==12345== 
+==12345== Invalid write of size 8
+==12345==    at 0x1086EA: f_noncompliant (Integer.c:17)
+==12345==    by 0x1087AD: main (Integer.c:42)
+==12345==  Address 0x522f278 is 0 bytes after a block of size 168 alloc'd
+==12345==    at 0x4C31B0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12345==    by 0x1086BC: f_noncompliant (Integer.c:10)
+==12345==    by 0x1087AD: main (Integer.c:42)
+==12345== 
+==12345== 
+==12345== HEAP SUMMARY:
+==12345==     in use at exit: 0 bytes in 0 blocks
+==12345==   total heap usage: 2 allocs, 2 frees, 504 bytes allocated
+==12345== 
+==12345== All heap blocks were freed -- no leaks are possible
+==12345== 
+==12345== For counts of detected and suppressed errors, rerun with: -v
+==12345== ERROR SUMMARY: 21 errors from 1 contexts (suppressed: 0 from 0)
 ```
