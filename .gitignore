@@ -11,3 +11,5 @@ a.out
 .scannerwork
 .vscode
 build_wrapper_output_directory
+__vfs-tis-*.c
+__vfs-tis-*.h
