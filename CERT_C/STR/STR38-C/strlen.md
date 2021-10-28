@@ -45,12 +45,12 @@ int
 ==12345== Command: ./strlen.out
 ==12345== 
 ==12345== Invalid write of size 4
-==12345==    at 0x108812: f_noncompliant (strlen.c:13)
-==12345==    by 0x108900: main (strlen.c:35)
-==12345==  Address 0x522f0bc is 10 bytes after a block of size 2 alloc'd
-==12345==    at 0x4C31B0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==12345==    by 0x1087F8: f_noncompliant (strlen.c:7)
-==12345==    by 0x108900: main (strlen.c:35)
+==12345==    at 0x424242424242: f_noncompliant (strlen.c:13)
+==12345==    by 0x424242424242: main (strlen.c:35)
+==12345==  Address 0x424242424242 is 10 bytes after a block of size 2 alloc'd
+==12345==    at 0x424242424242: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12345==    by 0x424242424242: f_noncompliant (strlen.c:7)
+==12345==    by 0x424242424242: main (strlen.c:35)
 ==12345== 
 ==12345== 
 ==12345== HEAP SUMMARY:
