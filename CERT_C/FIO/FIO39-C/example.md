@@ -20,14 +20,14 @@
 ==12345== 
 ==12345== 
 ==12345== HEAP SUMMARY:
-==12345==     in use at exit: 552 bytes in 1 blocks
-==12345==   total heap usage: 4 allocs, 3 frees, 9,296 bytes allocated
+==12345==     in use at exit: 123,456 bytes in 2 blocks
+==12345==   total heap usage: 4 allocs, 2 frees, 123,456 bytes allocated
 ==12345== 
 ==12345== LEAK SUMMARY:
 ==12345==    definitely lost: 0 bytes in 0 blocks
 ==12345==    indirectly lost: 0 bytes in 0 blocks
 ==12345==      possibly lost: 0 bytes in 0 blocks
-==12345==    still reachable: 552 bytes in 1 blocks
+==12345==    still reachable: 123,456 bytes in 2 blocks
 ==12345==         suppressed: 0 bytes in 0 blocks
 ==12345== Reachable blocks (those to which a pointer was found) are not shown.
 ==12345== To see them, rerun with: --leak-check=full --show-leak-kinds=all

@@ -21,7 +21,7 @@
 ==12345== 
 ==12345== HEAP SUMMARY:
 ==12345==     in use at exit: 552 bytes in 1 blocks
-==12345==   total heap usage: 4 allocs, 3 frees, 9,296 bytes allocated
+==12345==   total heap usage: 4 allocs, 3 frees, 123,456 bytes allocated
 ==12345== 
 ==12345== LEAK SUMMARY:
 ==12345==    definitely lost: 0 bytes in 0 blocks

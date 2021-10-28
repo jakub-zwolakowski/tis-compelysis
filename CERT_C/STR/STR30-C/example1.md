@@ -28,11 +28,11 @@ int
 ### UBSan
 ```
 UndefinedBehaviorSanitizer:DEADLYSIGNAL
-==12345==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x00000042ca55 (pc 0x000000424154 bp 0x7fffd61f0e30 sp 0x7fffd61f0e10 T25713)
+==12345==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x424242424242 (pc 0x424242424242 bp 0x424242424242 sp 0x424242424242 T4242)
 ==12345==The signal is caused by a WRITE memory access.
     #0 0x424154 in f_noncompliant (/home/qba/git/tis-compelysis/CERT_C/STR/STR30-C/example1.UBSan-out+0x424154)
     #1 0x42420d in main (/home/qba/git/tis-compelysis/CERT_C/STR/STR30-C/example1.UBSan-out+0x42420d)
-    #2 0x7fe4086cabf6 in __libc_start_main /build/glibc-S9d2JN/glibc-2.27/csu/../csu/libc-start.c:310
+    #2 0x424242424242 in __libc_start_main /build/glibc-S9d2JN/glibc-2.27/csu/../csu/libc-start.c:310
     #3 0x4029d9 in _start (/home/qba/git/tis-compelysis/CERT_C/STR/STR30-C/example1.UBSan-out+0x4029d9)
 
 UndefinedBehaviorSanitizer can not provide additional info.

@@ -39,7 +39,7 @@ check: I _love_ you
 ==12345== 
 ==12345== HEAP SUMMARY:
 ==12345==     in use at exit: 0 bytes in 0 blocks
-==12345==   total heap usage: 5 allocs, 5 frees, 4,843 bytes allocated
+==12345==   total heap usage: 5 allocs, 5 frees, 123,456 bytes allocated
 ==12345== 
 ==12345== All heap blocks were freed -- no leaks are possible
 ==12345== 

@@ -32,7 +32,7 @@ int
 ==12345== 
 ==12345== HEAP SUMMARY:
 ==12345==     in use at exit: 0 bytes in 0 blocks
-==12345==   total heap usage: 2 allocs, 2 frees, 2,688 bytes allocated
+==12345==   total heap usage: 2 allocs, 2 frees, 123,456 bytes allocated
 ==12345== 
 ==12345== All heap blocks were freed -- no leaks are possible
 ==12345== 

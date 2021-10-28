@@ -26,7 +26,7 @@ SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior example_noncompliant.c:1
 ==12345== 
 ==12345== HEAP SUMMARY:
 ==12345==     in use at exit: 552 bytes in 1 blocks
-==12345==   total heap usage: 4 allocs, 3 frees, 9,296 bytes allocated
+==12345==   total heap usage: 4 allocs, 3 frees, 123,456 bytes allocated
 ==12345== 
 ==12345== LEAK SUMMARY:
 ==12345==    definitely lost: 0 bytes in 0 blocks
@@ -63,7 +63,7 @@ SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior example_noncompliant.c:1
 ==12345== 
 ==12345== HEAP SUMMARY:
 ==12345==     in use at exit: 552 bytes in 1 blocks
-==12345==   total heap usage: 4 allocs, 3 frees, 9,296 bytes allocated
+==12345==   total heap usage: 4 allocs, 3 frees, 123,456 bytes allocated
 ==12345== 
 ==12345== LEAK SUMMARY:
 ==12345==    definitely lost: 0 bytes in 0 blocks
@@ -104,7 +104,7 @@ SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior example.c:29:3 in
 ==12345== 
 ==12345== HEAP SUMMARY:
 ==12345==     in use at exit: 0 bytes in 0 blocks
-==12345==   total heap usage: 8 allocs, 8 frees, 18,592 bytes allocated
+==12345==   total heap usage: 8 allocs, 8 frees, 123,456 bytes allocated
 ==12345== 
 ==12345== All heap blocks were freed -- no leaks are possible
 ==12345== 

@@ -122,9 +122,9 @@ markdown_files = $(patsubst %.c, %.md, $(main_C_files))
 	echo '```' >> $@
 	cat $*.valgrind-run >> $@
 	echo '```' >> $@
-
-
-
+	ls *.md | xargs -n 1 sed -i -E 's/^==[0-9]+==/==12345==/g'
+	ls *.md | xargs -n 1 sed -i -E 's/0x[a-z0-9]{8,12}/0x424242424242/g'
+	ls *.md | xargs -n 1 sed -i -E 's/T[0-9]{3,5}/T4242/g'
 
 
 README.md: $(markdown_files)

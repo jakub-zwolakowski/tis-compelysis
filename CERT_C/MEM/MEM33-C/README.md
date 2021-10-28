@@ -145,7 +145,7 @@ SUMMARY: UndefinedBehaviorSanitizer: SEGV (<unknown module>)
 ==12345==    by 0x4F72B60: __fortify_fail_abort (fortify_fail.c:33)
 ==12345==    by 0x4F72B21: __stack_chk_fail (stack_chk_fail.c:29)
 ==12345==    by 0x10870A: func_noncompliant (example.c:19)
-==12345==    by 0x108779: main (example.c:43)
+==12345==    by 0x108782: main (example.c:44)
 ==12345== 
 ==12345== HEAP SUMMARY:
 ==12345==     in use at exit: 24 bytes in 1 blocks
@@ -154,7 +154,7 @@ SUMMARY: UndefinedBehaviorSanitizer: SEGV (<unknown module>)
 ==12345== 24 bytes in 1 blocks are definitely lost in loss record 1 of 1
 ==12345==    at 0x4C31B0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
 ==12345==    by 0x108730: func_compliant (example.c:26)
-==12345==    by 0x108774: main (example.c:42)
+==12345==    by 0x10877D: main (example.c:43)
 ==12345== 
 ==12345== LEAK SUMMARY:
 ==12345==    definitely lost: 24 bytes in 1 blocks

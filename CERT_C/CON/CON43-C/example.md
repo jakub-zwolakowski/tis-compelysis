@@ -2,7 +2,7 @@
 ### Test
 ```
 -42
-0
+-84
 -42
 0
 -42
@@ -14,9 +14,9 @@
 -42
 0
 -42
-0
+-84
 -42
-0
+-84
 -42
 0
 -42
@@ -59,29 +59,29 @@
 ==12345== Command: ./example.out
 ==12345== 
 42
+0
+42
+0
+-42
+0
+42
 84
-126
-84
-126
-168
-126
+42
+0
+42
+0
+-42
+0
+42
 84
 42
 0
 -42
 0
--42
-0
--42
--84
--126
--84
--42
-0
 ==12345== 
 ==12345== HEAP SUMMARY:
 ==12345==     in use at exit: 0 bytes in 0 blocks
-==12345==   total heap usage: 17 allocs, 17 frees, 8,448 bytes allocated
+==12345==   total heap usage: 17 allocs, 17 frees, 123,456 bytes allocated
 ==12345== 
 ==12345== All heap blocks were freed -- no leaks are possible
 ==12345== 

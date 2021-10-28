@@ -43,7 +43,7 @@ compliant end
 ==12345== 
 ==12345== HEAP SUMMARY:
 ==12345==     in use at exit: 0 bytes in 0 blocks
-==12345==   total heap usage: 6 allocs, 6 frees, 5,456 bytes allocated
+==12345==   total heap usage: 6 allocs, 6 frees, 123,456 bytes allocated
 ==12345== 
 ==12345== All heap blocks were freed -- no leaks are possible
 ==12345== 
@@ -57,7 +57,7 @@ noncompliant beginning
 noncompliant 1, Worker 1
 noncompliant 2, Worker 2
 noncompliant 3, Worker 3
-noncompliant 5, Destruction 3
+noncompliant 4, Destruction 3
 noncompliant 5, Destruction 3
 noncompliant end
 ```
@@ -70,11 +70,11 @@ noncompliant end
 ### UBSan
 ```
 noncompliant beginning
-noncompliant 2, Worker 1
+noncompliant 1, Worker 1
 noncompliant 3, Worker 2
-noncompliant 3, Worker 3
-noncompliant 4, Destruction 3
-noncompliant 5, Destruction 3
+noncompliant 5, Destruction 2
+noncompliant 5, Destruction 2
+noncompliant 5, Destruction 2
 noncompliant end
 ```
 ### Valgrind
@@ -85,16 +85,16 @@ noncompliant end
 ==12345== Command: ./example_noncompliant.out
 ==12345== 
 noncompliant beginning
-noncompliant 3, Worker 1
-noncompliant 3, Worker 2
-noncompliant 3, Worker 3
-noncompliant 3, Worker 4
-noncompliant 5, Destruction 4
+noncompliant 5, Destruction 0
+noncompliant 5, Destruction 0
+noncompliant 5, Destruction 0
+noncompliant 5, Destruction 0
+noncompliant 5, Destruction 0
 noncompliant end
 ==12345== 
 ==12345== HEAP SUMMARY:
 ==12345==     in use at exit: 0 bytes in 0 blocks
-==12345==   total heap usage: 6 allocs, 6 frees, 5,456 bytes allocated
+==12345==   total heap usage: 6 allocs, 6 frees, 123,456 bytes allocated
 ==12345== 
 ==12345== All heap blocks were freed -- no leaks are possible
 ==12345== 
@@ -113,9 +113,9 @@ compliant 5
 compliant end
 noncompliant beginning
 noncompliant 1, Worker 1
-noncompliant 2, Worker 2
-noncompliant 3, Worker 3
-noncompliant 4, Destruction 3
+noncompliant 3, Worker 2
+noncompliant 4, Worker 3
+noncompliant 5, Destruction 3
 noncompliant 5, Destruction 3
 noncompliant end
 ```
@@ -135,11 +135,11 @@ compliant 4
 compliant 5
 compliant end
 noncompliant beginning
-noncompliant 2, Worker 1
-noncompliant 3, Worker 2
-noncompliant 4, Destruction 2
-noncompliant 5, Destruction 2
-noncompliant 5, Destruction 2
+noncompliant 5, Destruction 0
+noncompliant 5, Destruction 0
+noncompliant 5, Destruction 0
+noncompliant 5, Destruction 0
+noncompliant 5, Destruction 0
 noncompliant end
 ```
 ### Valgrind
@@ -157,16 +157,16 @@ compliant 4
 compliant 5
 compliant end
 noncompliant beginning
-noncompliant 5, Destruction 0
-noncompliant 5, Destruction 0
-noncompliant 5, Destruction 0
-noncompliant 5, Destruction 0
-noncompliant 5, Destruction 0
+noncompliant 3, Worker 1
+noncompliant 3, Worker 2
+noncompliant 3, Worker 3
+noncompliant 3, Worker 4
+noncompliant 5, Destruction 4
 noncompliant end
 ==12345== 
 ==12345== HEAP SUMMARY:
 ==12345==     in use at exit: 0 bytes in 0 blocks
-==12345==   total heap usage: 7 allocs, 7 frees, 5,728 bytes allocated
+==12345==   total heap usage: 7 allocs, 7 frees, 123,456 bytes allocated
 ==12345== 
 ==12345== All heap blocks were freed -- no leaks are possible
 ==12345== 

@@ -25,11 +25,11 @@ int
 example1.c:17:9: runtime error: index 4294967168 out of bounds for type 'char [256]'
 SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior example1.c:17:9 in 
 UndefinedBehaviorSanitizer:DEADLYSIGNAL
-==12345==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x000100639da0 (pc 0x000000424426 bp 0x7ffdf8bd8980 sp 0x7ffdf8bd8910 T26314)
+==12345==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x424242424242 (pc 0x424242424242 bp 0x424242424242 sp 0x424242424242 T4242)
 ==12345==The signal is caused by a READ memory access.
     #0 0x424426 in first_not_in_table_noncompliant (/home/qba/git/tis-compelysis/CERT_C/STR/STR34-C/example1.UBSan-out+0x424426)
     #1 0x424810 in main (/home/qba/git/tis-compelysis/CERT_C/STR/STR34-C/example1.UBSan-out+0x424810)
-    #2 0x7f8d7e4b6bf6 in __libc_start_main /build/glibc-S9d2JN/glibc-2.27/csu/../csu/libc-start.c:310
+    #2 0x424242424242 in __libc_start_main /build/glibc-S9d2JN/glibc-2.27/csu/../csu/libc-start.c:310
     #3 0x4029d9 in _start (/home/qba/git/tis-compelysis/CERT_C/STR/STR34-C/example1.UBSan-out+0x4029d9)
 
 UndefinedBehaviorSanitizer can not provide additional info.
@@ -46,11 +46,11 @@ SUMMARY: UndefinedBehaviorSanitizer: SEGV (/home/qba/git/tis-compelysis/CERT_C/S
 ==12345== Invalid read of size 1
 ==12345==    at 0x1086ED: first_not_in_table_noncompliant (example1.c:17)
 ==12345==    by 0x1087CF: main (example1.c:33)
-==12345==  Address 0x100308fa0 is not stack'd, malloc'd or (recently) free'd
+==12345==  Address 0x424242424242 is not stack'd, malloc'd or (recently) free'd
 ==12345== 
 ==12345== 
 ==12345== Process terminating with default action of signal 11 (SIGSEGV)
-==12345==  Access not within mapped region at address 0x100308FA0
+==12345==  Access not within mapped region at address 0x424242424242
 ==12345==    at 0x1086ED: first_not_in_table_noncompliant (example1.c:17)
 ==12345==    by 0x1087CF: main (example1.c:33)
 ==12345==  If you believe this happened as a result of a stack

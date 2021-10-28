@@ -47,11 +47,11 @@ SUMMARY: UndefinedBehaviorSanitizer: SEGV (/home/qba/git/tis-compelysis/CERT_C/S
 ==12345== Invalid read of size 1
 ==12345==    at 0x1086ED: first_not_in_table_noncompliant (example1.c:17)
 ==12345==    by 0x1087CF: main (example1.c:33)
-==12345==  Address 0x100308fa0 is not stack'd, malloc'd or (recently) free'd
+==12345==  Address 0x424242424242 is not stack'd, malloc'd or (recently) free'd
 ==12345== 
 ==12345== 
 ==12345== Process terminating with default action of signal 11 (SIGSEGV)
-==12345==  Access not within mapped region at address 0x100308FA0
+==12345==  Access not within mapped region at address 0x424242424242
 ==12345==    at 0x1086ED: first_not_in_table_noncompliant (example1.c:17)
 ==12345==    by 0x1087CF: main (example1.c:33)
 ==12345==  If you believe this happened as a result of a stack

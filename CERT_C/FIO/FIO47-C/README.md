@@ -86,10 +86,10 @@ SUMMARY: UndefinedBehaviorSanitizer: SEGV /build/glibc-S9d2JN/glibc-2.27/string/
 ==12345==  main thread stack using the --main-stacksize= flag.
 ==12345==  The main thread stack size used in this run was 8388608.
 Error (type 3): Resource not available to user.
-Error (type ==28797== 
+Error (type ==12345== 
 ==12345== HEAP SUMMARY:
 ==12345==     in use at exit: 0 bytes in 0 blocks
-==12345==   total heap usage: 1 allocs, 1 frees, 4,096 bytes allocated
+==12345==   total heap usage: 1 allocs, 1 frees, 123,456 bytes allocated
 ==12345== 
 ==12345== All heap blocks were freed -- no leaks are possible
 ==12345== 

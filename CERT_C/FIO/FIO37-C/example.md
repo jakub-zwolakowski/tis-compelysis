@@ -12,7 +12,7 @@
 ```
 example.c:29:3: runtime error: index 18446744073709551615 out of bounds for type 'char [1024]'
 SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior example.c:29:3 in 
-example.c:29:3: runtime error: addition of unsigned offset to 0x7fff9015cf40 overflowed to 0x7fff9015cf3f
+example.c:29:3: runtime error: addition of unsigned offset to 0x424242424242 overflowed to 0x424242424242
 SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior example.c:29:3 in 
 ```
 ### Valgrind
@@ -25,7 +25,7 @@ SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior example.c:29:3 in
 ==12345== 
 ==12345== HEAP SUMMARY:
 ==12345==     in use at exit: 0 bytes in 0 blocks
-==12345==   total heap usage: 8 allocs, 8 frees, 18,592 bytes allocated
+==12345==   total heap usage: 8 allocs, 8 frees, 123,456 bytes allocated
 ==12345== 
 ==12345== All heap blocks were freed -- no leaks are possible
 ==12345== 

@@ -39,17 +39,17 @@ SUMMARY: UndefinedBehaviorSanitizer: stack-overflow (/home/qba/git/tis-compelysi
 ==12345== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
 ==12345== Command: ./example1.out
 ==12345== 
-==12345== Warning: set address range perms: large range [0x59e43040, 0x259e4303c) (undefined)
-==12345== Warning: set address range perms: large range [0x59e43028, 0x259e43054) (noaccess)
-==12345== Warning: client switching stacks?  SP change: 0x1ffefff820 --> 0x1dfefff820
+==12345== Warning: set address range perms: large range [0x424242424242, 0x424242424242) (undefined)
+==12345== Warning: set address range perms: large range [0x424242424242, 0x424242424242) (noaccess)
+==12345== Warning: client switching stacks?  SP change: 0x424242424242 --> 0x424242424242
 ==12345==          to suppress, use: --max-stackframe=8589934592 or greater
 ==12345== Invalid write of size 8
 ==12345==    at 0x1087C6: f_noncompliant (example1.c:14)
-==12345==  Address 0x1dfefff818 is on thread 1's stack
+==12345==  Address 0x424242424242 is on thread 1's stack
 ==12345== 
 ==12345== 
 ==12345== Process terminating with default action of signal 11 (SIGSEGV)
-==12345==  Access not within mapped region at address 0x1DFEFFF818
+==12345==  Access not within mapped region at address 0x424242424242
 ==12345==    at 0x1087C6: f_noncompliant (example1.c:14)
 ==12345==  If you believe this happened as a result of a stack
 ==12345==  overflow in your program's main thread (unlikely but
@@ -58,11 +58,11 @@ SUMMARY: UndefinedBehaviorSanitizer: stack-overflow (/home/qba/git/tis-compelysi
 ==12345==  The main thread stack size used in this run was 8388608.
 ==12345== Invalid write of size 8
 ==12345==    at 0x4A2C650: _vgnU_freeres (in /usr/lib/valgrind/vgpreload_core-amd64-linux.so)
-==12345==  Address 0x1dfefff810 is on thread 1's stack
+==12345==  Address 0x424242424242 is on thread 1's stack
 ==12345== 
 ==12345== 
 ==12345== Process terminating with default action of signal 11 (SIGSEGV)
-==12345==  Access not within mapped region at address 0x1DFEFFF810
+==12345==  Access not within mapped region at address 0x424242424242
 ==12345==    at 0x4A2C650: _vgnU_freeres (in /usr/lib/valgrind/vgpreload_core-amd64-linux.so)
 ==12345==  If you believe this happened as a result of a stack
 ==12345==  overflow in your program's main thread (unlikely but
@@ -72,7 +72,7 @@ SUMMARY: UndefinedBehaviorSanitizer: stack-overflow (/home/qba/git/tis-compelysi
 ==12345== 
 ==12345== HEAP SUMMARY:
 ==12345==     in use at exit: 0 bytes in 0 blocks
-==12345==   total heap usage: 1 allocs, 1 frees, 8,589,934,588 bytes allocated
+==12345==   total heap usage: 1 allocs, 1 frees, 123,456 bytes allocated
 ==12345== 
 ==12345== All heap blocks were freed -- no leaks are possible
 ==12345== 
