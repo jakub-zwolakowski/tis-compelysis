@@ -24,13 +24,13 @@ int
 ### UBSan
 ```
 UndefinedBehaviorSanitizer:DEADLYSIGNAL
-==12345==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x000000000060 (pc 0x7fc4c18ecf37 bp 0x7ffdc433e6e0 sp 0x7ffdc433e6c8 T1023)
+==12345==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x424242424242 (pc 0x424242424242 bp 0x424242424242 sp 0x424242424242 T4242)
 ==12345==The signal is caused by a READ memory access.
 ==12345==Hint: address points to the zero page.
-    #0 0x7fc4c18ecf37  /build/glibc-S9d2JN/glibc-2.27/string/../sysdeps/x86_64/multiarch/strchr-avx2.S:76
+    #0 0x424242424242  /build/glibc-S9d2JN/glibc-2.27/string/../sysdeps/x86_64/multiarch/strchr-avx2.S:76
     #1 0x4241a1 in f_noncompliant (/home/qba/git/tis-compelysis/CERT_C/EXP/EXP37-C/example_strchr.UBSan-out+0x4241a1)
     #2 0x42422d in main (/home/qba/git/tis-compelysis/CERT_C/EXP/EXP37-C/example_strchr.UBSan-out+0x42422d)
-    #3 0x7fc4c1780bf6 in __libc_start_main /build/glibc-S9d2JN/glibc-2.27/csu/../csu/libc-start.c:310
+    #3 0x424242424242 in __libc_start_main /build/glibc-S9d2JN/glibc-2.27/csu/../csu/libc-start.c:310
     #4 0x402a69 in _start (/home/qba/git/tis-compelysis/CERT_C/EXP/EXP37-C/example_strchr.UBSan-out+0x402a69)
 
 UndefinedBehaviorSanitizer can not provide additional info.

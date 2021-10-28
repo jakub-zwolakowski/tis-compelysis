@@ -26,11 +26,11 @@ int
 example1.c:17:9: runtime error: index 4294967168 out of bounds for type 'char [256]'
 SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior example1.c:17:9 in 
 UndefinedBehaviorSanitizer:DEADLYSIGNAL
-==12345==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x000100639da0 (pc 0x000000424426 bp 0x7ffdf8bd8980 sp 0x7ffdf8bd8910 T26314)
+==12345==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x424242424242 (pc 0x424242424242 bp 0x424242424242 sp 0x424242424242 T4242)
 ==12345==The signal is caused by a READ memory access.
     #0 0x424426 in first_not_in_table_noncompliant (/home/qba/git/tis-compelysis/CERT_C/STR/STR34-C/example1.UBSan-out+0x424426)
     #1 0x424810 in main (/home/qba/git/tis-compelysis/CERT_C/STR/STR34-C/example1.UBSan-out+0x424810)
-    #2 0x7f8d7e4b6bf6 in __libc_start_main /build/glibc-S9d2JN/glibc-2.27/csu/../csu/libc-start.c:310
+    #2 0x424242424242 in __libc_start_main /build/glibc-S9d2JN/glibc-2.27/csu/../csu/libc-start.c:310
     #3 0x4029d9 in _start (/home/qba/git/tis-compelysis/CERT_C/STR/STR34-C/example1.UBSan-out+0x4029d9)
 
 UndefinedBehaviorSanitizer can not provide additional info.

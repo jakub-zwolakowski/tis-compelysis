@@ -58,13 +58,13 @@ example_noncompliant.c:10:28: warning: variable ‘flex_struct’ set but not us
 ### UBSan
 ```
 UndefinedBehaviorSanitizer:DEADLYSIGNAL
-==12345==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x000000000000 (pc 0x000000000000 bp 0x000000000000 sp 0x7ffe10a5f890 T23566)
+==12345==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x424242424242 (pc 0x424242424242 bp 0x424242424242 sp 0x424242424242 T4242)
 ==12345==Hint: pc points to the zero page.
 ==12345==The signal is caused by a READ memory access.
 ==12345==Hint: address points to the zero page.
     #0 0x0  (<unknown module>)
     #1 0x41d33a in __sanitizer::HandleDeadlySignal(void*, void*, unsigned int, void (*)(__sanitizer::SignalContext const&, void const*, __sanitizer::BufferedStackTrace*), void const*) /home/qba/tis/deps/llvm/12.0.0/src/projects/compiler-rt/lib/sanitizer_common/sanitizer_symbolizer_report.cpp:246:3
-    #2 0x7fd8f73c497f  (/lib/x86_64-linux-gnu/libpthread.so.0+0x1297f)
+    #2 0x424242424242  (/lib/x86_64-linux-gnu/libpthread.so.0+0x1297f)
 
 UndefinedBehaviorSanitizer can not provide additional info.
 SUMMARY: UndefinedBehaviorSanitizer: SEGV (<unknown module>) 
@@ -117,13 +117,13 @@ example.c:10:28: warning: variable ‘flex_struct’ set but not used [-Wunused-
 ### UBSan
 ```
 UndefinedBehaviorSanitizer:DEADLYSIGNAL
-==12345==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x000000000000 (pc 0x000000000000 bp 0x000000000000 sp 0x7ffec6688df0 T24015)
+==12345==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x424242424242 (pc 0x424242424242 bp 0x424242424242 sp 0x424242424242 T4242)
 ==12345==Hint: pc points to the zero page.
 ==12345==The signal is caused by a READ memory access.
 ==12345==Hint: address points to the zero page.
     #0 0x0  (<unknown module>)
     #1 0x41d37a in __sanitizer::HandleDeadlySignal(void*, void*, unsigned int, void (*)(__sanitizer::SignalContext const&, void const*, __sanitizer::BufferedStackTrace*), void const*) /home/qba/tis/deps/llvm/12.0.0/src/projects/compiler-rt/lib/sanitizer_common/sanitizer_symbolizer_report.cpp:246:3
-    #2 0x7fc9caedb97f  (/lib/x86_64-linux-gnu/libpthread.so.0+0x1297f)
+    #2 0x424242424242  (/lib/x86_64-linux-gnu/libpthread.so.0+0x1297f)
 
 UndefinedBehaviorSanitizer can not provide additional info.
 SUMMARY: UndefinedBehaviorSanitizer: SEGV (<unknown module>) 

@@ -25,7 +25,7 @@ int
 ### UBSan
 ```
 UndefinedBehaviorSanitizer:DEADLYSIGNAL
-==12345==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address (pc 0x00000042429c bp 0xfffd611800001788 sp 0x7ffcea75b668 T6339)
+==12345==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address (pc 0x424242424242 bp 0x4242424242421788 sp 0x424242424242 T4242)
 ==12345==The signal is caused by a READ memory access.
 ==12345==Hint: this fault was caused by a dereference of a high value address (see register values below).  Disassemble the provided pc to learn which register was used.
 UndefinedBehaviorSanitizer:DEADLYSIGNAL
@@ -47,7 +47,7 @@ UndefinedBehaviorSanitizer: nested bug in the same thread, aborting.
 ==12345==    by 0x4F72B60: __fortify_fail_abort (fortify_fail.c:33)
 ==12345==    by 0x4F72B21: __stack_chk_fail (stack_chk_fail.c:29)
 ==12345==    by 0x108757: f_noncompliant (Element_Count.c:12)
-==12345==    by 0x110780100527A00: ???
+==12345==    by 0x424242424242A00: ???
 ==12345==    by 0x1087DF: ??? (in /home/qba/git/tis-compelysis/CERT_C/ARR/ARR38-C/Element_Count.out)
 ==12345==    by 0x4E5FBF6: (below main) (libc-start.c:310)
 ==12345== 

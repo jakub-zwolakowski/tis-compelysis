@@ -13,7 +13,7 @@
 ```
 example_noncompliant.c:14:3: runtime error: index 18446744073709551615 out of bounds for type 'char [1024]'
 SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior example_noncompliant.c:14:3 in 
-example_noncompliant.c:14:3: runtime error: addition of unsigned offset to 0x7ffe489f9f20 overflowed to 0x7ffe489f9f1f
+example_noncompliant.c:14:3: runtime error: addition of unsigned offset to 0x424242424242 overflowed to 0x424242424242
 SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior example_noncompliant.c:14:3 in 
 ```
 ### Valgrind
@@ -91,7 +91,7 @@ SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior example_noncompliant.c:1
 ```
 example.c:29:3: runtime error: index 18446744073709551615 out of bounds for type 'char [1024]'
 SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior example.c:29:3 in 
-example.c:29:3: runtime error: addition of unsigned offset to 0x7fff9015cf40 overflowed to 0x7fff9015cf3f
+example.c:29:3: runtime error: addition of unsigned offset to 0x424242424242 overflowed to 0x424242424242
 SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior example.c:29:3 in 
 ```
 ### Valgrind

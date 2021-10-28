@@ -26,12 +26,12 @@ int
 custom_example.c:12:10: runtime error: load of null pointer of type 'int'
 SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior custom_example.c:12:10 in 
 UndefinedBehaviorSanitizer:DEADLYSIGNAL
-==12345==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x000000000000 (pc 0x0000004241eb bp 0x7fff1c0c7d30 sp 0x7fff1c0c7d10 T3057)
+==12345==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x424242424242 (pc 0x424242424242 bp 0x424242424242 sp 0x424242424242 T4242)
 ==12345==The signal is caused by a READ memory access.
 ==12345==Hint: address points to the zero page.
     #0 0x4241eb in f_noncompliant (/home/qba/git/tis-compelysis/CERT_C/EXP/EXP34-C/custom_example.UBSan-out+0x4241eb)
     #1 0x4242b5 in main (/home/qba/git/tis-compelysis/CERT_C/EXP/EXP34-C/custom_example.UBSan-out+0x4242b5)
-    #2 0x7f4869b68bf6 in __libc_start_main /build/glibc-S9d2JN/glibc-2.27/csu/../csu/libc-start.c:310
+    #2 0x424242424242 in __libc_start_main /build/glibc-S9d2JN/glibc-2.27/csu/../csu/libc-start.c:310
     #3 0x4029d9 in _start (/home/qba/git/tis-compelysis/CERT_C/EXP/EXP34-C/custom_example.UBSan-out+0x4029d9)
 
 UndefinedBehaviorSanitizer can not provide additional info.
