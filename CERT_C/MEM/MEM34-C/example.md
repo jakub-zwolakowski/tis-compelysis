@@ -77,10 +77,10 @@ UndefinedBehaviorSanitizer:DEADLYSIGNAL
 ==12345==The signal is caused by a READ memory access.
 ==12345==Hint: address points to the zero page.
     #0 0x424242424242 in free /build/glibc-S9d2JN/glibc-2.27/malloc/malloc.c:3133
-    #1 0x424458 in f_noncompliant (/home/qba/git/tis-compelysis/CERT_C/MEM/MEM34-C/example.UBSan-out+0x424458)
-    #2 0x4247fc in main (/home/qba/git/tis-compelysis/CERT_C/MEM/MEM34-C/example.UBSan-out+0x4247fc)
+    #1 0x424242424242 in f_noncompliant (/home/qba/git/tis-compelysis/CERT_C/MEM/MEM34-C/example.UBSan-out+0x424242424242)
+    #2 0x424242424242 in main (/home/qba/git/tis-compelysis/CERT_C/MEM/MEM34-C/example.UBSan-out+0x424242424242)
     #3 0x424242424242 in __libc_start_main /build/glibc-S9d2JN/glibc-2.27/csu/../csu/libc-start.c:310
-    #4 0x402b39 in _start (/home/qba/git/tis-compelysis/CERT_C/MEM/MEM34-C/example.UBSan-out+0x402b39)
+    #4 0x424242424242 in _start (/home/qba/git/tis-compelysis/CERT_C/MEM/MEM34-C/example.UBSan-out+0x424242424242)
 
 UndefinedBehaviorSanitizer can not provide additional info.
 SUMMARY: UndefinedBehaviorSanitizer: SEGV /build/glibc-S9d2JN/glibc-2.27/malloc/malloc.c:3133 in free
@@ -94,10 +94,10 @@ SUMMARY: UndefinedBehaviorSanitizer: SEGV /build/glibc-S9d2JN/glibc-2.27/malloc/
 ==12345== Command: ./example.out
 ==12345== 
 ==12345== Invalid free() / delete / delete[] / realloc()
-==12345==    at 0x4C32D3B: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==12345==    by 0x10886F: f_noncompliant (example.c:27)
-==12345==    by 0x10898E: main (example.c:62)
-==12345==  Address 0x108a34 is in a r-x mapped file /home/qba/git/tis-compelysis/CERT_C/MEM/MEM34-C/example.out segment
+==12345==    at 0x424242424242: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12345==    by 0x424242424242: f_noncompliant (example.c:27)
+==12345==    by 0x424242424242: main (example.c:62)
+==12345==  Address 0x424242424242 is in a r-x mapped file /home/qba/git/tis-compelysis/CERT_C/MEM/MEM34-C/example.out segment
 ==12345== 
 usage: $>a.exe [string]
 usage: $>a.exe [string]

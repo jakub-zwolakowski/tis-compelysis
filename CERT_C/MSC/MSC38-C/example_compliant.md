@@ -25,14 +25,14 @@ Aborted (core dumped)
 example_compliant.out: example_compliant.c:10: assert_handler: Assertion `value' failed.
 ==12345== 
 ==12345== Process terminating with default action of signal 6 (SIGABRT)
-==12345==    at 0x4E7CFB7: raise (raise.c:51)
-==12345==    by 0x4E7E920: abort (abort.c:79)
-==12345==    by 0x4E6E489: __assert_fail_base (assert.c:92)
-==12345==    by 0x4E6E501: __assert_fail (assert.c:101)
-==12345==    by 0x108696: assert_handler (example_compliant.c:10)
-==12345==    by 0x108663: execute_handler (example_compliant.c:6)
-==12345==    by 0x1086BB: func (example_compliant.c:14)
-==12345==    by 0x1086CC: main (example_compliant.c:18)
+==12345==    at 0x424242424242: raise (raise.c:51)
+==12345==    by 0x424242424242: abort (abort.c:79)
+==12345==    by 0x424242424242: __assert_fail_base (assert.c:92)
+==12345==    by 0x424242424242: __assert_fail (assert.c:101)
+==12345==    by 0x424242424242: assert_handler (example_compliant.c:10)
+==12345==    by 0x424242424242: execute_handler (example_compliant.c:6)
+==12345==    by 0x424242424242: func (example_compliant.c:14)
+==12345==    by 0x424242424242: main (example_compliant.c:18)
 ==12345== 
 ==12345== HEAP SUMMARY:
 ==12345==     in use at exit: 0 bytes in 0 blocks

@@ -25,12 +25,12 @@
 ==12345==   total heap usage: 1 allocs, 0 frees, 272 bytes allocated
 ==12345== 
 ==12345== 272 bytes in 1 blocks are possibly lost in loss record 1 of 1
-==12345==    at 0x4C33B25: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==12345==    by 0x4013646: allocate_dtv (dl-tls.c:286)
-==12345==    by 0x4013646: _dl_allocate_tls (dl-tls.c:530)
-==12345==    by 0x4E46227: allocate_stack (allocatestack.c:627)
-==12345==    by 0x4E46227: pthread_create@@GLIBC_2.2.5 (pthread_create.c:644)
-==12345==    by 0x108769: main (example_compliant.c:19)
+==12345==    at 0x424242424242: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12345==    by 0x424242424242: allocate_dtv (dl-tls.c:286)
+==12345==    by 0x424242424242: _dl_allocate_tls (dl-tls.c:530)
+==12345==    by 0x424242424242: allocate_stack (allocatestack.c:627)
+==12345==    by 0x424242424242: pthread_create@@GLIBC_2.2.5 (pthread_create.c:644)
+==12345==    by 0x424242424242: main (example_compliant.c:19)
 ==12345== 
 ==12345== LEAK SUMMARY:
 ==12345==    definitely lost: 0 bytes in 0 blocks
@@ -68,12 +68,12 @@
 ==12345==   total heap usage: 1 allocs, 0 frees, 272 bytes allocated
 ==12345== 
 ==12345== 272 bytes in 1 blocks are possibly lost in loss record 1 of 1
-==12345==    at 0x4C33B25: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==12345==    by 0x4013646: allocate_dtv (dl-tls.c:286)
-==12345==    by 0x4013646: _dl_allocate_tls (dl-tls.c:530)
-==12345==    by 0x4E46227: allocate_stack (allocatestack.c:627)
-==12345==    by 0x4E46227: pthread_create@@GLIBC_2.2.5 (pthread_create.c:644)
-==12345==    by 0x1087A6: main (example_noncompliant.c:23)
+==12345==    at 0x424242424242: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12345==    by 0x424242424242: allocate_dtv (dl-tls.c:286)
+==12345==    by 0x424242424242: _dl_allocate_tls (dl-tls.c:530)
+==12345==    by 0x424242424242: allocate_stack (allocatestack.c:627)
+==12345==    by 0x424242424242: pthread_create@@GLIBC_2.2.5 (pthread_create.c:644)
+==12345==    by 0x424242424242: main (example_noncompliant.c:23)
 ==12345== 
 ==12345== LEAK SUMMARY:
 ==12345==    definitely lost: 0 bytes in 0 blocks
@@ -111,22 +111,22 @@
 ==12345==   total heap usage: 2 allocs, 0 frees, 544 bytes allocated
 ==12345== 
 ==12345== 272 bytes in 1 blocks are possibly lost in loss record 1 of 2
-==12345==    at 0x4C33B25: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==12345==    by 0x4013646: allocate_dtv (dl-tls.c:286)
-==12345==    by 0x4013646: _dl_allocate_tls (dl-tls.c:530)
-==12345==    by 0x4E46227: allocate_stack (allocatestack.c:627)
-==12345==    by 0x4E46227: pthread_create@@GLIBC_2.2.5 (pthread_create.c:644)
-==12345==    by 0x10884C: main_compliant (example.c:46)
-==12345==    by 0x10888F: main (example.c:58)
+==12345==    at 0x424242424242: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12345==    by 0x424242424242: allocate_dtv (dl-tls.c:286)
+==12345==    by 0x424242424242: _dl_allocate_tls (dl-tls.c:530)
+==12345==    by 0x424242424242: allocate_stack (allocatestack.c:627)
+==12345==    by 0x424242424242: pthread_create@@GLIBC_2.2.5 (pthread_create.c:644)
+==12345==    by 0x424242424242: main_compliant (example.c:46)
+==12345==    by 0x424242424242: main (example.c:58)
 ==12345== 
 ==12345== 272 bytes in 1 blocks are possibly lost in loss record 2 of 2
-==12345==    at 0x4C33B25: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==12345==    by 0x4013646: allocate_dtv (dl-tls.c:286)
-==12345==    by 0x4013646: _dl_allocate_tls (dl-tls.c:530)
-==12345==    by 0x4E46227: allocate_stack (allocatestack.c:627)
-==12345==    by 0x4E46227: pthread_create@@GLIBC_2.2.5 (pthread_create.c:644)
-==12345==    by 0x1087A6: main_noncompliant (example.c:23)
-==12345==    by 0x108894: main (example.c:59)
+==12345==    at 0x424242424242: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12345==    by 0x424242424242: allocate_dtv (dl-tls.c:286)
+==12345==    by 0x424242424242: _dl_allocate_tls (dl-tls.c:530)
+==12345==    by 0x424242424242: allocate_stack (allocatestack.c:627)
+==12345==    by 0x424242424242: pthread_create@@GLIBC_2.2.5 (pthread_create.c:644)
+==12345==    by 0x424242424242: main_noncompliant (example.c:23)
+==12345==    by 0x424242424242: main (example.c:59)
 ==12345== 
 ==12345== LEAK SUMMARY:
 ==12345==    definitely lost: 0 bytes in 0 blocks

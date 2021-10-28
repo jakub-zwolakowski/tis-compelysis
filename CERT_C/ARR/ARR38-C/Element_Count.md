@@ -40,15 +40,15 @@ UndefinedBehaviorSanitizer: nested bug in the same thread, aborting.
 *** stack smashing detected ***: <unknown> terminated
 ==12345== 
 ==12345== Process terminating with default action of signal 6 (SIGABRT)
-==12345==    at 0x4E7CFB7: raise (raise.c:51)
-==12345==    by 0x4E7E920: abort (abort.c:79)
-==12345==    by 0x4EC7966: __libc_message (libc_fatal.c:181)
-==12345==    by 0x4F72B60: __fortify_fail_abort (fortify_fail.c:33)
-==12345==    by 0x4F72B21: __stack_chk_fail (stack_chk_fail.c:29)
-==12345==    by 0x108757: f_noncompliant (Element_Count.c:12)
+==12345==    at 0x424242424242: raise (raise.c:51)
+==12345==    by 0x424242424242: abort (abort.c:79)
+==12345==    by 0x424242424242: __libc_message (libc_fatal.c:181)
+==12345==    by 0x424242424242: __fortify_fail_abort (fortify_fail.c:33)
+==12345==    by 0x424242424242: __stack_chk_fail (stack_chk_fail.c:29)
+==12345==    by 0x424242424242: f_noncompliant (Element_Count.c:12)
 ==12345==    by 0x424242424242A00: ???
-==12345==    by 0x1087DF: ??? (in /home/qba/git/tis-compelysis/CERT_C/ARR/ARR38-C/Element_Count.out)
-==12345==    by 0x4E5FBF6: (below main) (libc-start.c:310)
+==12345==    by 0x424242424242: ??? (in /home/qba/git/tis-compelysis/CERT_C/ARR/ARR38-C/Element_Count.out)
+==12345==    by 0x424242424242: (below main) (libc-start.c:310)
 ==12345== 
 ==12345== HEAP SUMMARY:
 ==12345==     in use at exit: 0 bytes in 0 blocks

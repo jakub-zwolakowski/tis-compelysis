@@ -122,9 +122,11 @@ markdown_files = $(patsubst %.c, %.md, $(main_C_files))
 	echo '```' >> $@
 	cat $*.valgrind-run >> $@
 	echo '```' >> $@
-	ls *.md | xargs -n 1 sed -i -E 's/^==[0-9]+==/==12345==/g'
-	ls *.md | xargs -n 1 sed -i -E 's/0x[a-z0-9]{8,12}/0x424242424242/g'
+	ls *.md | xargs -n 1 sed -i -E 's/==[0-9]+==/==12345==/g'
+	ls *.md | xargs -n 1 sed -i -E 's/0x[a-zA-Z0-9]{6,12}/0x424242424242/g'
 	ls *.md | xargs -n 1 sed -i -E 's/T[0-9]{3,5}/T4242/g'
+	ls *.md | xargs -n 1 sed -i -E 's/ [0-9]+,[0-9,]+ bytes/ 123,456 bytes/g'
+	ls *.md | xargs -n 1 sed -i -E 's/Result: [0-9]+/Result: 12345/g'
 
 
 README.md: $(markdown_files)
@@ -144,6 +146,6 @@ clean:
 	rm -f $(UBSan_executables)
 	rm -f $(UBSan_results)
 	rm -f $(valgrind_results)
-	# rm -f $(markdown_files) # These stay.
+	rm -f $(markdown_files) README.md # These stay.
 
 .PHONY = all clean %.tis markdown

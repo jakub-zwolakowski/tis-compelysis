@@ -34,16 +34,16 @@ Aborted (core dumped)
 ==12345== Command: ./example1.out
 ==12345== 
 ==12345== Invalid read of size 8
-==12345==    at 0x1086B0: free_list_noncompliant (example1.c:9)
-==12345==    by 0x10878E: main (example1.c:39)
-==12345==  Address 0x522f1d8 is 8 bytes inside a block of size 16 free'd
-==12345==    at 0x4C32D3B: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==12345==    by 0x1086AB: free_list_noncompliant (example1.c:10)
-==12345==    by 0x10878E: main (example1.c:39)
+==12345==    at 0x424242424242: free_list_noncompliant (example1.c:9)
+==12345==    by 0x424242424242: main (example1.c:39)
+==12345==  Address 0x424242424242 is 8 bytes inside a block of size 16 free'd
+==12345==    at 0x424242424242: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12345==    by 0x424242424242: free_list_noncompliant (example1.c:10)
+==12345==    by 0x424242424242: main (example1.c:39)
 ==12345==  Block was alloc'd at
-==12345==    at 0x4C31B0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==12345==    by 0x108727: make_list (example1.c:27)
-==12345==    by 0x10877E: main (example1.c:38)
+==12345==    at 0x424242424242: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12345==    by 0x424242424242: make_list (example1.c:27)
+==12345==    by 0x424242424242: main (example1.c:38)
 ==12345== 
 ==12345== 
 ==12345== HEAP SUMMARY:
@@ -51,14 +51,14 @@ Aborted (core dumped)
 ==12345==   total heap usage: 6 allocs, 2 frees, 96 bytes allocated
 ==12345== 
 ==12345== 32 bytes in 2 blocks are definitely lost in loss record 1 of 2
-==12345==    at 0x4C31B0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==12345==    by 0x108727: make_list (example1.c:27)
-==12345==    by 0x108764: main (example1.c:36)
+==12345==    at 0x424242424242: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12345==    by 0x424242424242: make_list (example1.c:27)
+==12345==    by 0x424242424242: main (example1.c:36)
 ==12345== 
 ==12345== 32 bytes in 2 blocks are definitely lost in loss record 2 of 2
-==12345==    at 0x4C31B0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==12345==    by 0x108727: make_list (example1.c:27)
-==12345==    by 0x10877E: main (example1.c:38)
+==12345==    at 0x424242424242: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12345==    by 0x424242424242: make_list (example1.c:27)
+==12345==    by 0x424242424242: main (example1.c:38)
 ==12345== 
 ==12345== LEAK SUMMARY:
 ==12345==    definitely lost: 64 bytes in 4 blocks

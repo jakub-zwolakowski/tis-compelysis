@@ -56,14 +56,14 @@ Aborted (core dumped)
 ==12345== 
 ==12345== 
 ==12345== Process terminating with default action of signal 6 (SIGABRT)
-==12345==    at 0x4E7CFB7: raise (raise.c:51)
-==12345==    by 0x4E7E920: abort (abort.c:79)
-==12345==    by 0x4EC76B4: __libc_message.constprop.0 (libc_fatal.c:181)
-==12345==    by 0x4EC79F9: __libc_fatal (libc_fatal.c:191)
-==12345==    by 0x4EC82A6: _IO_vtable_check (vtables.c:72)
-==12345==    by 0x4EBD404: IO_validate_vtable (libioP.h:876)
-==12345==    by 0x4EBD404: fputs (iofputs.c:38)
-==12345==    by 0x10883C: main (example_noncompliant.c:5)
+==12345==    at 0x424242424242: raise (raise.c:51)
+==12345==    by 0x424242424242: abort (abort.c:79)
+==12345==    by 0x424242424242: __libc_message.constprop.0 (libc_fatal.c:181)
+==12345==    by 0x424242424242: __libc_fatal (libc_fatal.c:191)
+==12345==    by 0x424242424242: _IO_vtable_check (vtables.c:72)
+==12345==    by 0x424242424242: IO_validate_vtable (libioP.h:876)
+==12345==    by 0x424242424242: fputs (iofputs.c:38)
+==12345==    by 0x424242424242: main (example_noncompliant.c:5)
 ==12345== 
 ==12345== HEAP SUMMARY:
 ==12345==     in use at exit: 0 bytes in 0 blocks
@@ -99,15 +99,15 @@ Aborted (core dumped)
 ==12345== 
 ==12345== 
 ==12345== Process terminating with default action of signal 6 (SIGABRT)
-==12345==    at 0x4E7CFB7: raise (raise.c:51)
-==12345==    by 0x4E7E920: abort (abort.c:79)
-==12345==    by 0x4EC76B4: __libc_message.constprop.0 (libc_fatal.c:181)
-==12345==    by 0x4EC79F9: __libc_fatal (libc_fatal.c:191)
-==12345==    by 0x4EC82A6: _IO_vtable_check (vtables.c:72)
-==12345==    by 0x4EBD404: IO_validate_vtable (libioP.h:876)
-==12345==    by 0x4EBD404: fputs (iofputs.c:38)
-==12345==    by 0x108875: main_noncompliant (example.c:14)
-==12345==    by 0x1088AA: main (example.c:23)
+==12345==    at 0x424242424242: raise (raise.c:51)
+==12345==    by 0x424242424242: abort (abort.c:79)
+==12345==    by 0x424242424242: __libc_message.constprop.0 (libc_fatal.c:181)
+==12345==    by 0x424242424242: __libc_fatal (libc_fatal.c:191)
+==12345==    by 0x424242424242: _IO_vtable_check (vtables.c:72)
+==12345==    by 0x424242424242: IO_validate_vtable (libioP.h:876)
+==12345==    by 0x424242424242: fputs (iofputs.c:38)
+==12345==    by 0x424242424242: main_noncompliant (example.c:14)
+==12345==    by 0x424242424242: main (example.c:23)
 Hello, World!
 ==12345== 
 ==12345== HEAP SUMMARY:

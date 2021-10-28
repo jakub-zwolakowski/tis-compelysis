@@ -25,9 +25,9 @@
 ==12345==   total heap usage: 1 allocs, 0 frees, 31 bytes allocated
 ==12345== 
 ==12345== 31 bytes in 1 blocks are definitely lost in loss record 1 of 1
-==12345==    at 0x4C31B0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==12345==    by 0x108714: func (example_compliant.c:9)
-==12345==    by 0x108743: main (example_compliant.c:19)
+==12345==    at 0x424242424242: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12345==    by 0x424242424242: func (example_compliant.c:9)
+==12345==    by 0x424242424242: main (example_compliant.c:19)
 ==12345== 
 ==12345== LEAK SUMMARY:
 ==12345==    definitely lost: 31 bytes in 1 blocks
@@ -65,9 +65,9 @@
 ==12345==   total heap usage: 1 allocs, 0 frees, 31 bytes allocated
 ==12345== 
 ==12345== 31 bytes in 1 blocks are definitely lost in loss record 1 of 1
-==12345==    at 0x4C31B0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==12345==    by 0x108714: func (example_noncompliant.c:9)
-==12345==    by 0x108743: main (example_noncompliant.c:21)
+==12345==    at 0x424242424242: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12345==    by 0x424242424242: func (example_noncompliant.c:9)
+==12345==    by 0x424242424242: main (example_noncompliant.c:21)
 ==12345== 
 ==12345== LEAK SUMMARY:
 ==12345==    definitely lost: 31 bytes in 1 blocks
@@ -105,14 +105,14 @@
 ==12345==   total heap usage: 2 allocs, 0 frees, 62 bytes allocated
 ==12345== 
 ==12345== 31 bytes in 1 blocks are definitely lost in loss record 1 of 2
-==12345==    at 0x4C31B0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==12345==    by 0x10875E: func_compliant (example.c:25)
-==12345==    by 0x10878D: main (example.c:35)
+==12345==    at 0x424242424242: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12345==    by 0x424242424242: func_compliant (example.c:25)
+==12345==    by 0x424242424242: main (example.c:35)
 ==12345== 
 ==12345== 31 bytes in 1 blocks are definitely lost in loss record 2 of 2
-==12345==    at 0x4C31B0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==12345==    by 0x108714: func_noncompliant (example.c:9)
-==12345==    by 0x108799: main (example.c:36)
+==12345==    at 0x424242424242: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12345==    by 0x424242424242: func_noncompliant (example.c:9)
+==12345==    by 0x424242424242: main (example.c:36)
 ==12345== 
 ==12345== LEAK SUMMARY:
 ==12345==    definitely lost: 62 bytes in 2 blocks

@@ -5,7 +5,7 @@ noncompliant beginning
 noncompliant 1, Worker 1
 noncompliant 2, Worker 2
 noncompliant 3, Worker 3
-noncompliant 4, Destruction 3
+noncompliant 5, Destruction 3
 noncompliant 5, Destruction 3
 noncompliant end
 ```
@@ -18,11 +18,11 @@ noncompliant end
 ### UBSan
 ```
 noncompliant beginning
-noncompliant 1, Worker 1
-noncompliant 3, Worker 2
-noncompliant 5, Destruction 2
-noncompliant 5, Destruction 2
-noncompliant 5, Destruction 2
+noncompliant 2, Worker 1
+noncompliant 4, Destruction 1
+noncompliant 4, Destruction 1
+noncompliant 5, Destruction 1
+noncompliant 5, Destruction 1
 noncompliant end
 ```
 ### Valgrind

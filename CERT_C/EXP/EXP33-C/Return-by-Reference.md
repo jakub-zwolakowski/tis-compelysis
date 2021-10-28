@@ -30,10 +30,10 @@ int
 ==12345== Command: ./Return-by-Reference.out
 ==12345== 
 ==12345== Syscall param exit_group(status) contains uninitialised byte(s)
-==12345==    at 0x4F22BD6: _Exit (_exit.c:31)
-==12345==    by 0x4E81231: __run_exit_handlers (exit.c:132)
-==12345==    by 0x4E81259: exit (exit.c:139)
-==12345==    by 0x4E5FBFD: (below main) (libc-start.c:344)
+==12345==    at 0x424242424242: _Exit (_exit.c:31)
+==12345==    by 0x424242424242: __run_exit_handlers (exit.c:132)
+==12345==    by 0x424242424242: exit (exit.c:139)
+==12345==    by 0x424242424242: (below main) (libc-start.c:344)
 ==12345== 
 ==12345== 
 ==12345== HEAP SUMMARY:

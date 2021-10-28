@@ -52,36 +52,36 @@ int
 ==12345== Command: ./example.out
 ==12345== 
 ==12345== Conditional jump or move depends on uninitialised value(s)
-==12345==    at 0x4E9A9DA: vfprintf (vfprintf.c:1642)
-==12345==    by 0x4EA3015: printf (printf.c:33)
-==12345==    by 0x108682: f_noncompliant (example.c:13)
-==12345==    by 0x1086F8: main (example.c:39)
+==12345==    at 0x424242424242: vfprintf (vfprintf.c:1642)
+==12345==    by 0x424242424242: printf (printf.c:33)
+==12345==    by 0x424242424242: f_noncompliant (example.c:13)
+==12345==    by 0x424242424242: main (example.c:39)
 ==12345== 
 ==12345== Use of uninitialised value of size 8
-==12345==    at 0x4E9696B: _itoa_word (_itoa.c:179)
-==12345==    by 0x4E9A00D: vfprintf (vfprintf.c:1642)
-==12345==    by 0x4EA3015: printf (printf.c:33)
-==12345==    by 0x108682: f_noncompliant (example.c:13)
-==12345==    by 0x1086F8: main (example.c:39)
+==12345==    at 0x424242424242: _itoa_word (_itoa.c:179)
+==12345==    by 0x424242424242: vfprintf (vfprintf.c:1642)
+==12345==    by 0x424242424242: printf (printf.c:33)
+==12345==    by 0x424242424242: f_noncompliant (example.c:13)
+==12345==    by 0x424242424242: main (example.c:39)
 ==12345== 
 ==12345== Conditional jump or move depends on uninitialised value(s)
-==12345==    at 0x4E96975: _itoa_word (_itoa.c:179)
-==12345==    by 0x4E9A00D: vfprintf (vfprintf.c:1642)
-==12345==    by 0x4EA3015: printf (printf.c:33)
-==12345==    by 0x108682: f_noncompliant (example.c:13)
-==12345==    by 0x1086F8: main (example.c:39)
+==12345==    at 0x424242424242: _itoa_word (_itoa.c:179)
+==12345==    by 0x424242424242: vfprintf (vfprintf.c:1642)
+==12345==    by 0x424242424242: printf (printf.c:33)
+==12345==    by 0x424242424242: f_noncompliant (example.c:13)
+==12345==    by 0x424242424242: main (example.c:39)
 ==12345== 
 ==12345== Conditional jump or move depends on uninitialised value(s)
-==12345==    at 0x4E9A114: vfprintf (vfprintf.c:1642)
-==12345==    by 0x4EA3015: printf (printf.c:33)
-==12345==    by 0x108682: f_noncompliant (example.c:13)
-==12345==    by 0x1086F8: main (example.c:39)
+==12345==    at 0x424242424242: vfprintf (vfprintf.c:1642)
+==12345==    by 0x424242424242: printf (printf.c:33)
+==12345==    by 0x424242424242: f_noncompliant (example.c:13)
+==12345==    by 0x424242424242: main (example.c:39)
 ==12345== 
 ==12345== Conditional jump or move depends on uninitialised value(s)
-==12345==    at 0x4E9AC4C: vfprintf (vfprintf.c:1642)
-==12345==    by 0x4EA3015: printf (printf.c:33)
-==12345==    by 0x108682: f_noncompliant (example.c:13)
-==12345==    by 0x1086F8: main (example.c:39)
+==12345==    at 0x424242424242: vfprintf (vfprintf.c:1642)
+==12345==    by 0x424242424242: printf (printf.c:33)
+==12345==    by 0x424242424242: f_noncompliant (example.c:13)
+==12345==    by 0x424242424242: main (example.c:39)
 ==12345== 
 17
 4

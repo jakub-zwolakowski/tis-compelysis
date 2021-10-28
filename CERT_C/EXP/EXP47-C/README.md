@@ -59,10 +59,10 @@ int
 ==12345== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
 ==12345== Command: ./example.out
 ==12345== 
-==12345== valgrind: Unrecognised instruction at address 0x10870c.
-==12345==    at 0x10870C: func_noncompliant (example.c:8)
-==12345==    by 0x108748: f_noncompliant (example.c:16)
-==12345==    by 0x108881: main (example.c:36)
+==12345== valgrind: Unrecognised instruction at address 0x424242424242.
+==12345==    at 0x424242424242: func_noncompliant (example.c:8)
+==12345==    by 0x424242424242: f_noncompliant (example.c:16)
+==12345==    by 0x424242424242: main (example.c:36)
 ==12345== Your program just tried to execute an instruction that Valgrind
 ==12345== did not recognise.  There are two possible reasons for this.
 ==12345== 1. Your program has a bug and erroneously jumped to a non-code
@@ -75,10 +75,10 @@ int
 ==12345== probably kill your program.
 ==12345== 
 ==12345== Process terminating with default action of signal 4 (SIGILL)
-==12345==  Illegal opcode at address 0x10870C
-==12345==    at 0x10870C: func_noncompliant (example.c:8)
-==12345==    by 0x108748: f_noncompliant (example.c:16)
-==12345==    by 0x108881: main (example.c:36)
+==12345==  Illegal opcode at address 0x424242424242
+==12345==    at 0x424242424242: func_noncompliant (example.c:8)
+==12345==    by 0x424242424242: f_noncompliant (example.c:16)
+==12345==    by 0x424242424242: main (example.c:36)
 ==12345== 
 ==12345== HEAP SUMMARY:
 ==12345==     in use at exit: 0 bytes in 0 blocks

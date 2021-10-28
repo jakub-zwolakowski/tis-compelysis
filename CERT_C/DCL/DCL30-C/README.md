@@ -3,7 +3,7 @@
 ### Test
 ```
 At the beginning I was here
-рв>М€
+
 ```
 ### gcc
 ```

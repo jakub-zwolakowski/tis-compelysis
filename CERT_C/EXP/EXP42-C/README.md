@@ -38,14 +38,14 @@ example.c:27:7: warning: unused variable 'res' [-Wunused-variable]
 ==12345== Command: ./example.out
 ==12345== 
 ==12345== Conditional jump or move depends on uninitialised value(s)
-==12345==    at 0x4C37E22: bcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==12345==    by 0x1086DF: compare_noncompliant (example.c:11)
-==12345==    by 0x1087DB: main (example.c:42)
+==12345==    at 0x424242424242: bcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12345==    by 0x424242424242: compare_noncompliant (example.c:11)
+==12345==    by 0x424242424242: main (example.c:42)
 ==12345== 
 ==12345== Conditional jump or move depends on uninitialised value(s)
-==12345==    at 0x4C37E91: bcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==12345==    by 0x1086DF: compare_noncompliant (example.c:11)
-==12345==    by 0x1087DB: main (example.c:42)
+==12345==    at 0x424242424242: bcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12345==    by 0x424242424242: compare_noncompliant (example.c:11)
+==12345==    by 0x424242424242: main (example.c:42)
 ==12345== 
 ==12345== 
 ==12345== HEAP SUMMARY:

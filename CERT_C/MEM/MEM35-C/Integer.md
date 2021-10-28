@@ -30,12 +30,12 @@ int
 ==12345== Command: ./Integer.out
 ==12345== 
 ==12345== Invalid write of size 8
-==12345==    at 0x1086EA: f_noncompliant (Integer.c:17)
-==12345==    by 0x1087AD: main (Integer.c:42)
-==12345==  Address 0x522f278 is 0 bytes after a block of size 168 alloc'd
-==12345==    at 0x4C31B0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==12345==    by 0x1086BC: f_noncompliant (Integer.c:10)
-==12345==    by 0x1087AD: main (Integer.c:42)
+==12345==    at 0x424242424242: f_noncompliant (Integer.c:17)
+==12345==    by 0x424242424242: main (Integer.c:42)
+==12345==  Address 0x424242424242 is 0 bytes after a block of size 168 alloc'd
+==12345==    at 0x424242424242: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12345==    by 0x424242424242: f_noncompliant (Integer.c:10)
+==12345==    by 0x424242424242: main (Integer.c:42)
 ==12345== 
 ==12345== 
 ==12345== HEAP SUMMARY:

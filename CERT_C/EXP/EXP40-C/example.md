@@ -33,13 +33,13 @@ int
 UndefinedBehaviorSanitizer:DEADLYSIGNAL
 ==12345==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x424242424242 (pc 0x424242424242 bp 0x424242424242 sp 0x424242424242 T4242)
 ==12345==The signal is caused by a WRITE memory access.
-    #0 0x424185 in f_noncompliant (/home/qba/git/tis-compelysis/CERT_C/EXP/EXP40-C/example.UBSan-out+0x424185)
-    #1 0x42426d in main (/home/qba/git/tis-compelysis/CERT_C/EXP/EXP40-C/example.UBSan-out+0x42426d)
+    #0 0x424242424242 in f_noncompliant (/home/qba/git/tis-compelysis/CERT_C/EXP/EXP40-C/example.UBSan-out+0x424242424242)
+    #1 0x424242424242 in main (/home/qba/git/tis-compelysis/CERT_C/EXP/EXP40-C/example.UBSan-out+0x424242424242)
     #2 0x424242424242 in __libc_start_main /build/glibc-S9d2JN/glibc-2.27/csu/../csu/libc-start.c:310
-    #3 0x4029d9 in _start (/home/qba/git/tis-compelysis/CERT_C/EXP/EXP40-C/example.UBSan-out+0x4029d9)
+    #3 0x424242424242 in _start (/home/qba/git/tis-compelysis/CERT_C/EXP/EXP40-C/example.UBSan-out+0x424242424242)
 
 UndefinedBehaviorSanitizer can not provide additional info.
-SUMMARY: UndefinedBehaviorSanitizer: SEGV (/home/qba/git/tis-compelysis/CERT_C/EXP/EXP40-C/example.UBSan-out+0x424185) in f_noncompliant
+SUMMARY: UndefinedBehaviorSanitizer: SEGV (/home/qba/git/tis-compelysis/CERT_C/EXP/EXP40-C/example.UBSan-out+0x424242424242) in f_noncompliant
 ==12345==ABORTING
 ```
 ### Valgrind
@@ -51,9 +51,9 @@ SUMMARY: UndefinedBehaviorSanitizer: SEGV (/home/qba/git/tis-compelysis/CERT_C/E
 ==12345== 
 ==12345== 
 ==12345== Process terminating with default action of signal 11 (SIGSEGV)
-==12345==  Bad permissions for mapped region at address 0x108704
-==12345==    at 0x108624: f_noncompliant (example.c:8)
-==12345==    by 0x10866D: main (example.c:23)
+==12345==  Bad permissions for mapped region at address 0x424242424242
+==12345==    at 0x424242424242: f_noncompliant (example.c:8)
+==12345==    by 0x424242424242: main (example.c:23)
 ==12345== 
 ==12345== HEAP SUMMARY:
 ==12345==     in use at exit: 0 bytes in 0 blocks

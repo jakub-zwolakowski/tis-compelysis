@@ -24,7 +24,7 @@ int
 ### UBSan
 ```
 abc
-abcδJκώ
+abcp\’^ÿ
 ```
 ### Valgrind
 ```

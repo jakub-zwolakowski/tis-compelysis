@@ -35,8 +35,8 @@ int
 ==12345==   total heap usage: 1 allocs, 0 frees, 8 bytes allocated
 ==12345== 
 ==12345== 8 bytes in 1 blocks are definitely lost in loss record 1 of 1
-==12345==    at 0x4C31B0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==12345==    by 0x10871C: main (Pointer_Past_Flexible_Array_Member.c:33)
+==12345==    at 0x424242424242: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12345==    by 0x424242424242: main (Pointer_Past_Flexible_Array_Member.c:33)
 ==12345== 
 ==12345== LEAK SUMMARY:
 ==12345==    definitely lost: 8 bytes in 1 blocks

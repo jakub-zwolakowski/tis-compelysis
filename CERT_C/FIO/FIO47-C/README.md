@@ -48,10 +48,10 @@ UndefinedBehaviorSanitizer:DEADLYSIGNAL
     #0 0x424242424242  /build/glibc-S9d2JN/glibc-2.27/string/../sysdeps/x86_64/multiarch/strlen-avx2.S:65
     #1 0x424242424242 in vfprintf /build/glibc-S9d2JN/glibc-2.27/stdio-common/vfprintf.c:1643
     #2 0x424242424242 in printf /build/glibc-S9d2JN/glibc-2.27/stdio-common/printf.c:33
-    #3 0x424154 in func_noncompliant (/home/qba/git/tis-compelysis/CERT_C/FIO/FIO47-C/example.UBSan-out+0x424154)
-    #4 0x4241ad in main (/home/qba/git/tis-compelysis/CERT_C/FIO/FIO47-C/example.UBSan-out+0x4241ad)
+    #3 0x424242424242 in func_noncompliant (/home/qba/git/tis-compelysis/CERT_C/FIO/FIO47-C/example.UBSan-out+0x424242424242)
+    #4 0x424242424242 in main (/home/qba/git/tis-compelysis/CERT_C/FIO/FIO47-C/example.UBSan-out+0x424242424242)
     #5 0x424242424242 in __libc_start_main /build/glibc-S9d2JN/glibc-2.27/csu/../csu/libc-start.c:310
-    #6 0x402a19 in _start (/home/qba/git/tis-compelysis/CERT_C/FIO/FIO47-C/example.UBSan-out+0x402a19)
+    #6 0x424242424242 in _start (/home/qba/git/tis-compelysis/CERT_C/FIO/FIO47-C/example.UBSan-out+0x424242424242)
 
 UndefinedBehaviorSanitizer can not provide additional info.
 SUMMARY: UndefinedBehaviorSanitizer: SEGV /build/glibc-S9d2JN/glibc-2.27/string/../sysdeps/x86_64/multiarch/strlen-avx2.S:65 
@@ -65,21 +65,21 @@ SUMMARY: UndefinedBehaviorSanitizer: SEGV /build/glibc-S9d2JN/glibc-2.27/string/
 ==12345== Command: ./example.out
 ==12345== 
 ==12345== Invalid read of size 1
-==12345==    at 0x4C34CF2: strlen (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==12345==    by 0x4E9B5D2: vfprintf (vfprintf.c:1643)
-==12345==    by 0x4EA3015: printf (printf.c:33)
-==12345==    by 0x10867D: func_noncompliant (example.c:7)
-==12345==    by 0x1086C5: main (example.c:22)
+==12345==    at 0x424242424242: strlen (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12345==    by 0x424242424242: vfprintf (vfprintf.c:1643)
+==12345==    by 0x424242424242: printf (printf.c:33)
+==12345==    by 0x424242424242: func_noncompliant (example.c:7)
+==12345==    by 0x424242424242: main (example.c:22)
 ==12345==  Address 0x3 is not stack'd, malloc'd or (recently) free'd
 ==12345== 
 ==12345== 
 ==12345== Process terminating with default action of signal 11 (SIGSEGV)
 ==12345==  Access not within mapped region at address 0x3
-==12345==    at 0x4C34CF2: strlen (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==12345==    by 0x4E9B5D2: vfprintf (vfprintf.c:1643)
-==12345==    by 0x4EA3015: printf (printf.c:33)
-==12345==    by 0x10867D: func_noncompliant (example.c:7)
-==12345==    by 0x1086C5: main (example.c:22)
+==12345==    at 0x424242424242: strlen (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==12345==    by 0x424242424242: vfprintf (vfprintf.c:1643)
+==12345==    by 0x424242424242: printf (printf.c:33)
+==12345==    by 0x424242424242: func_noncompliant (example.c:7)
+==12345==    by 0x424242424242: main (example.c:22)
 ==12345==  If you believe this happened as a result of a stack
 ==12345==  overflow in your program's main thread (unlikely but
 ==12345==  possible), you can try to increase the size of the

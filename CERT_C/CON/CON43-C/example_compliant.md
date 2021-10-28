@@ -1,15 +1,15 @@
 ## example_compliant
 ### Test
 ```
+42
+0
+-42
+-84
+-126
+-84
 -42
 0
-42
-84
-42
-84
-42
-0
-42
+-42
 0
 ```
 ### gcc
@@ -38,14 +38,14 @@
 ==12345== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
 ==12345== Command: ./example_compliant.out
 ==12345== 
-42
-0
--42
--84
 -42
 0
+-42
+0
+-42
+0
 42
-84
+0
 42
 0
 ==12345== 
