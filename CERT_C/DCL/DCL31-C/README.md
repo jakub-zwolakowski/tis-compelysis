@@ -7,7 +7,7 @@
 ```
 ### gcc
 ```
-Implicit_Return_Type.c:4:1: warning: return type defaults to ‘int’ [-Wimplicit-int]
+Implicit_Return_Type.c:4:1: error: return type defaults to ‘int’ [-Wimplicit-int]
  foo_noncompliant(void) {
  ^~~~~~~~~~~~~~~~
 ```

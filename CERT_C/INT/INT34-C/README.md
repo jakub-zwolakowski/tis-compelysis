@@ -5,14 +5,6 @@
 ```
 ### gcc
 ```
-Left_Shift_Unsigned_Type.c: In function ‘f_noncompliant’:
-Left_Shift_Unsigned_Type.c:20:16: warning: unused variable ‘uresult’ [-Wunused-variable]
-   unsigned int uresult = ui_a << ui_b;
-                ^~~~~~~
-Left_Shift_Unsigned_Type.c: In function ‘f_compliant’:
-Left_Shift_Unsigned_Type.c:25:16: warning: variable ‘uresult’ set but not used [-Wunused-but-set-variable]
-   unsigned int uresult = 0;
-                ^~~~~~~
 ```
 ### clang
 ```

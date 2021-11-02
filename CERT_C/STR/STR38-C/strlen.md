@@ -5,7 +5,7 @@
 ### gcc
 ```
 strlen.c: In function ‘f_noncompliant’:
-strlen.c:7:48: warning: passing argument 1 of ‘strlen’ from incompatible pointer type [-Wincompatible-pointer-types]
+strlen.c:7:48: error: passing argument 1 of ‘strlen’ from incompatible pointer type [-Wincompatible-pointer-types]
    wchar_t *wide_str2 = (wchar_t*)malloc(strlen(wide_str1) + 1);
                                                 ^~~~~~~~~
 In file included from strlen.c:2:0:

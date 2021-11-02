@@ -5,7 +5,7 @@
 ```
 ### gcc
 ```
-example.c:3:12: warning: ‘i3’ initialized and declared ‘extern’
+example.c:3:12: error: ‘i3’ initialized and declared ‘extern’ [-Werror]
  extern int i3 = 30;  /* Definition, external linkage */
             ^~
 example.c:8:5: error: non-static declaration of ‘i2’ follows static declaration
@@ -20,10 +20,7 @@ example.c:11:5: error: non-static declaration of ‘i5’ follows static declara
 example.c:5:12: note: previous declaration of ‘i5’ was here
  static int i5;       /* Tentative definition, internal linkage */
             ^~
-example.c:5:12: warning: ‘i5’ defined but not used [-Wunused-variable]
-example.c:2:12: warning: ‘i2’ defined but not used [-Wunused-variable]
- static int i2 = 20;  /* Definition, internal linkage */
-            ^~
+cc1: all warnings being treated as errors
 ```
 ### clang
 ```

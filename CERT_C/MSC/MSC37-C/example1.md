@@ -6,14 +6,6 @@ Success
 ```
 ### gcc
 ```
-example1.c: In function ‘main’:
-example1.c:31:8: warning: unused variable ‘not_a_pass’ [-Wunused-variable]
-   char not_a_pass[] = "Doom... Doom. Doooooom!!!";
-        ^~~~~~~~~~
-example1.c: In function ‘checkpass_noncompliant’:
-example1.c:8:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
 ```
 ### clang
 ```

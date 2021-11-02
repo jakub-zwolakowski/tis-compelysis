@@ -7,7 +7,7 @@ Segmentation fault (core dumped)
 ### gcc
 ```
 example.c: In function ‘f_noncompliant’:
-example.c:6:20: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+example.c:6:20: error: assignment from incompatible pointer type [-Wincompatible-pointer-types]
    ipp_noncompliant = &ip_noncompliant; /* Constraint violation */
                     ^
 ```

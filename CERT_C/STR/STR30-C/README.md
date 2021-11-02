@@ -6,10 +6,6 @@ Segmentation fault (core dumped)
 ```
 ### gcc
 ```
-example1.c: In function ‘f_compliant’:
-example1.c:7:8: warning: variable ‘str’ set but not used [-Wunused-but-set-variable]
-   char str[] = "string literal";
-        ^~~
 ```
 ### clang
 ```

@@ -5,14 +5,6 @@ Floating point exception (core dumped)
 ```
 ### gcc
 ```
-Division.c: In function ‘f_noncompliant’:
-Division.c:4:15: warning: variable ‘result’ set but not used [-Wunused-but-set-variable]
-   signed long result;
-               ^~~~~~
-Division.c: In function ‘f_compliant’:
-Division.c:14:15: warning: variable ‘result’ set but not used [-Wunused-but-set-variable]
-   signed long result;
-               ^~~~~~
 ```
 ### clang
 ```

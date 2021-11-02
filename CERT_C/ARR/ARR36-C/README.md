@@ -5,14 +5,6 @@
 ```
 ### gcc
 ```
-example.c: In function ‘f_noncompliant’:
-example.c:9:10: warning: variable ‘free_elements’ set but not used [-Wunused-but-set-variable]
-   size_t free_elements;
-          ^~~~~~~~~~~~~
-example.c: In function ‘f_compliant’:
-example.c:19:10: warning: variable ‘free_elements’ set but not used [-Wunused-but-set-variable]
-   size_t free_elements;
-          ^~~~~~~~~~~~~
 ```
 ### clang
 ```

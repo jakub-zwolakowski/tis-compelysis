@@ -42,7 +42,7 @@ gcc_results = $(patsubst %.out, %.gcc-result, $(executables))
 	@echo ""
 	@echo "--- gcc '$<' ---"
 	@echo ""
-	-gcc -std=c17 -Werror -pedantic -pedantic-errors -g -O0 -I. $< $(other_C_files) -lm -lpthread > $@ 2>&1
+	-gcc -Werror -pedantic -pedantic-errors -g -O0 -I. $< $(other_C_files) -lm -lpthread > $@ 2>&1
 
 gcc: $(gcc_results)
 
@@ -55,7 +55,7 @@ clang_results = $(patsubst %.out, %.clang-result, $(executables))
 	@echo ""
 	@echo "--- clang '$<' ---"
 	@echo ""
-	-clang -std=c17 -Werror -pedantic -pedantic-errors -g -O0 -I. $< $(other_C_files) -lm -lpthread > $@ 2>&1
+	-clang -Werror -pedantic -pedantic-errors -g -O0 -I. $< $(other_C_files) -lm -lpthread > $@ 2>&1
 
 clang: $(clang_results)
 

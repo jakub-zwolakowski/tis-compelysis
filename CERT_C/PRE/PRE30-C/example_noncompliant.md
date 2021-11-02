@@ -24,9 +24,6 @@ example_noncompliant.c:6:11: note: each undeclared identifier is reported only o
 example_noncompliant.c:1:31: note: in definition of macro ‘assign’
  #define assign(uc1, uc2, val) uc1##uc2 = val
                                ^~~
-example_noncompliant.c:4:7: warning: unused variable ‘Ё’ [-Wunused-variable]
-   int \u0401;
-       ^~~~~~
 ```
 ### clang
 ```

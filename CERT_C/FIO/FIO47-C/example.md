@@ -6,14 +6,15 @@ Segmentation fault (core dumped)
 ### gcc
 ```
 example.c: In function ‘func_noncompliant’:
-example.c:7:24: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘int’ [-Wformat=]
+example.c:7:24: error: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘int’ [-Werror=format=]
    printf("Error (type %s): %d\n", error_type, error_msg);
                        ~^
                        %d
-example.c:7:29: warning: format ‘%d’ expects argument of type ‘int’, but argument 3 has type ‘const char *’ [-Wformat=]
+example.c:7:29: error: format ‘%d’ expects argument of type ‘int’, but argument 3 has type ‘const char *’ [-Werror=format=]
    printf("Error (type %s): %d\n", error_type, error_msg);
                             ~^
                             %s
+cc1: all warnings being treated as errors
 ```
 ### clang
 ```

@@ -7,10 +7,6 @@
 ```
 ### clang
 ```
-example_noncompliant.c:28:8: error: implicit declaration of function 'fileno' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
-  dup2(fileno(file), STDIN_FILENO);
-       ^
-1 error generated.
 ```
 ### UBSan
 ```

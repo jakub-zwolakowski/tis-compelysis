@@ -4,14 +4,6 @@
 ```
 ### gcc
 ```
-Addition.c: In function ‘f_noncompliant’:
-Addition.c:4:14: warning: unused variable ‘sum’ [-Wunused-variable]
-   signed int sum = si_a + si_b;
-              ^~~
-Addition.c: In function ‘f_compliant’:
-Addition.c:9:14: warning: variable ‘sum’ set but not used [-Wunused-but-set-variable]
-   signed int sum;
-              ^~~
 ```
 ### clang
 ```

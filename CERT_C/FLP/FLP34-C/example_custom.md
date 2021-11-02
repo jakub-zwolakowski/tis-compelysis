@@ -4,20 +4,6 @@
 ```
 ### gcc
 ```
-example_custom.c: In function ‘f_noncompliant’:
-example_custom.c:8:7: warning: unused variable ‘j’ [-Wunused-variable]
-   int j = g;
-       ^
-example_custom.c:6:7: warning: unused variable ‘i’ [-Wunused-variable]
-   int i = f;
-       ^
-example_custom.c: In function ‘f_compliant’:
-example_custom.c:17:7: warning: variable ‘j’ set but not used [-Wunused-but-set-variable]
-   int j = 0;
-       ^
-example_custom.c:13:7: warning: variable ‘i’ set but not used [-Wunused-but-set-variable]
-   int i = 0;
-       ^
 ```
 ### clang
 ```
@@ -30,7 +16,7 @@ example_custom.c:14:11: error: implicit conversion from 'int' to 'float' changes
 /home/qba/tis/deps/llvm/12.0.0/build/lib/clang/12.0.0/include/limits.h:46:19: note: expanded from macro 'INT_MAX'
 #define INT_MAX   __INT_MAX__
                   ^~~~~~~~~~~
-<built-in>:37:21: note: expanded from here
+<built-in>:36:21: note: expanded from here
 #define __INT_MAX__ 2147483647
                     ^~~~~~~~~~
 example_custom.c:16:13: error: implicit conversion from 'long' to 'float' changes value from -21474836490 to -21474836480 [-Werror,-Wimplicit-const-int-float-conversion]

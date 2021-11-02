@@ -5,21 +5,14 @@ Illegal instruction (core dumped)
 ```
 ### gcc
 ```
-example.c: In function ‘func_noncompliant’:
-example.c:8:19: warning: unused variable ‘c’ [-Wunused-variable]
-     unsigned char c = va_arg(ap, unsigned char);
-                   ^
-example.c: In function ‘func_compliant’:
-example.c:23:19: warning: unused variable ‘c’ [-Wunused-variable]
-     unsigned char c = (unsigned char) va_arg(ap, int);
-                   ^
 In file included from example.c:1:0:
 example.c: In function ‘func_noncompliant’:
-example.c:8:34: warning: ‘unsigned char’ is promoted to ‘int’ when passed through ‘...’
+example.c:8:34: error: ‘unsigned char’ is promoted to ‘int’ when passed through ‘...’ [-Werror]
      unsigned char c = va_arg(ap, unsigned char);
                                   ^
 example.c:8:34: note: (so you should pass ‘int’ not ‘unsigned char’ to ‘va_arg’)
 example.c:8:34: note: if this code is reached, the program will abort
+cc1: all warnings being treated as errors
 ```
 ### clang
 ```

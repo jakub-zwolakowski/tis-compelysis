@@ -4,10 +4,6 @@
 ```
 ### gcc
 ```
-example_compliant.c: In function ‘func’:
-example_compliant.c:4:7: warning: variable ‘Ё’ set but not used [-Wunused-but-set-variable]
-   int \u0401;
-       ^~~~~~
 ```
 ### clang
 ```

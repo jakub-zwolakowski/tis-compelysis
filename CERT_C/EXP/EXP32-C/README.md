@@ -8,10 +8,10 @@ i = 0.
 ### gcc
 ```
 example.c: In function ‘f_noncompliant’:
-example.c:10:7: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+example.c:10:7: error: assignment from incompatible pointer type [-Wincompatible-pointer-types]
    ipp = &ip; /* May produce a warning diagnostic */
        ^
-example.c:11:7: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+example.c:11:7: error: assignment from incompatible pointer type [-Wincompatible-pointer-types]
    ipp = (int**) &ip; /* Constraint violation; may produce a warning diagnostic */
        ^
 ```

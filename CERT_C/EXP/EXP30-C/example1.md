@@ -5,10 +5,6 @@
 ```
 ### gcc
 ```
-example1.c: In function ‘f_noncompliant’:
-example1.c:4:17: warning: operation on ‘i’ may be undefined [-Wsequence-point]
-   int a = i + b[++i];
-                 ^~~
 ```
 ### clang
 ```

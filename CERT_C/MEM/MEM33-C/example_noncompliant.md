@@ -6,10 +6,6 @@ Aborted (core dumped)
 ```
 ### gcc
 ```
-example_noncompliant.c: In function ‘func’:
-example_noncompliant.c:10:28: warning: variable ‘flex_struct’ set but not used [-Wunused-but-set-variable]
-   struct flex_array_struct flex_struct;
-                            ^~~~~~~~~~~
 ```
 ### clang
 ```

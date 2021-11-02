@@ -7,25 +7,25 @@ Aborted (core dumped)
 ### gcc
 ```
 example.c: In function ‘main’:
-example.c:59:18: warning: passing argument 2 of ‘f_compliant’ from incompatible pointer type [-Wincompatible-pointer-types]
+example.c:59:18: error: passing argument 2 of ‘f_compliant’ from incompatible pointer type [-Wincompatible-pointer-types]
    f_compliant(2, argv);
                   ^~~~
 example.c:31:5: note: expected ‘const char **’ but argument is of type ‘char **’
  int f_compliant(int argc, const char *argv[]) {
      ^~~~~~~~~~~
-example.c:60:18: warning: passing argument 2 of ‘f_compliant’ from incompatible pointer type [-Wincompatible-pointer-types]
+example.c:60:18: error: passing argument 2 of ‘f_compliant’ from incompatible pointer type [-Wincompatible-pointer-types]
    f_compliant(1, argv);
                   ^~~~
 example.c:31:5: note: expected ‘const char **’ but argument is of type ‘char **’
  int f_compliant(int argc, const char *argv[]) {
      ^~~~~~~~~~~
-example.c:61:21: warning: passing argument 2 of ‘f_noncompliant’ from incompatible pointer type [-Wincompatible-pointer-types]
+example.c:61:21: error: passing argument 2 of ‘f_noncompliant’ from incompatible pointer type [-Wincompatible-pointer-types]
    f_noncompliant(2, argv);
                      ^~~~
 example.c:7:5: note: expected ‘const char **’ but argument is of type ‘char **’
  int f_noncompliant(int argc, const char *argv[]) {
      ^~~~~~~~~~~~~~
-example.c:62:21: warning: passing argument 2 of ‘f_noncompliant’ from incompatible pointer type [-Wincompatible-pointer-types]
+example.c:62:21: error: passing argument 2 of ‘f_noncompliant’ from incompatible pointer type [-Wincompatible-pointer-types]
    f_noncompliant(1, argv);
                      ^~~~
 example.c:7:5: note: expected ‘const char **’ but argument is of type ‘char **’

@@ -4,10 +4,6 @@
 ```
 ### gcc
 ```
-Unintentional_Assignment.c: In function ‘f_noncompliant’:
-Unintentional_Assignment.c:2:7: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
-   if (a = b) {
-       ^
 ```
 ### clang
 ```

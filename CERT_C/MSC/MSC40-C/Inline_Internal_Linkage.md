@@ -4,14 +4,6 @@
 ```
 ### gcc
 ```
-Inline_Internal_Linkage.c: In function ‘func_noncompliant’:
-Inline_Internal_Linkage.c:3:7: warning: unused variable ‘b’ [-Wunused-variable]
-   int b = a * I_noncompliant;
-       ^
-Inline_Internal_Linkage.c: In function ‘func_compliant’:
-Inline_Internal_Linkage.c:9:7: warning: unused variable ‘b’ [-Wunused-variable]
-   int b = a * I_compliant;
-       ^
 ```
 ### clang
 ```

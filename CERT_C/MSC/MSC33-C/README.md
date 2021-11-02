@@ -6,10 +6,6 @@ Time: Sat Mar 25 06:42:99 1989
 ```
 ### gcc
 ```
-example_compliant.c: In function ‘func’:
-example_compliant.c:11:10: warning: unused variable ‘size’ [-Wunused-variable]
-   size_t size = strftime(s, maxsize, format, time); // This is an UB too actually...
-          ^~~~
 ```
 ### clang
 ```
@@ -75,10 +71,6 @@ Time: Sat Mar 25 06:42:99 1989Time: Sat Mar 25 06:42:99 1989
 ```
 ### gcc
 ```
-example.c: In function ‘func_compliant’:
-example.c:18:10: warning: unused variable ‘size’ [-Wunused-variable]
-   size_t size = strftime(s, maxsize, format, time); // This is an UB too actually...
-          ^~~~
 ```
 ### clang
 ```

@@ -5,13 +5,6 @@ Segmentation fault (core dumped)
 ```
 ### gcc
 ```
-Null_Pointer_Arithmetic.c: In function ‘main’:
-Null_Pointer_Arithmetic.c:39:9: warning: unused variable ‘block2’ [-Wunused-variable]
-   char *block2 = init_block_noncompliant(7, 0, data, sizeof (data));
-         ^~~~~~
-Null_Pointer_Arithmetic.c:38:9: warning: unused variable ‘block1’ [-Wunused-variable]
-   char *block1 = init_block_compliant(7, 0, data, sizeof (data));
-         ^~~~~~
 ```
 ### clang
 ```

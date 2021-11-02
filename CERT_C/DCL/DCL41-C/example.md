@@ -9,9 +9,10 @@
 ### gcc
 ```
 example.c: In function ‘f_noncompliant’:
-example.c:7:9: warning: statement will never be executed [-Wswitch-unreachable]
+example.c:7:9: error: statement will never be executed [-Werror=switch-unreachable]
      int i = 4;
          ^
+cc1: all warnings being treated as errors
 ```
 ### clang
 ```

@@ -5,14 +5,6 @@
 ```
 ### gcc
 ```
-Unsigned_to_Signed.c: In function ‘f_noncompliant’:
-Unsigned_to_Signed.c:5:15: warning: variable ‘sc’ set but not used [-Wunused-but-set-variable]
-   signed char sc;
-               ^~
-Unsigned_to_Signed.c: In function ‘f_compliant’:
-Unsigned_to_Signed.c:12:15: warning: variable ‘sc’ set but not used [-Wunused-but-set-variable]
-   signed char sc;
-               ^~
 ```
 ### clang
 ```

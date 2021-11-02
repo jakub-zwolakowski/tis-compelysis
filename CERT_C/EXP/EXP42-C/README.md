@@ -5,10 +5,6 @@
 ```
 ### gcc
 ```
-example.c: In function ‘main’:
-example.c:27:7: warning: unused variable ‘res’ [-Wunused-variable]
-   int res = 13;
-       ^~~
 ```
 ### clang
 ```

@@ -2,14 +2,10 @@
 ### Test
 ```
 At the beginning I was here
-Pê‘¶ÿ
+Àƒª¹ý
 ```
 ### gcc
 ```
-Storage_Durations.c: In function â€˜this_is_OKâ€™:
-Storage_Durations.c:12:15: warning: unused variable â€˜pâ€™ [-Wunused-variable]
-   const char *p = c_str;
-               ^
 ```
 ### clang
 ```

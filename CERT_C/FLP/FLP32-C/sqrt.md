@@ -4,14 +4,6 @@
 ```
 ### gcc
 ```
-sqrt.c: In function ‘f_noncompliant’:
-sqrt.c:4:10: warning: variable ‘result’ set but not used [-Wunused-but-set-variable]
-   double result;
-          ^~~~~~
-sqrt.c: In function ‘f_compliant’:
-sqrt.c:9:10: warning: variable ‘result’ set but not used [-Wunused-but-set-variable]
-   double result;
-          ^~~~~~
 ```
 ### clang
 ```

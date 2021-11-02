@@ -4,10 +4,6 @@
 ```
 ### gcc
 ```
-example.c: In function ‘main’:
-example.c:29:8: warning: variable ‘are_equal’ set but not used [-Wunused-but-set-variable]
-   bool are_equal;
-        ^~~~~~~~~
 ```
 ### clang
 ```

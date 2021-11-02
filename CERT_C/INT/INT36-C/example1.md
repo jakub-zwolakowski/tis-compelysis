@@ -5,16 +5,13 @@
 ### gcc
 ```
 example1.c: In function ‘func_noncompliant’:
-example1.c:5:25: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+example1.c:5:25: error: cast from pointer to integer of different size [-Werror=pointer-to-int-cast]
    unsigned int number = (unsigned int)ptr;
                          ^
-example1.c:7:9: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+example1.c:7:9: error: cast to pointer from integer of different size [-Werror=int-to-pointer-cast]
    ptr = (char *)number;
          ^
-example1.c: In function ‘func_compliant’:
-example1.c:18:19: warning: ‘ptr’ is used uninitialized in this function [-Wuninitialized]
-   ptrflag.pointer = ptr;
-   ~~~~~~~~~~~~~~~~^~~~~
+cc1: all warnings being treated as errors
 ```
 ### clang
 ```
