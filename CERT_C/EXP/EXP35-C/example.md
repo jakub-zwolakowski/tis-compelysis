@@ -1,7 +1,8 @@
 ## example
 ### Test
 ```
-22```
+22
+```
 ### gcc
 ```
 ```
@@ -10,7 +11,8 @@
 ```
 ### UBSan
 ```
-22```
+22
+```
 ### Valgrind
 ```
 ==12345== Memcheck, a memory error detector

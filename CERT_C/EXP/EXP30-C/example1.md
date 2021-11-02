@@ -1,7 +1,8 @@
 ## example1
 ### Test
 ```
-42, 142, 1```
+42, 142, 1
+```
 ### gcc
 ```
 example1.c: In function ‘f_noncompliant’:
@@ -18,7 +19,8 @@ example1.c:4:17: error: unsequenced modification and access to 'i' [-Werror,-Wun
 ```
 ### UBSan
 ```
-42, 141, 1```
+42, 141, 1
+```
 ### Valgrind
 ```
 ==12345== Memcheck, a memory error detector

@@ -1,15 +1,15 @@
 ## example_compliant
 ### Test
 ```
--42
 0
-42
-84
-42
 0
--42
 0
--42
+0
+0
+0
+0
+0
+0
 0
 ```
 ### gcc
@@ -20,15 +20,15 @@
 ```
 ### UBSan
 ```
--42
--84
--42
 0
-42
-84
-42
 0
-42
+0
+0
+0
+0
+0
+0
+0
 0
 ```
 ### Valgrind
@@ -38,15 +38,15 @@
 ==12345== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
 ==12345== Command: ./example_compliant.out
 ==12345== 
-42
 0
-42
-84
-42
 0
-42
 0
--42
+0
+0
+0
+0
+0
+0
 0
 ==12345== 
 ==12345== HEAP SUMMARY:

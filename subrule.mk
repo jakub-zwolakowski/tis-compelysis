@@ -128,12 +128,15 @@ markdown_files = $(patsubst %.c, %.md, $(main_C_files))
 	echo '```' >> $@
 	cat $*.valgrind-run >> $@
 	echo '```' >> $@
-	ls *.md | xargs -n 1 sed -i -E 's/==[0-9]+==/==12345==/g'
-	ls *.md | xargs -n 1 sed -i -E 's/0x[a-zA-Z0-9]{6,12}/0x424242424242/g'
+	ls *.md | xargs -n 1 sed -i -E 's/[^[[:alnum:]][[:blank:]][[:punct:]][[:space:]]]/\?/g' # Uniformize unprintable characters
+	ls *.md | xargs -n 1 sed -i -E 's/==[0-9]+==/==12345==/g' # Uniformize Valgrind's line beginnings
+	ls *.md | xargs -n 1 sed -i -E 's/0x[a-zA-Z0-9]{6,12}/0x424242424242/g' # Uniformize hex numbers (addresses?)
 	ls *.md | xargs -n 1 sed -i -E 's/T[0-9]{3,5}/T4242/g'
-	ls *.md | xargs -n 1 sed -i -E 's/ [0-9]+,[0-9,]+ bytes/ 123,456 bytes/g'
-	ls *.md | xargs -n 1 sed -i -E 's/Result: [0-9]+/Result: 12345/g'
-
+	ls *.md | xargs -n 1 sed -i -E 's/ [0-9]+,[0-9,]+ bytes/ 123,456 bytes/g' # Uniformize big sizes that may change
+	ls *.md | xargs -n 1 sed -i -E 's/Result: [0-9]+/Result: 12345/g' # Uniformize printed "Result"
+	ls *.md | xargs -n 1 sed -i -E 's/noncompliant [0-9], (Creation|Worker|Destruction) [0-9]/noncompliant X, Creation|Worker|Destruction X/g' # Uniformize sequencing
+	ls *.md | xargs -n 1 sed -i -E 's/([^\n])```/\1\n```/g' # Fix the messages not ending by newline
+	ls *.md | xargs -n 1 sed -i -E 's/^-?(0|42|84|126|168|210|252|294)$$/0/g' # Uniformize sequencing
 
 README.md: $(markdown_files)
 	echo "# Examples" > README.md

@@ -2,7 +2,8 @@
 ## example_compliant
 ### Test
 ```
-Time: Sat Mar 25 06:42:99 1989```
+Time: Sat Mar 25 06:42:99 1989
+```
 ### gcc
 ```
 example_compliant.c: In function ‘func’:
@@ -15,7 +16,8 @@ example_compliant.c:11:10: warning: unused variable ‘size’ [-Wunused-variabl
 ```
 ### UBSan
 ```
-Time: Sat Mar 25 06:42:99 1989```
+Time: Sat Mar 25 06:42:99 1989
+```
 ### Valgrind
 ```
 ==12345== Memcheck, a memory error detector

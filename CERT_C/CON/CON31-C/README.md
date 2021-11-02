@@ -54,11 +54,11 @@ compliant end
 ### Test
 ```
 noncompliant beginning
-noncompliant 2, Worker 1
-noncompliant 3, Worker 2
-noncompliant 3, Worker 3
-noncompliant 4, Destruction 3
-noncompliant 5, Destruction 3
+noncompliant X, Creation|Worker|Destruction X
+noncompliant X, Creation|Worker|Destruction X
+noncompliant X, Creation|Worker|Destruction X
+noncompliant X, Creation|Worker|Destruction X
+noncompliant X, Creation|Worker|Destruction X
 noncompliant end
 ```
 ### gcc
@@ -70,11 +70,11 @@ noncompliant end
 ### UBSan
 ```
 noncompliant beginning
-noncompliant 1, Worker 1
-noncompliant 2, Worker 2
-noncompliant 3, Worker 3
-noncompliant 4, Destruction 3
-noncompliant 5, Destruction 3
+noncompliant X, Creation|Worker|Destruction X
+noncompliant X, Creation|Worker|Destruction X
+noncompliant X, Creation|Worker|Destruction X
+noncompliant X, Creation|Worker|Destruction X
+noncompliant X, Creation|Worker|Destruction X
 noncompliant end
 ```
 ### Valgrind
@@ -85,11 +85,11 @@ noncompliant end
 ==12345== Command: ./example_noncompliant.out
 ==12345== 
 noncompliant beginning
-noncompliant 5, Destruction 0
-noncompliant 5, Destruction 0
-noncompliant 5, Destruction 0
-noncompliant 5, Destruction 0
-noncompliant 5, Destruction 0
+noncompliant X, Creation|Worker|Destruction X
+noncompliant X, Creation|Worker|Destruction X
+noncompliant X, Creation|Worker|Destruction X
+noncompliant X, Creation|Worker|Destruction X
+noncompliant X, Creation|Worker|Destruction X
 noncompliant end
 ==12345== 
 ==12345== HEAP SUMMARY:
@@ -112,11 +112,11 @@ compliant 4
 compliant 5
 compliant end
 noncompliant beginning
-noncompliant 1, Worker 1
-noncompliant 3, Worker 2
-noncompliant 3, Worker 3
-noncompliant 4, Destruction 3
-noncompliant 5, Destruction 3
+noncompliant X, Creation|Worker|Destruction X
+noncompliant X, Creation|Worker|Destruction X
+noncompliant X, Creation|Worker|Destruction X
+noncompliant X, Creation|Worker|Destruction X
+noncompliant X, Creation|Worker|Destruction X
 noncompliant end
 ```
 ### gcc
@@ -135,11 +135,11 @@ compliant 4
 compliant 5
 compliant end
 noncompliant beginning
-noncompliant 2, Worker 1
-noncompliant 4, Destruction 1
-noncompliant 5, Destruction 1
-noncompliant 5, Destruction 1
-noncompliant 5, Destruction 1
+noncompliant X, Creation|Worker|Destruction X
+noncompliant X, Creation|Worker|Destruction X
+noncompliant X, Creation|Worker|Destruction X
+noncompliant X, Creation|Worker|Destruction X
+noncompliant X, Creation|Worker|Destruction X
 noncompliant end
 ```
 ### Valgrind
@@ -157,11 +157,11 @@ compliant 4
 compliant 5
 compliant end
 noncompliant beginning
-noncompliant 0, Creation 1
-noncompliant 1, Worker 2
-noncompliant 5, Destruction 2
-noncompliant 5, Destruction 2
-noncompliant 5, Destruction 2
+noncompliant X, Creation|Worker|Destruction X
+noncompliant X, Creation|Worker|Destruction X
+noncompliant X, Creation|Worker|Destruction X
+noncompliant X, Creation|Worker|Destruction X
+noncompliant X, Creation|Worker|Destruction X
 noncompliant end
 ==12345== 
 ==12345== HEAP SUMMARY:

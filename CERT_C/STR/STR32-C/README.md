@@ -14,7 +14,7 @@ abc
 ### UBSan
 ```
 abc
-abc µúYý
+abcP*¼jþ
 ```
 ### Valgrind
 ```
