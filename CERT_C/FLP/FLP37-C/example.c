@@ -23,10 +23,11 @@ bool are_equal_compliant(const struct S *s1, const struct S *s2) {
          s1->f == s2->f;
 }
 
-void main(void) {
+int main(void) {
   struct S s1 = { .i = 42, .f = 0.0 };
   struct S s2 = { .i = 42, .f = -0.0 };
   bool are_equal;
   are_equal = are_equal_compliant(&s1, &s2);
   are_equal = are_equal_noncompliant(&s1, &s2);
+  return 0;
 }

@@ -33,8 +33,9 @@ char *init_block_compliant(size_t block_size, size_t offset,
   return buffer;
 }
 
-void main(void) {
+int main(void) {
   char data[] = "Foo";
   char *block1 = init_block_compliant(7, 0, data, sizeof (data));
   char *block2 = init_block_noncompliant(7, 0, data, sizeof (data));
+  return 0;
 }

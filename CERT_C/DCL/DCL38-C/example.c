@@ -53,7 +53,8 @@ void f_compliant(size_t array_size) {
   }
 }
 
-void main(void) {
+int main(void) {
   f_compliant(42);
   f_noncompliant(42);
+  return 0;
 }

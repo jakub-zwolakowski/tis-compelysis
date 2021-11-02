@@ -16,7 +16,8 @@ void f_compliant(signed int si_a, signed int si_b) {
   /* ... */
 }
 
-void main(void) {
+int main(void) {
   f_compliant(INT_MAX, 1);
   f_noncompliant(INT_MAX, 1);
+  return 0;
 }

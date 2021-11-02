@@ -10,9 +10,10 @@ extern inline void func_compliant(int a) {
   /* ... */
 }
 
-void main(void) {
+int main(void) {
   func_compliant(42);
   func_noncompliant(42);
+  return 0;
 }
 
 // DOES NOT WORK

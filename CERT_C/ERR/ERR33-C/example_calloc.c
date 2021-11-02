@@ -57,10 +57,11 @@ void f_compliant(size_t num_of_records, size_t temp_num,
 
 const char tmp2[512];
 
-void main(void) {
+int main(void) {
   size_t num_of_records = 42;
   size_t temp_num = 1;
   size_t tmp2_size_bytes = sizeof tmp2;
   f_compliant(num_of_records, temp_num, tmp2, tmp2_size_bytes);
   f_noncompliant(num_of_records, temp_num, tmp2, tmp2_size_bytes);
+  return 0;
 }

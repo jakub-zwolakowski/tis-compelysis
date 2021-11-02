@@ -31,10 +31,11 @@ struct node *make_list(int elts) {
   return current_node;
 }
 
-void main(void) {
+int main(void) {
   struct node *head;
   head = make_list(3);
   free_list_compliant(head);
   head = make_list(3);
   free_list_noncompliant(head);
+  return 0;
 }

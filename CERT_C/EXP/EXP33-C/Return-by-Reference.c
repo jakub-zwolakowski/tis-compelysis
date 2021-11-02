@@ -38,11 +38,12 @@ int is_negative_compliant(int number) {
   return sign < 0;
 }
 
-void main(void) {
+int main(void) {
   is_negative_compliant(42);
   is_negative_compliant(-42);
   is_negative_compliant(0);
   is_negative_noncompliant(42);
   is_negative_noncompliant(-42);
   is_negative_noncompliant(0);
+  return 0;
 }

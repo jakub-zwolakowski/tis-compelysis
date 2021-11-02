@@ -26,7 +26,7 @@ test_results = $(patsubst %.out, %.test-result, $(executables))
 	@echo "--- Running test '$<' ---"
 	@echo ""
 	-./$< > $@ 2>&1
-	# -echo "DUMMY" > $@ 2>&1 # For FLP30
+	@# -echo "DUMMY" > $@ 2>&1 # For FLP30
 
 test: $(test_results)
 
@@ -52,7 +52,7 @@ clang_results = $(patsubst %.out, %.clang-result, $(executables))
 	@echo ""
 	@echo "--- clang '$<' ---"
 	@echo ""
-	-clang -Wall -Wpedantic -g -O0 -I. $< $(other_C_files) -lm -lpthread > $@ 2>&1
+	-clang -std=c17 -Werror -pedantic -pedantic-errors -g -O0 -I. $< $(other_C_files) -lm -lpthread > $@ 2>&1
 
 clang: $(clang_results)
 
@@ -62,14 +62,14 @@ UBSan_executables = $(patsubst %.c, %.UBSan-out, $(main_C_files))
 UBSan_results = $(patsubst %.UBSan-out, %.UBSan-run, $(UBSan_executables))
 
 %.UBSan-out: %.c
-	-clang -fsanitize=undefined -Wno-main-return-type -I. $< $(other_C_files) -lm -o $@
+	-clang -fsanitize=undefined -I. $< $(other_C_files) -lm -lpthread -o $@
 
 %.UBSan-run: %.UBSan-out
 	@echo ""
 	@echo "--- UBSan on '$<' ---"
 	@echo ""
 	-./$< > $@ 2>&1
-	# -echo "DUMMY" > $@ 2>&1 # For FLP30
+	@# -echo "DUMMY" > $@ 2>&1 # For FLP30
 
 ubsan: $(UBSan_results)
 
@@ -82,7 +82,7 @@ valgrind_results = $(patsubst %.out, %.valgrind-run, $(executables))
 	@echo "--- Valgrind on '$<' ---"
 	@echo ""
 	-valgrind --leak-check=yes ./$< > $@ 2>&1
-	# -echo "DUMMY" > $@ 2>&1 # For FLP30
+	@# -echo "DUMMY" > $@ 2>&1 # For FLP30
 
 valgrind: $(valgrind_results)
 

@@ -31,7 +31,8 @@ void f_compliant(void) {
   func_compliant(1, c);
 }
 
-void main(void) {
+int main(void) {
   f_compliant();
   f_noncompliant();
+  return 0;
 }

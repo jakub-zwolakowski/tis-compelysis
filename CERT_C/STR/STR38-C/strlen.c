@@ -30,7 +30,8 @@ void f_compliant(void) {
   wide_str2 = NULL;
 }
 
-void main(void) {
+int main(void) {
   f_compliant();
   f_noncompliant();
+  return 0;
 }

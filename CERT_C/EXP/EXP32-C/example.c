@@ -33,7 +33,8 @@ void f_compliant(void) {
   return;
 }
 
-void main(void) {
+int main(void) {
   f_compliant();
   f_noncompliant();
+  return 0;
 }

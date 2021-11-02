@@ -19,7 +19,8 @@ void init_matrix_compliant(int x) {
   }
 }
 
-void main(void) {
+int main(void) {
   init_matrix_compliant(42);
   init_matrix_noncompliant(42);
+  return 0;
 }

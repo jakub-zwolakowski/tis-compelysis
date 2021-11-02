@@ -59,7 +59,8 @@ int print_reciprocals_compliant(size_t count, ...) {
   return status;
 }
 
-void main(void) {
+int main(void) {
   print_reciprocals_compliant(3, (double)1, (double)2, (double)3);
   print_reciprocals_noncompliant(3, (double)1, (double)2, (double)3);
+  return 0;
 }

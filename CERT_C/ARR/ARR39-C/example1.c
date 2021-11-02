@@ -22,7 +22,8 @@ void f_compliant(void) {
   }
 }
 
-void main(void) {
+int main(void) {
   f_compliant();
   f_noncompliant();
+  return 0;
 }

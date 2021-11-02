@@ -18,7 +18,8 @@ void f_compliant(void) {
   wmemcpy(w_buffer, w_str, wcslen(w_str) + 1);
 }
 
-void main(void) {
+int main(void) {
   f_compliant();
   f_noncompliant();
+  return 0;
 }

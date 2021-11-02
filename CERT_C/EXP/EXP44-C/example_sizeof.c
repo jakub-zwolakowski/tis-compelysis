@@ -13,7 +13,8 @@ void f_compliant(void) {
   printf("%d, %d\n", a, b);
 }
 
-void main(void) {
+int main(void) {
   f_compliant();
   f_noncompliant();
+  return 0;
 }

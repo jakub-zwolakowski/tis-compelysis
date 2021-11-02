@@ -10,7 +10,8 @@ void f_compliant(void) {
   printf("%s\n", c_str);
 }
 
-void main(void) {
+int main(void) {
   f_compliant();
   f_noncompliant();
+  return 0;
 }

@@ -31,10 +31,11 @@ void f_compliant(unsigned int ui_a, unsigned int ui_b) {
   /* ... */
 }
 
-void main(void) {
+int main(void) {
   unsigned int a, b;
   a = 42;
   b = 42;
   f_compliant(a, b);
   f_noncompliant(a, b);
+  return 0;
 }

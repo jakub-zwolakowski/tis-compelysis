@@ -35,11 +35,12 @@ void f_compliant(size_t size) {
   }
 }
 
-void main(void) {
+int main(void) {
   f_compliant(42);
   f_compliant(0);
   f_compliant(INT_MAX);
   f_noncompliant(42);
   f_noncompliant(0);
   f_noncompliant(INT_MAX);
+  return 0;
 }

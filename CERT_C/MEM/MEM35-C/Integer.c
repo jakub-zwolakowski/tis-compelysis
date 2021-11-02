@@ -37,7 +37,8 @@ void f_compliant(size_t len) {
   free(p);
 }
 
-void main(void) {
+int main(void) {
   f_compliant(42);
   f_noncompliant(42);
+  return 0;
 }

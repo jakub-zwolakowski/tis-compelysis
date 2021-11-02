@@ -20,11 +20,12 @@ void f_compliant(signed long s_a, signed long s_b) {
   /* ... */
 }
 
-void main(void) {
+int main(void) {
   f_compliant(42, 42);
   f_compliant(42, 1);
   f_compliant(42, 0);
   f_noncompliant(42, 42);
   f_noncompliant(42, 1);
   f_noncompliant(42, 0);
+  return 0;
 }

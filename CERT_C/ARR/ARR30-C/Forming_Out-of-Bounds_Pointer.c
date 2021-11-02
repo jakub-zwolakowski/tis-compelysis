@@ -18,7 +18,8 @@ int *f_compliant(int index) {
   return NULL;
 }
 
-void main(void) {
+int main(void) {
   f_compliant(-1);
   f_noncompliant(-1);
+  return 0;
 }

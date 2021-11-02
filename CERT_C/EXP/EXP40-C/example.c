@@ -18,7 +18,8 @@ void f_compliant(void) {
   *ip_compliant = 0; /* Valid */
 }
 
-void main(void) {
+int main(void) {
   f_compliant();
   f_noncompliant();
+  return 0;
 }

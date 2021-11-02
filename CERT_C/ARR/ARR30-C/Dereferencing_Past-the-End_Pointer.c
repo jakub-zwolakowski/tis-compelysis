@@ -49,11 +49,12 @@ error_status_t _RemoteActivation(
   /* ... */
 }
 
-void main(void) {
+int main(void) {
   /* backslash at index 4 */
   WCHAR myObjectName1[] = "Foo\\";
   _RemoteActivation(myObjectName1);
   /* backslash at index 18 */
   WCHAR myObjectName2[] = "Foo walks into a Bar\\";
   _RemoteActivation(myObjectName2);
+  return 0;
 }

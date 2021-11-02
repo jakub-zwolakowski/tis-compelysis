@@ -18,9 +18,10 @@ void copy_compliant(size_t n, char src[n], char dest[n]) {
    dest[i] = '\0';
 }
 
-void main(void) {
+int main(void) {
    char src[5] = "12345";
    char dest[5];
    copy_compliant(5, src, dest);
    copy_noncompliant(5, src, dest);
+  return 0;
 }

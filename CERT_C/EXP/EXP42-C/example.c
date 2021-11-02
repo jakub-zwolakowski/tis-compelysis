@@ -22,7 +22,7 @@ void compare_compliant(const struct s *left, const struct s *right) {
   }
 }
 
-void main(void) {
+int main(void) {
   int j;
   int res = 13;
   struct s left, right;
@@ -40,4 +40,6 @@ void main(void) {
 
   compare_compliant(&left, &right);
   compare_noncompliant(&left, &right);
+  
+  return 0;
 }

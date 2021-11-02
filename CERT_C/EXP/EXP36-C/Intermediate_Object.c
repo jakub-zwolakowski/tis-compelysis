@@ -17,7 +17,8 @@ void func_compliant(void) {
   assert(ip == &i);
 }
 
-void main(void) {
+int main(void) {
   func_compliant();
   func_noncompliant();
+  return 0;
 }

@@ -29,7 +29,7 @@ const char *find_compliant(const struct S *s, int c) {
   return NULL;
 }
 
-void main(void) {
+int main(void) {
   struct S *s = (struct S *)malloc(sizeof(struct S));
   if (s == NULL) {
     /* Handle error */
@@ -37,4 +37,5 @@ void main(void) {
   s->len = 0;
   find_compliant(s, 'a');
   find_noncompliant(s, 'a');
+  return 0;
 }

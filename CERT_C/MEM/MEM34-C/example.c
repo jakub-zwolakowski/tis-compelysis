@@ -52,7 +52,7 @@ int f_compliant(int argc, const char *argv[]) {
   return 0;
 }
 
-void main(void) {
+int main(void) {
   char *argv[2];
   argv[0] = "Foo";
   argv[1] = "Bar";
@@ -60,4 +60,5 @@ void main(void) {
   f_compliant(1, argv);
   f_noncompliant(2, argv);
   f_noncompliant(1, argv);
+  return 0;
 }

@@ -19,7 +19,8 @@ size_t count_preceding_whitespace_compliant(const char *s) {
   return t - s;
 }
 
-void main(void) {
+int main(void) {
   count_preceding_whitespace_compliant("   ÿ foo");
   count_preceding_whitespace_noncompliant("   ÿ foo");
+  return 0;
 }

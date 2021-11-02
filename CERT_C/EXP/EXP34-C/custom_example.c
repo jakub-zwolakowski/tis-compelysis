@@ -21,9 +21,10 @@ int f_compliant(int i) {
   return *p;
 }
 
-void main(void) {
+int main(void) {
   f_compliant(0);
   f_compliant(42);
   f_noncompliant(0);
   f_noncompliant(42);
+  return 0;
 }

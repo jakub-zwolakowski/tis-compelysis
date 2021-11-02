@@ -42,7 +42,7 @@ void f_compliant(const char *buff) {
   }
 }
 
-void main(void) {
+int main(void) {
   f_compliant("2");
   printf("x = %d\n", x);
   f_compliant("foo");
@@ -55,4 +55,5 @@ void main(void) {
   printf("x = %d\n", x);
   f_noncompliant("12345678901234567890");
   printf("x = %d\n", x);
+  return 0;
 }

@@ -17,9 +17,10 @@ void innocuous(void) {
   printf("%s\n", p);
 }
 
-void main(void) {
+int main(void) {
   this_is_OK();
   innocuous();
   dont_do_this();
   innocuous();
+  return 0;
 }

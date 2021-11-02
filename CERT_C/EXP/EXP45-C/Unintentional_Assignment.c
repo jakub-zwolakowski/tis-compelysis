@@ -12,9 +12,10 @@ int f_compliant(int a, int b) {
   return 1;
 }
 
-void main(void) {
+int main(void) {
   int a = 13;
   int b = 42;
   f_noncompliant(a, b);
   f_compliant(a, b);
+  return 0;
 }

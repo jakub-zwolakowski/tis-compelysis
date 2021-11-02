@@ -26,9 +26,10 @@ void f_compliant(const char *userinput) {
   }
 }
 
-void main(void) {
+int main(void) {
   char pass[] = "pass";
   char not_a_pass[] = "Doom... Doom. Doooooom!!!";
   f_compliant(pass);
   f_noncompliant(pass);
+  return 0;
 }

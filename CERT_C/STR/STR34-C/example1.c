@@ -21,7 +21,7 @@ ptrdiff_t first_not_in_table_noncompliant(const char *c_str) {
   return -1;
 }
 
-void main(void) {
+int main(void) {
   for(int i = 0; i < UCHAR_MAX + 1; i++) {
     table[i] = (unsigned char)i;
   }
@@ -31,4 +31,5 @@ void main(void) {
   }
   first_not_in_table_compliant(c_str);
   first_not_in_table_noncompliant(c_str);
+  return 0;
 }

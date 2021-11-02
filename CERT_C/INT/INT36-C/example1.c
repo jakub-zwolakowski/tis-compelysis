@@ -19,7 +19,8 @@ void func_compliant(unsigned int flag) {
   ptrflag.flag = flag;
 }
 
-void main(void) {
+int main(void) {
   func_compliant(0);
   func_noncompliant(0);
+  return 0;
 }

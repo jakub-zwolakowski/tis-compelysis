@@ -18,7 +18,8 @@ int main_compliant(void) {
   return 0;
 }
 
-void main(void) {
+int main(void) {
   main_compliant();
   main_noncompliant();
+  return 0;
 }

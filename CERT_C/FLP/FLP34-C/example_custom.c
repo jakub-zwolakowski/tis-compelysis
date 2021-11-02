@@ -19,7 +19,8 @@ void f_compliant(void) {
       j = g;
 }
 
-void main(void) {
+int main(void) {
   f_compliant();
   f_noncompliant();
+  return 0;
 }

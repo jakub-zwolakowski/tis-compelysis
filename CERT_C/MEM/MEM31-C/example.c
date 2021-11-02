@@ -22,10 +22,11 @@ int f_compliant(void) {
   return 0;
 }
 
-void main(void) {
+int main(void) {
   f_compliant();
   f_noncompliant();
 #ifdef __TRUSTINSOFT_ANALYZER__
   tis_check_leak();
 #endif
+  return 0;
 }

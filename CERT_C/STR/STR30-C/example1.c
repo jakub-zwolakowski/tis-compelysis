@@ -8,7 +8,8 @@ void f_compliant() {
   str[0] = 'S';
 }
 
-void main(void) {
+int main(void) {
   f_compliant();
   f_noncompliant();
+  return 0;
 }

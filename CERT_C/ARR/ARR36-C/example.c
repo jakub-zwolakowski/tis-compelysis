@@ -23,7 +23,8 @@ void f_compliant(void) {
   free_elements = &(nums[SIZE]) - next_num_ptr;
 }
 
-void main(void) {
+int main(void) {
   f_compliant();
   f_noncompliant();
+  return 0;
 }

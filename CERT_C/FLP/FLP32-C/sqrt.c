@@ -16,9 +16,10 @@ void f_compliant(double x) {
   result = sqrt(x);
 }
 
-void main(void) {
+int main(void) {
   f_compliant(1);
   f_compliant(-1);
   f_noncompliant(1);
   f_noncompliant(-1);
+  return 0;
 }

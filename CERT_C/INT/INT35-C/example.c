@@ -31,11 +31,12 @@ unsigned int pow2_compliant(unsigned int exp) {
   return ((unsigned int) 1) << exp;
 }
 
-void main(void) {
+int main(void) {
   pow2_compliant(1);
   pow2_compliant(31);
   pow2_compliant(32);
   pow2_noncompliant(1);
   pow2_noncompliant(31);
   pow2_noncompliant(32);
+  return 0;
 }

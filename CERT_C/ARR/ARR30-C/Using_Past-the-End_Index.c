@@ -39,9 +39,10 @@ int insert_in_table(size_t pos, int value) {
   return 0;
 }
 
-void main(void) {
+int main(void) {
   insert_in_table(3, 43);
   insert_in_table(2, 42);
   insert_in_table(1, 41);
   insert_in_table(4, 44);
+  return 0;
 }
