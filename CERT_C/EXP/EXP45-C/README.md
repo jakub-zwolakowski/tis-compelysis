@@ -9,14 +9,10 @@ Unintentional_Assignment.c: In function ‘f_noncompliant’:
 Unintentional_Assignment.c:2:7: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
    if (a = b) {
        ^
-Unintentional_Assignment.c: At top level:
-Unintentional_Assignment.c:15:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
- void main(void) {
-      ^~~~
 ```
 ### clang
 ```
-Unintentional_Assignment.c:2:9: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+Unintentional_Assignment.c:2:9: error: using the result of an assignment as a condition without parentheses [-Werror,-Wparentheses]
   if (a = b) {
       ~~^~~
 Unintentional_Assignment.c:2:9: note: place parentheses around the assignment to silence this warning
@@ -27,14 +23,7 @@ Unintentional_Assignment.c:2:9: note: use '==' to turn this assignment into an e
   if (a = b) {
         ^
         ==
-Unintentional_Assignment.c:15:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main(void) {
-^
-Unintentional_Assignment.c:15:1: note: change return type to 'int'
-void main(void) {
-^~~~
-int
-2 warnings generated.
+1 error generated.
 ```
 ### UBSan
 ```

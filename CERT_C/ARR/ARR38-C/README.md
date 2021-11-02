@@ -7,20 +7,9 @@ Aborted (core dumped)
 ```
 ### gcc
 ```
-Element_Count.c:21:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
- void main(void) {
-      ^~~~
 ```
 ### clang
 ```
-Element_Count.c:21:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main(void) {
-^
-Element_Count.c:21:1: note: change return type to 'int'
-void main(void) {
-^~~~
-int
-1 warning generated.
 ```
 ### UBSan
 ```

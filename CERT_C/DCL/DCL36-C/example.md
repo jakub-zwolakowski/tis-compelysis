@@ -27,7 +27,7 @@ example.c:2:12: warning: ‘i2’ defined but not used [-Wunused-variable]
 ```
 ### clang
 ```
-example.c:3:12: warning: 'extern' variable has an initializer [-Wextern-initializer]
+example.c:3:12: error: 'extern' variable has an initializer [-Werror,-Wextern-initializer]
 extern int i3 = 30;  /* Definition, external linkage */
            ^
 example.c:8:5: error: non-static declaration of 'i2' follows static declaration
@@ -42,7 +42,7 @@ int i5;  /* Undefined, linkage disagreement with previous */
 example.c:5:12: note: previous definition is here
 static int i5;       /* Tentative definition, internal linkage */
            ^
-1 warning and 2 errors generated.
+3 errors generated.
 ```
 ### UBSan
 ```

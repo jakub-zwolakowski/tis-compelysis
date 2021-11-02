@@ -9,21 +9,9 @@ example1.c: In function ‘f_compliant’:
 example1.c:7:8: warning: variable ‘str’ set but not used [-Wunused-but-set-variable]
    char str[] = "string literal";
         ^~~
-example1.c: At top level:
-example1.c:11:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
- void main(void) {
-      ^~~~
 ```
 ### clang
 ```
-example1.c:11:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main(void) {
-^
-example1.c:11:1: note: change return type to 'int'
-void main(void) {
-^~~~
-int
-1 warning generated.
 ```
 ### UBSan
 ```

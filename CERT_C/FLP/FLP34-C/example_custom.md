@@ -18,42 +18,25 @@ example_custom.c:17:7: warning: variable ‘j’ set but not used [-Wunused-but-
 example_custom.c:13:7: warning: variable ‘i’ set but not used [-Wunused-but-set-variable]
    int i = 0;
        ^
-example_custom.c: At top level:
-example_custom.c:22:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
- void main(void) {
-      ^~~~
 ```
 ### clang
 ```
-example_custom.c:6:7: warning: unused variable 'i' [-Wunused-variable]
-  int i = f;
-      ^
-example_custom.c:8:7: warning: unused variable 'j' [-Wunused-variable]
-  int j = g;
-      ^
-example_custom.c:7:13: warning: implicit conversion from 'long' to 'float' changes value from -21474836490 to -21474836480 [-Wimplicit-const-int-float-conversion]
+example_custom.c:7:13: error: implicit conversion from 'long' to 'float' changes value from -21474836490 to -21474836480 [-Werror,-Wimplicit-const-int-float-conversion]
   float g = -21474836490;
         ~   ^~~~~~~~~~~~
-example_custom.c:14:11: warning: implicit conversion from 'int' to 'float' changes value from 2147483647 to 2147483648 [-Wimplicit-const-int-float-conversion]
+example_custom.c:14:11: error: implicit conversion from 'int' to 'float' changes value from 2147483647 to 2147483648 [-Werror,-Wimplicit-const-int-float-conversion]
   if (f < INT_MAX)
         ~ ^~~~~~~
 /home/qba/tis/deps/llvm/12.0.0/build/lib/clang/12.0.0/include/limits.h:46:19: note: expanded from macro 'INT_MAX'
 #define INT_MAX   __INT_MAX__
                   ^~~~~~~~~~~
-<built-in>:36:21: note: expanded from here
+<built-in>:37:21: note: expanded from here
 #define __INT_MAX__ 2147483647
                     ^~~~~~~~~~
-example_custom.c:16:13: warning: implicit conversion from 'long' to 'float' changes value from -21474836490 to -21474836480 [-Wimplicit-const-int-float-conversion]
+example_custom.c:16:13: error: implicit conversion from 'long' to 'float' changes value from -21474836490 to -21474836480 [-Werror,-Wimplicit-const-int-float-conversion]
   float g = -21474836490;
         ~   ^~~~~~~~~~~~
-example_custom.c:22:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main(void) {
-^
-example_custom.c:22:1: note: change return type to 'int'
-void main(void) {
-^~~~
-int
-6 warnings generated.
+3 errors generated.
 ```
 ### UBSan
 ```

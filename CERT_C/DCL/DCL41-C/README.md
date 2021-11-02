@@ -9,9 +9,6 @@
 ```
 ### gcc
 ```
-example.c:35:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
- void main(void) {
-      ^~~~
 example.c: In function ‘f_noncompliant’:
 example.c:7:9: warning: statement will never be executed [-Wswitch-unreachable]
      int i = 4;
@@ -19,23 +16,6 @@ example.c:7:9: warning: statement will never be executed [-Wswitch-unreachable]
 ```
 ### clang
 ```
-example.c:12:3: warning: variable 'i' is used uninitialized whenever switch default is taken [-Wsometimes-uninitialized]
-  default:
-  ^~~~~~~
-example.c:13:20: note: uninitialized use occurs here
-    printf("%d\n", i);
-                   ^
-example.c:7:5: note: variable 'i' is declared here
-    int i = 4;
-    ^
-example.c:35:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main(void) {
-^
-example.c:35:1: note: change return type to 'int'
-void main(void) {
-^~~~
-int
-2 warnings generated.
 ```
 ### UBSan
 ```

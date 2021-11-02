@@ -8,24 +8,13 @@ example1.c: In function ‘f_noncompliant’:
 example1.c:4:17: warning: operation on ‘i’ may be undefined [-Wsequence-point]
    int a = i + b[++i];
                  ^~~
-example1.c: At top level:
-example1.c:15:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
- void main(void) {
-      ^~~~
 ```
 ### clang
 ```
-example1.c:4:17: warning: unsequenced modification and access to 'i' [-Wunsequenced]
+example1.c:4:17: error: unsequenced modification and access to 'i' [-Werror,-Wunsequenced]
   int a = i + b[++i];
           ~     ^
-example1.c:15:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main(void) {
-^
-example1.c:15:1: note: change return type to 'int'
-void main(void) {
-^~~~
-int
-2 warnings generated.
+1 error generated.
 ```
 ### UBSan
 ```

@@ -12,10 +12,6 @@ Addition.c: In function ‘f_compliant’:
 Addition.c:9:16: warning: variable ‘usum’ set but not used [-Wunused-but-set-variable]
    unsigned int usum;
                 ^~~~
-Addition.c: At top level:
-Addition.c:18:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
- void main(void) {
-      ^~~~
 Addition.c: In function ‘main’:
 Addition.c:19:22: warning: unused variable ‘c’ [-Wunused-variable]
    unsigned int a, b, c;
@@ -23,20 +19,6 @@ Addition.c:19:22: warning: unused variable ‘c’ [-Wunused-variable]
 ```
 ### clang
 ```
-Addition.c:4:16: warning: unused variable 'usum' [-Wunused-variable]
-  unsigned int usum = ui_a + ui_b;
-               ^
-Addition.c:18:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main(void) {
-^
-Addition.c:18:1: note: change return type to 'int'
-void main(void) {
-^~~~
-int
-Addition.c:19:22: warning: unused variable 'c' [-Wunused-variable]
-  unsigned int a, b, c;
-                     ^
-3 warnings generated.
 ```
 ### UBSan
 ```

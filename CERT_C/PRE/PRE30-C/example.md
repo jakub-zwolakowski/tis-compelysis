@@ -34,11 +34,11 @@ example.c:13:7: warning: variable ‘Ё’ set but not used [-Wunused-but-set-va
 ```
 ### clang
 ```
-example.c:6:23: warning: incomplete universal character name; treating as '\' followed by identifier [-Wunicode]
+example.c:6:23: error: incomplete universal character name; treating as '\' followed by identifier [-Werror,-Wunicode]
   assign_noncompliant(\u04, 01, 4);
                       ^
 example.c:6:23: error: expected expression
-1 warning and 1 error generated.
+2 errors generated.
 ```
 ### UBSan
 ```

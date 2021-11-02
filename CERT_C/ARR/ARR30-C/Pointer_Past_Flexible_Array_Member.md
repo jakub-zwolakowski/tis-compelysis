@@ -4,20 +4,9 @@
 ```
 ### gcc
 ```
-Pointer_Past_Flexible_Array_Member.c:32:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
- void main(void) {
-      ^~~~
 ```
 ### clang
 ```
-Pointer_Past_Flexible_Array_Member.c:32:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main(void) {
-^
-Pointer_Past_Flexible_Array_Member.c:32:1: note: change return type to 'int'
-void main(void) {
-^~~~
-int
-1 warning generated.
 ```
 ### UBSan
 ```

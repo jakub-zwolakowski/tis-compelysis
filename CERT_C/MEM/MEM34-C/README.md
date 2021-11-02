@@ -7,9 +7,6 @@ Aborted (core dumped)
 ```
 ### gcc
 ```
-example.c:55:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
- void main(void) {
-      ^~~~
 example.c: In function ‘main’:
 example.c:59:18: warning: passing argument 2 of ‘f_compliant’ from incompatible pointer type [-Wincompatible-pointer-types]
    f_compliant(2, argv);
@@ -38,38 +35,31 @@ example.c:7:5: note: expected ‘const char **’ but argument is of type ‘cha
 ```
 ### clang
 ```
-example.c:55:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main(void) {
-^
-example.c:55:1: note: change return type to 'int'
-void main(void) {
-^~~~
-int
-example.c:59:18: warning: passing 'char *[2]' to parameter of type 'const char **' discards qualifiers in nested pointer types [-Wincompatible-pointer-types-discards-qualifiers]
+example.c:59:18: error: passing 'char *[2]' to parameter of type 'const char **' discards qualifiers in nested pointer types [-Werror,-Wincompatible-pointer-types-discards-qualifiers]
   f_compliant(2, argv);
                  ^~~~
 example.c:31:39: note: passing argument to parameter 'argv' here
 int f_compliant(int argc, const char *argv[]) {
                                       ^
-example.c:60:18: warning: passing 'char *[2]' to parameter of type 'const char **' discards qualifiers in nested pointer types [-Wincompatible-pointer-types-discards-qualifiers]
+example.c:60:18: error: passing 'char *[2]' to parameter of type 'const char **' discards qualifiers in nested pointer types [-Werror,-Wincompatible-pointer-types-discards-qualifiers]
   f_compliant(1, argv);
                  ^~~~
 example.c:31:39: note: passing argument to parameter 'argv' here
 int f_compliant(int argc, const char *argv[]) {
                                       ^
-example.c:61:21: warning: passing 'char *[2]' to parameter of type 'const char **' discards qualifiers in nested pointer types [-Wincompatible-pointer-types-discards-qualifiers]
+example.c:61:21: error: passing 'char *[2]' to parameter of type 'const char **' discards qualifiers in nested pointer types [-Werror,-Wincompatible-pointer-types-discards-qualifiers]
   f_noncompliant(2, argv);
                     ^~~~
 example.c:7:42: note: passing argument to parameter 'argv' here
 int f_noncompliant(int argc, const char *argv[]) {
                                          ^
-example.c:62:21: warning: passing 'char *[2]' to parameter of type 'const char **' discards qualifiers in nested pointer types [-Wincompatible-pointer-types-discards-qualifiers]
+example.c:62:21: error: passing 'char *[2]' to parameter of type 'const char **' discards qualifiers in nested pointer types [-Werror,-Wincompatible-pointer-types-discards-qualifiers]
   f_noncompliant(1, argv);
                     ^~~~
 example.c:7:42: note: passing argument to parameter 'argv' here
 int f_noncompliant(int argc, const char *argv[]) {
                                          ^
-5 warnings generated.
+4 errors generated.
 ```
 ### UBSan
 ```

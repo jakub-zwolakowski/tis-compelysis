@@ -12,21 +12,9 @@ sqrt.c: In function ‘f_compliant’:
 sqrt.c:9:10: warning: variable ‘result’ set but not used [-Wunused-but-set-variable]
    double result;
           ^~~~~~
-sqrt.c: At top level:
-sqrt.c:19:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
- void main(void) {
-      ^~~~
 ```
 ### clang
 ```
-sqrt.c:19:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main(void) {
-^
-sqrt.c:19:1: note: change return type to 'int'
-void main(void) {
-^~~~
-int
-1 warning generated.
 ```
 ### UBSan
 ```

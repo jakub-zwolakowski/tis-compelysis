@@ -13,21 +13,9 @@ Unsigned_to_Signed.c: In function ‘f_compliant’:
 Unsigned_to_Signed.c:12:15: warning: variable ‘sc’ set but not used [-Wunused-but-set-variable]
    signed char sc;
                ^~
-Unsigned_to_Signed.c: At top level:
-Unsigned_to_Signed.c:20:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
- void main(void) {
-      ^~~~
 ```
 ### clang
 ```
-Unsigned_to_Signed.c:20:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main(void) {
-^
-Unsigned_to_Signed.c:20:1: note: change return type to 'int'
-void main(void) {
-^~~~
-int
-1 warning generated.
 ```
 ### UBSan
 ```

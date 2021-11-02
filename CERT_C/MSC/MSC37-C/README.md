@@ -7,9 +7,6 @@ Success
 ```
 ### gcc
 ```
-example1.c:29:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
- void main(void) {
-      ^~~~
 example1.c: In function ‘main’:
 example1.c:31:8: warning: unused variable ‘not_a_pass’ [-Wunused-variable]
    char not_a_pass[] = "Doom... Doom. Doooooom!!!";
@@ -21,20 +18,10 @@ example1.c:8:1: warning: control reaches end of non-void function [-Wreturn-type
 ```
 ### clang
 ```
-example1.c:8:1: warning: non-void function does not return a value in all control paths [-Wreturn-type]
+example1.c:8:1: error: non-void function does not return a value in all control paths [-Werror,-Wreturn-type]
 }
 ^
-example1.c:29:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main(void) {
-^
-example1.c:29:1: note: change return type to 'int'
-void main(void) {
-^~~~
-int
-example1.c:31:8: warning: unused variable 'not_a_pass' [-Wunused-variable]
-  char not_a_pass[] = "Doom... Doom. Doooooom!!!";
-       ^
-3 warnings generated.
+1 error generated.
 ```
 ### UBSan
 ```

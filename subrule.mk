@@ -15,6 +15,9 @@ executables = $(patsubst %.c, %.out, $(main_C_files))
 all: $(executables)
 
 %.out: %.c
+	@echo ""
+	@echo "--- Executable $@ ---"
+	@echo ""
 	-gcc -g -O0 -I. $< $(other_C_files) -lm -lpthread -o $@
 
 # -- Tests --
@@ -39,7 +42,7 @@ gcc_results = $(patsubst %.out, %.gcc-result, $(executables))
 	@echo ""
 	@echo "--- gcc '$<' ---"
 	@echo ""
-	-gcc -Wall -Wpedantic -g -O0 -I. $< $(other_C_files) -lm -lpthread > $@ 2>&1
+	-gcc -std=c17 -Werror -pedantic -pedantic-errors -g -O0 -I. $< $(other_C_files) -lm -lpthread > $@ 2>&1
 
 gcc: $(gcc_results)
 
@@ -101,6 +104,9 @@ tis: $(patsubst %.c, %.tis, $(main_C_files))
 markdown_files = $(patsubst %.c, %.md, $(main_C_files))
 
 %.md: %.c %.test-result %.gcc-result %.clang-result %.UBSan-run %.valgrind-run
+	@echo ""
+	@echo "--- $@ ---"
+	@echo ""
 	echo "## $*" > $@
 	echo "### Test" >> $@
 	echo '```' >> $@

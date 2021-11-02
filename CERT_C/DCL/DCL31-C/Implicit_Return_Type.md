@@ -9,23 +9,13 @@
 Implicit_Return_Type.c:4:1: warning: return type defaults to ‘int’ [-Wimplicit-int]
  foo_noncompliant(void) {
  ^~~~~~~~~~~~~~~~
-Implicit_Return_Type.c:12:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
- void main(void) {
-      ^~~~
 ```
 ### clang
 ```
-Implicit_Return_Type.c:4:1: warning: type specifier missing, defaults to 'int' [-Wimplicit-int]
+Implicit_Return_Type.c:4:1: error: type specifier missing, defaults to 'int' [-Werror,-Wimplicit-int]
 foo_noncompliant(void) {
 ^
-Implicit_Return_Type.c:12:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main(void) {
-^
-Implicit_Return_Type.c:12:1: note: change return type to 'int'
-void main(void) {
-^~~~
-int
-2 warnings generated.
+1 error generated.
 ```
 ### UBSan
 ```

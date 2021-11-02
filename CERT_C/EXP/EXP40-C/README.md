@@ -10,24 +10,13 @@ example.c: In function ‘f_noncompliant’:
 example.c:6:20: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
    ipp_noncompliant = &ip_noncompliant; /* Constraint violation */
                     ^
-example.c: At top level:
-example.c:21:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
- void main(void) {
-      ^~~~
 ```
 ### clang
 ```
-example.c:6:20: warning: assigning to 'const int **' from 'int **' discards qualifiers in nested pointer types [-Wincompatible-pointer-types-discards-qualifiers]
+example.c:6:20: error: assigning to 'const int **' from 'int **' discards qualifiers in nested pointer types [-Werror,-Wincompatible-pointer-types-discards-qualifiers]
   ipp_noncompliant = &ip_noncompliant; /* Constraint violation */
                    ^ ~~~~~~~~~~~~~~~~
-example.c:21:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main(void) {
-^
-example.c:21:1: note: change return type to 'int'
-void main(void) {
-^~~~
-int
-2 warnings generated.
+1 error generated.
 ```
 ### UBSan
 ```

@@ -5,20 +5,9 @@
 ```
 ### gcc
 ```
-Pointer_Past_Flexible_Array_Member.c:32:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
- void main(void) {
-      ^~~~
 ```
 ### clang
 ```
-Pointer_Past_Flexible_Array_Member.c:32:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main(void) {
-^
-Pointer_Past_Flexible_Array_Member.c:32:1: note: change return type to 'int'
-void main(void) {
-^~~~
-int
-1 warning generated.
 ```
 ### UBSan
 ```
@@ -56,9 +45,6 @@ Segmentation fault (core dumped)
 ```
 ### gcc
 ```
-Null_Pointer_Arithmetic.c:36:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
- void main(void) {
-      ^~~~
 Null_Pointer_Arithmetic.c: In function ‘main’:
 Null_Pointer_Arithmetic.c:39:9: warning: unused variable ‘block2’ [-Wunused-variable]
    char *block2 = init_block_noncompliant(7, 0, data, sizeof (data));
@@ -69,20 +55,6 @@ Null_Pointer_Arithmetic.c:38:9: warning: unused variable ‘block1’ [-Wunused-
 ```
 ### clang
 ```
-Null_Pointer_Arithmetic.c:36:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main(void) {
-^
-Null_Pointer_Arithmetic.c:36:1: note: change return type to 'int'
-void main(void) {
-^~~~
-int
-Null_Pointer_Arithmetic.c:38:9: warning: unused variable 'block1' [-Wunused-variable]
-  char *block1 = init_block_compliant(7, 0, data, sizeof (data));
-        ^
-Null_Pointer_Arithmetic.c:39:9: warning: unused variable 'block2' [-Wunused-variable]
-  char *block2 = init_block_noncompliant(7, 0, data, sizeof (data));
-        ^
-3 warnings generated.
 ```
 ### UBSan
 ```
@@ -146,20 +118,9 @@ Segmentation fault (core dumped)
 ```
 ### gcc
 ```
-Forming_Out-of-Bounds_Pointer.c:21:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
- void main(void) {
-      ^~~~
 ```
 ### clang
 ```
-Forming_Out-of-Bounds_Pointer.c:21:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main(void) {
-^
-Forming_Out-of-Bounds_Pointer.c:21:1: note: change return type to 'int'
-void main(void) {
-^~~~
-int
-1 warning generated.
 ```
 ### UBSan
 ```
@@ -189,20 +150,9 @@ SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior Forming_Out-of-Bounds_Po
 ```
 ### gcc
 ```
-Using_Past-the-End_Index.c:42:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
- void main(void) {
-      ^~~~
 ```
 ### clang
 ```
-Using_Past-the-End_Index.c:42:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main(void) {
-^
-Using_Past-the-End_Index.c:42:1: note: change return type to 'int'
-void main(void) {
-^~~~
-int
-1 warning generated.
 ```
 ### UBSan
 ```
@@ -248,20 +198,9 @@ Aborted (core dumped)
 ```
 ### gcc
 ```
-Dereferencing_Past-the-End_Pointer.c:52:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
- void main(void) {
-      ^~~~
 ```
 ### clang
 ```
-Dereferencing_Past-the-End_Pointer.c:52:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main(void) {
-^
-Dereferencing_Past-the-End_Pointer.c:52:1: note: change return type to 'int'
-void main(void) {
-^~~~
-int
-1 warning generated.
 ```
 ### UBSan
 ```
@@ -301,20 +240,9 @@ Aborted (core dumped)
 ```
 ### gcc
 ```
-Apparently_Accessible_Out-of-Range_Index.c:22:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
- void main(void) {
-      ^~~~
 ```
 ### clang
 ```
-Apparently_Accessible_Out-of-Range_Index.c:22:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main(void) {
-^
-Apparently_Accessible_Out-of-Range_Index.c:22:1: note: change return type to 'int'
-void main(void) {
-^~~~
-int
-1 warning generated.
 ```
 ### UBSan
 ```

@@ -11,6 +11,14 @@ check: I "love" you
 ```
 ### clang
 ```
+example_compliant.c:41:3: error: implicit declaration of function 'setenv' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+  setenv("TEST_ENV", "I \"love\" you", 1);
+  ^
+example_compliant.c:41:3: note: did you mean 'getenv'?
+/usr/include/stdlib.h:631:14: note: 'getenv' declared here
+extern char *getenv (const char *__name) __THROW __nonnull ((1)) __wur;
+             ^
+1 error generated.
 ```
 ### UBSan
 ```
@@ -50,6 +58,14 @@ check: I _love_ you
 ```
 ### clang
 ```
+example_noncompliant.c:28:3: error: implicit declaration of function 'setenv' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+  setenv("TEST_ENV", "I \"love\" you", 1);
+  ^
+example_noncompliant.c:28:3: note: did you mean 'getenv'?
+/usr/include/stdlib.h:631:14: note: 'getenv' declared here
+extern char *getenv (const char *__name) __THROW __nonnull ((1)) __wur;
+             ^
+1 error generated.
 ```
 ### UBSan
 ```
@@ -92,6 +108,14 @@ check: I _love_ you
 ```
 ### clang
 ```
+example.c:52:3: error: implicit declaration of function 'setenv' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+  setenv("TEST_ENV", "I \"love\" you", 1);
+  ^
+example.c:52:3: note: did you mean 'getenv'?
+/usr/include/stdlib.h:631:14: note: 'getenv' declared here
+extern char *getenv (const char *__name) __THROW __nonnull ((1)) __wur;
+             ^
+1 error generated.
 ```
 ### UBSan
 ```

@@ -13,24 +13,9 @@ Left_Shift_Unsigned_Type.c: In function ‘f_compliant’:
 Left_Shift_Unsigned_Type.c:25:16: warning: variable ‘uresult’ set but not used [-Wunused-but-set-variable]
    unsigned int uresult = 0;
                 ^~~~~~~
-Left_Shift_Unsigned_Type.c: At top level:
-Left_Shift_Unsigned_Type.c:34:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
- void main(void) {
-      ^~~~
 ```
 ### clang
 ```
-Left_Shift_Unsigned_Type.c:20:16: warning: unused variable 'uresult' [-Wunused-variable]
-  unsigned int uresult = ui_a << ui_b;
-               ^
-Left_Shift_Unsigned_Type.c:34:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main(void) {
-^
-Left_Shift_Unsigned_Type.c:34:1: note: change return type to 'int'
-void main(void) {
-^~~~
-int
-2 warnings generated.
 ```
 ### UBSan
 ```

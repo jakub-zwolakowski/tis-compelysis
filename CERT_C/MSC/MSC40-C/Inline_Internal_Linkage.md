@@ -12,33 +12,16 @@ Inline_Internal_Linkage.c: In function ‘func_compliant’:
 Inline_Internal_Linkage.c:9:7: warning: unused variable ‘b’ [-Wunused-variable]
    int b = a * I_compliant;
        ^
-Inline_Internal_Linkage.c: At top level:
-Inline_Internal_Linkage.c:13:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
- void main(void) {
-      ^~~~
 ```
 ### clang
 ```
-Inline_Internal_Linkage.c:3:15: warning: static variable 'I_noncompliant' is used in an inline function with external linkage [-Wstatic-in-inline]
+Inline_Internal_Linkage.c:3:15: error: static variable 'I_noncompliant' is used in an inline function with external linkage [-Werror,-Wstatic-in-inline]
   int b = a * I_noncompliant;
               ^
 Inline_Internal_Linkage.c:1:12: note: 'I_noncompliant' declared here
 static int I_noncompliant = 12;
            ^
-Inline_Internal_Linkage.c:3:7: warning: unused variable 'b' [-Wunused-variable]
-  int b = a * I_noncompliant;
-      ^
-Inline_Internal_Linkage.c:9:7: warning: unused variable 'b' [-Wunused-variable]
-  int b = a * I_compliant;
-      ^
-Inline_Internal_Linkage.c:13:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main(void) {
-^
-Inline_Internal_Linkage.c:13:1: note: change return type to 'int'
-void main(void) {
-^~~~
-int
-4 warnings generated.
+1 error generated.
 ```
 ### UBSan
 ```

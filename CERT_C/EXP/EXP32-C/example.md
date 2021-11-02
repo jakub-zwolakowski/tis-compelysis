@@ -13,27 +13,16 @@ example.c:10:7: warning: assignment from incompatible pointer type [-Wincompatib
 example.c:11:7: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
    ipp = (int**) &ip; /* Constraint violation; may produce a warning diagnostic */
        ^
-example.c: At top level:
-example.c:36:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
- void main(void) {
-      ^~~~
 ```
 ### clang
 ```
-example.c:10:7: warning: assigning to 'volatile int **' from 'int **' discards qualifiers in nested pointer types [-Wincompatible-pointer-types-discards-qualifiers]
+example.c:10:7: error: assigning to 'volatile int **' from 'int **' discards qualifiers in nested pointer types [-Werror,-Wincompatible-pointer-types-discards-qualifiers]
   ipp = &ip; /* May produce a warning diagnostic */
       ^ ~~~
-example.c:11:7: warning: assigning to 'volatile int **' from 'int **' discards qualifiers in nested pointer types [-Wincompatible-pointer-types-discards-qualifiers]
+example.c:11:7: error: assigning to 'volatile int **' from 'int **' discards qualifiers in nested pointer types [-Werror,-Wincompatible-pointer-types-discards-qualifiers]
   ipp = (int**) &ip; /* Constraint violation; may produce a warning diagnostic */
       ^ ~~~~~~~~~~~
-example.c:36:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main(void) {
-^
-example.c:36:1: note: change return type to 'int'
-void main(void) {
-^~~~
-int
-3 warnings generated.
+2 errors generated.
 ```
 ### UBSan
 ```

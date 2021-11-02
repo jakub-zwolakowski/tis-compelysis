@@ -5,20 +5,9 @@
 ```
 ### gcc
 ```
-example_main.c:5:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
- void main(void) {
-      ^~~~
 ```
 ### clang
 ```
-example_main.c:5:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main(void) {
-^
-example_main.c:5:1: note: change return type to 'int'
-void main(void) {
-^~~~
-int
-1 warning generated.
 ```
 ### UBSan
 ```

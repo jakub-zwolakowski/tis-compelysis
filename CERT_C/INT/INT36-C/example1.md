@@ -11,10 +11,6 @@ example1.c:5:25: warning: cast from pointer to integer of different size [-Wpoin
 example1.c:7:9: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
    ptr = (char *)number;
          ^
-example1.c: At top level:
-example1.c:22:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
- void main(void) {
-      ^~~~
 example1.c: In function ‘func_compliant’:
 example1.c:18:19: warning: ‘ptr’ is used uninitialized in this function [-Wuninitialized]
    ptrflag.pointer = ptr;
@@ -22,27 +18,13 @@ example1.c:18:19: warning: ‘ptr’ is used uninitialized in this function [-Wu
 ```
 ### clang
 ```
-example1.c:5:25: warning: cast to smaller integer type 'unsigned int' from 'char *' [-Wpointer-to-int-cast]
+example1.c:5:25: error: cast to smaller integer type 'unsigned int' from 'char *' [-Werror,-Wpointer-to-int-cast]
   unsigned int number = (unsigned int)ptr;
                         ^~~~~~~~~~~~~~~~~
-example1.c:7:9: warning: cast to 'char *' from smaller integer type 'unsigned int' [-Wint-to-pointer-cast]
+example1.c:7:9: error: cast to 'char *' from smaller integer type 'unsigned int' [-Werror,-Wint-to-pointer-cast]
   ptr = (char *)number;
         ^~~~~~~~~~~~~~
-example1.c:18:21: warning: variable 'ptr' is uninitialized when used here [-Wuninitialized]
-  ptrflag.pointer = ptr;
-                    ^~~
-example1.c:16:12: note: initialize the variable 'ptr' to silence this warning
-  char *ptr;
-           ^
-            = 0
-example1.c:22:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main(void) {
-^
-example1.c:22:1: note: change return type to 'int'
-void main(void) {
-^~~~
-int
-4 warnings generated.
+2 errors generated.
 ```
 ### UBSan
 ```

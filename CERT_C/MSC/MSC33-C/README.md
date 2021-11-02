@@ -2,8 +2,7 @@
 ## example_compliant
 ### Test
 ```
-Time: Sat Mar 25 06:42:99 1989
-```
+Time: Sat Mar 25 06:42:99 1989```
 ### gcc
 ```
 example_compliant.c: In function ‘func’:
@@ -13,15 +12,10 @@ example_compliant.c:11:10: warning: unused variable ‘size’ [-Wunused-variabl
 ```
 ### clang
 ```
-example_compliant.c:11:10: warning: unused variable 'size' [-Wunused-variable]
-  size_t size = strftime(s, maxsize, format, time); // This is an UB too actually...
-         ^
-1 warning generated.
 ```
 ### UBSan
 ```
-Time: Sat Mar 25 06:42:99 1989
-```
+Time: Sat Mar 25 06:42:99 1989```
 ### Valgrind
 ```
 ==12345== Memcheck, a memory error detector
@@ -86,10 +80,6 @@ example.c:18:10: warning: unused variable ‘size’ [-Wunused-variable]
 ```
 ### clang
 ```
-example.c:18:10: warning: unused variable 'size' [-Wunused-variable]
-  size_t size = strftime(s, maxsize, format, time); // This is an UB too actually...
-         ^
-1 warning generated.
 ```
 ### UBSan
 ```

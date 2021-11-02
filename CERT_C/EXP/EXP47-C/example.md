@@ -13,10 +13,6 @@ example.c: In function ‘func_compliant’:
 example.c:23:19: warning: unused variable ‘c’ [-Wunused-variable]
      unsigned char c = (unsigned char) va_arg(ap, int);
                    ^
-example.c: At top level:
-example.c:34:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
- void main(void) {
-      ^~~~
 In file included from example.c:1:0:
 example.c: In function ‘func_noncompliant’:
 example.c:8:34: warning: ‘unsigned char’ is promoted to ‘int’ when passed through ‘...’
@@ -27,26 +23,13 @@ example.c:8:34: note: if this code is reached, the program will abort
 ```
 ### clang
 ```
-example.c:8:19: warning: unused variable 'c' [-Wunused-variable]
-    unsigned char c = va_arg(ap, unsigned char);
-                  ^
-example.c:8:34: warning: second argument to 'va_arg' is of promotable type 'unsigned char'; this va_arg has undefined behavior because arguments will be promoted to 'int' [-Wvarargs]
+example.c:8:34: error: second argument to 'va_arg' is of promotable type 'unsigned char'; this va_arg has undefined behavior because arguments will be promoted to 'int' [-Werror,-Wvarargs]
     unsigned char c = va_arg(ap, unsigned char);
                                  ^~~~~~~~~~~~~
 /home/qba/tis/deps/llvm/12.0.0/build/lib/clang/12.0.0/include/stdarg.h:19:50: note: expanded from macro 'va_arg'
 #define va_arg(ap, type)    __builtin_va_arg(ap, type)
                                                  ^~~~
-example.c:23:19: warning: unused variable 'c' [-Wunused-variable]
-    unsigned char c = (unsigned char) va_arg(ap, int);
-                  ^
-example.c:34:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main(void) {
-^
-example.c:34:1: note: change return type to 'int'
-void main(void) {
-^~~~
-int
-4 warnings generated.
+1 error generated.
 ```
 ### UBSan
 ```

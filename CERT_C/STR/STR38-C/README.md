@@ -13,27 +13,16 @@ In file included from strlen.c:2:0:
 /usr/include/string.h:384:15: note: expected ‘const char *’ but argument is of type ‘wchar_t * {aka int *}’
  extern size_t strlen (const char *__s)
                ^~~~~~
-strlen.c: At top level:
-strlen.c:33:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
- void main(void) {
-      ^~~~
 ```
 ### clang
 ```
-strlen.c:7:48: warning: incompatible pointer types passing 'wchar_t [11]' to parameter of type 'const char *' [-Wincompatible-pointer-types]
+strlen.c:7:48: error: incompatible pointer types passing 'wchar_t [11]' to parameter of type 'const char *' [-Werror,-Wincompatible-pointer-types]
   wchar_t *wide_str2 = (wchar_t*)malloc(strlen(wide_str1) + 1);
                                                ^~~~~~~~~
 /usr/include/string.h:384:35: note: passing argument to parameter '__s' here
 extern size_t strlen (const char *__s)
                                   ^
-strlen.c:33:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main(void) {
-^
-strlen.c:33:1: note: change return type to 'int'
-void main(void) {
-^~~~
-int
-2 warnings generated.
+1 error generated.
 ```
 ### UBSan
 ```

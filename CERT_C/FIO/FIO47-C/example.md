@@ -14,29 +14,18 @@ example.c:7:29: warning: format ‘%d’ expects argument of type ‘int’, but
    printf("Error (type %s): %d\n", error_type, error_msg);
                             ~^
                             %s
-example.c: At top level:
-example.c:20:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
- void main(void) {
-      ^~~~
 ```
 ### clang
 ```
-example.c:7:35: warning: format specifies type 'char *' but the argument has type 'int' [-Wformat]
+example.c:7:35: error: format specifies type 'char *' but the argument has type 'int' [-Werror,-Wformat]
   printf("Error (type %s): %d\n", error_type, error_msg);
                       ~~          ^~~~~~~~~~
                       %d
-example.c:7:47: warning: format specifies type 'int' but the argument has type 'const char *' [-Wformat]
+example.c:7:47: error: format specifies type 'int' but the argument has type 'const char *' [-Werror,-Wformat]
   printf("Error (type %s): %d\n", error_type, error_msg);
                            ~~                 ^~~~~~~~~
                            %s
-example.c:20:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main(void) {
-^
-example.c:20:1: note: change return type to 'int'
-void main(void) {
-^~~~
-int
-3 warnings generated.
+2 errors generated.
 ```
 ### UBSan
 ```

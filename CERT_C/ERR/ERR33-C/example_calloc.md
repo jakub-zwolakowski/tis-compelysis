@@ -4,20 +4,9 @@
 ```
 ### gcc
 ```
-example_calloc.c:60:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
- void main(void) {
-      ^~~~
 ```
 ### clang
 ```
-example_calloc.c:60:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main(void) {
-^
-example_calloc.c:60:1: note: change return type to 'int'
-void main(void) {
-^~~~
-int
-1 warning generated.
 ```
 ### UBSan
 ```

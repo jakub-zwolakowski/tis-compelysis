@@ -5,9 +5,6 @@
 ```
 ### gcc
 ```
-example.c:26:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
- void main(void) {
-      ^~~~
 example.c: In function ‘main’:
 example.c:29:8: warning: variable ‘are_equal’ set but not used [-Wunused-but-set-variable]
    bool are_equal;
@@ -15,14 +12,6 @@ example.c:29:8: warning: variable ‘are_equal’ set but not used [-Wunused-but
 ```
 ### clang
 ```
-example.c:26:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main(void) {
-^
-example.c:26:1: note: change return type to 'int'
-void main(void) {
-^~~~
-int
-1 warning generated.
 ```
 ### UBSan
 ```

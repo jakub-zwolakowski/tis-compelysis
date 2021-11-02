@@ -30,11 +30,11 @@ example_noncompliant.c:4:7: warning: unused variable ‘Ё’ [-Wunused-variable
 ```
 ### clang
 ```
-example_noncompliant.c:6:10: warning: incomplete universal character name; treating as '\' followed by identifier [-Wunicode]
+example_noncompliant.c:6:10: error: incomplete universal character name; treating as '\' followed by identifier [-Werror,-Wunicode]
   assign(\u04, 01, 4);
          ^
 example_noncompliant.c:6:10: error: expected expression
-1 warning and 1 error generated.
+2 errors generated.
 ```
 ### UBSan
 ```

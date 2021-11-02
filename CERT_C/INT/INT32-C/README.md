@@ -13,24 +13,9 @@ Addition.c: In function ‘f_compliant’:
 Addition.c:9:14: warning: variable ‘sum’ set but not used [-Wunused-but-set-variable]
    signed int sum;
               ^~~
-Addition.c: At top level:
-Addition.c:19:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
- void main(void) {
-      ^~~~
 ```
 ### clang
 ```
-Addition.c:4:14: warning: unused variable 'sum' [-Wunused-variable]
-  signed int sum = si_a + si_b;
-             ^
-Addition.c:19:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main(void) {
-^
-Addition.c:19:1: note: change return type to 'int'
-void main(void) {
-^~~~
-int
-2 warnings generated.
 ```
 ### UBSan
 ```

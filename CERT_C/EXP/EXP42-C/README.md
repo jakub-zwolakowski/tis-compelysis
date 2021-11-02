@@ -5,9 +5,6 @@
 ```
 ### gcc
 ```
-example.c:25:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
- void main(void) {
-      ^~~~
 example.c: In function ‘main’:
 example.c:27:7: warning: unused variable ‘res’ [-Wunused-variable]
    int res = 13;
@@ -15,17 +12,6 @@ example.c:27:7: warning: unused variable ‘res’ [-Wunused-variable]
 ```
 ### clang
 ```
-example.c:25:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main(void) {
-^
-example.c:25:1: note: change return type to 'int'
-void main(void) {
-^~~~
-int
-example.c:27:7: warning: unused variable 'res' [-Wunused-variable]
-  int res = 13;
-      ^
-2 warnings generated.
 ```
 ### UBSan
 ```

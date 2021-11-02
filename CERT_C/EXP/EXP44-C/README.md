@@ -7,23 +7,13 @@
 ```
 ### gcc
 ```
-example_sizeof.c:16:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
- void main(void) {
-      ^~~~
 ```
 ### clang
 ```
-example_sizeof.c:5:17: warning: expression with side effects has no effect in an unevaluated context [-Wunevaluated-expression]
+example_sizeof.c:5:17: error: expression with side effects has no effect in an unevaluated context [-Werror,-Wunevaluated-expression]
   int b = sizeof(a++);
                 ^
-example_sizeof.c:16:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main(void) {
-^
-example_sizeof.c:16:1: note: change return type to 'int'
-void main(void) {
-^~~~
-int
-2 warnings generated.
+1 error generated.
 ```
 ### UBSan
 ```

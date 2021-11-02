@@ -3,7 +3,7 @@
 ### Test
 ```
 At the beginning I was here
-
+°ì%æÿ
 ```
 ### gcc
 ```
@@ -11,24 +11,9 @@ Storage_Durations.c: In function â€˜this_is_OKâ€™:
 Storage_Durations.c:12:15: warning: unused variable â€˜pâ€™ [-Wunused-variable]
    const char *p = c_str;
                ^
-Storage_Durations.c: At top level:
-Storage_Durations.c:20:6: warning: return type of â€˜mainâ€™ is not â€˜intâ€™ [-Wmain]
- void main(void) {
-      ^~~~
 ```
 ### clang
 ```
-Storage_Durations.c:12:15: warning: unused variable 'p' [-Wunused-variable]
-  const char *p = c_str;
-              ^
-Storage_Durations.c:20:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main(void) {
-^
-Storage_Durations.c:20:1: note: change return type to 'int'
-void main(void) {
-^~~~
-int
-2 warnings generated.
 ```
 ### UBSan
 ```
@@ -43,7 +28,7 @@ This will change
 ==12345== Command: ./Storage_Durations.out
 ==12345== 
 At the beginning I was here
-ùÿþ
+ ùÿþ
 ==12345== 
 ==12345== HEAP SUMMARY:
 ==12345==     in use at exit: 0 bytes in 0 blocks

@@ -6,20 +6,9 @@ Segmentation fault (core dumped)
 ```
 ### gcc
 ```
-example_strchr.c:22:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
- void main(void) {
-      ^~~~
 ```
 ### clang
 ```
-example_strchr.c:22:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main(void) {
-^
-example_strchr.c:22:1: note: change return type to 'int'
-void main(void) {
-^~~~
-int
-1 warning generated.
 ```
 ### UBSan
 ```

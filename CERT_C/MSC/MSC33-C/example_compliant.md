@@ -11,10 +11,6 @@ example_compliant.c:11:10: warning: unused variable ‘size’ [-Wunused-variabl
 ```
 ### clang
 ```
-example_compliant.c:11:10: warning: unused variable 'size' [-Wunused-variable]
-  size_t size = strftime(s, maxsize, format, time); // This is an UB too actually...
-         ^
-1 warning generated.
 ```
 ### UBSan
 ```

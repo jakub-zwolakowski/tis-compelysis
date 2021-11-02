@@ -14,21 +14,9 @@ Division.c: In function ‘f_compliant’:
 Division.c:14:15: warning: variable ‘result’ set but not used [-Wunused-but-set-variable]
    signed long result;
                ^~~~~~
-Division.c: At top level:
-Division.c:23:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
- void main(void) {
-      ^~~~
 ```
 ### clang
 ```
-Division.c:23:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main(void) {
-^
-Division.c:23:1: note: change return type to 'int'
-void main(void) {
-^~~~
-int
-1 warning generated.
 ```
 ### UBSan
 ```
