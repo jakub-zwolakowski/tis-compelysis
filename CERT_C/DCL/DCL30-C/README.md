@@ -3,7 +3,7 @@
 ### Test
 ```
 At the beginning I was here
-Àƒª¹ý
+ ˜mPü
 ```
 ### gcc
 ```
@@ -24,7 +24,7 @@ This will change
 ==12345== Command: ./Storage_Durations.out
 ==12345== 
 At the beginning I was here
- ùÿþ
+0ùÿþ
 ==12345== 
 ==12345== HEAP SUMMARY:
 ==12345==     in use at exit: 0 bytes in 0 blocks

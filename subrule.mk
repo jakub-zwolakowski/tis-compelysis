@@ -55,7 +55,7 @@ clang_results = $(patsubst %.out, %.clang-result, $(executables))
 	@echo ""
 	@echo "--- clang '$<' ---"
 	@echo ""
-	-clang -Werror -pedantic -pedantic-errors -g -O0 -I. $< $(other_C_files) -lm -lpthread > $@ 2>&1
+	-clang -Werror -pedantic -pedantic-errors -Wno-implicit-const-int-float-conversion -g -O0 -I. $< $(other_C_files) -lm -lpthread > $@ 2>&1
 
 clang: $(clang_results)
 

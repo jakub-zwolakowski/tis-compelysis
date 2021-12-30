@@ -7,22 +7,6 @@
 ```
 ### clang
 ```
-example_custom.c:7:13: error: implicit conversion from 'long' to 'float' changes value from -21474836490 to -21474836480 [-Werror,-Wimplicit-const-int-float-conversion]
-  float g = -21474836490;
-        ~   ^~~~~~~~~~~~
-example_custom.c:14:11: error: implicit conversion from 'int' to 'float' changes value from 2147483647 to 2147483648 [-Werror,-Wimplicit-const-int-float-conversion]
-  if (f < INT_MAX)
-        ~ ^~~~~~~
-/home/qba/tis/deps/llvm/12.0.0/build/lib/clang/12.0.0/include/limits.h:46:19: note: expanded from macro 'INT_MAX'
-#define INT_MAX   __INT_MAX__
-                  ^~~~~~~~~~~
-<built-in>:36:21: note: expanded from here
-#define __INT_MAX__ 2147483647
-                    ^~~~~~~~~~
-example_custom.c:16:13: error: implicit conversion from 'long' to 'float' changes value from -21474836490 to -21474836480 [-Werror,-Wimplicit-const-int-float-conversion]
-  float g = -21474836490;
-        ~   ^~~~~~~~~~~~
-3 errors generated.
 ```
 ### UBSan
 ```

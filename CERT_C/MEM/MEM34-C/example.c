@@ -53,7 +53,7 @@ int f_compliant(int argc, const char *argv[]) {
 }
 
 int main(void) {
-  char *argv[2];
+  const char *argv[2];
   argv[0] = "Foo";
   argv[1] = "Bar";
   f_compliant(2, argv);

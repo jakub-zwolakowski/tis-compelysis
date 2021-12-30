@@ -13,7 +13,7 @@ abc
 ### UBSan
 ```
 abc
-abcP<Wòÿ
+abcðñ1Gý
 ```
 ### Valgrind
 ```
