@@ -43,6 +43,6 @@ int main(void) {
 }
 
 // NOT DETECTED
-// CMD: tis-analyzer --interpreter example_noncompliant.c
+// CMD: tis-analyzer --interpreter example_compliant.c
 // C17: ?
 // UB: ?
