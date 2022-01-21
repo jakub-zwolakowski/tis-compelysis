@@ -17,6 +17,6 @@ int main(void) {
 }
 
 // NOT DETECTED
-// CMD: tis-analyzer --interpreter example_compliant.c 
+// CMD: tis-analyzer --interpreter example_nonportable_compliant.c 
 // C17: ?
 // UB: ?
