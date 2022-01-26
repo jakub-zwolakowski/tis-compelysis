@@ -13,9 +13,11 @@ void func(void) {
       strcpy(tmpvar, temp);
     } else {
       /* Handle error */
+      return;
     }
   } else {
     /* Handle error */
+    return;
   }
  
   temp = getenv("TEMP");
@@ -25,9 +27,11 @@ void func(void) {
       strcpy(tempvar, temp);
     } else {
       /* Handle error */
+      return;
     }
   } else {
     /* Handle error */
+    return;
   }
  
   if (strcmp(tmpvar, tempvar) == 0) {
