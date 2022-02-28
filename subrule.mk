@@ -28,7 +28,7 @@ test_results = $(patsubst %.out, %.test-result, $(executables))
 	@echo ""
 	@echo "--- Running test '$<' ---"
 	@echo ""
-	-./$< > $@ 2>&1
+	-timeout 5 ./$< > $@ 2>&1
 	@# -echo "DUMMY" > $@ 2>&1 # For FLP30
 
 test: $(test_results)
@@ -71,7 +71,7 @@ UBSan_results = $(patsubst %.UBSan-out, %.UBSan-run, $(UBSan_executables))
 	@echo ""
 	@echo "--- UBSan on '$<' ---"
 	@echo ""
-	-./$< > $@ 2>&1
+	-timeout 5 ./$< > $@ 2>&1
 	@# -echo "DUMMY" > $@ 2>&1 # For FLP30
 
 ubsan: $(UBSan_results)
@@ -84,7 +84,7 @@ valgrind_results = $(patsubst %.out, %.valgrind-run, $(executables))
 	@echo ""
 	@echo "--- Valgrind on '$<' ---"
 	@echo ""
-	-valgrind --leak-check=yes ./$< > $@ 2>&1
+	-timeout 5 valgrind --leak-check=yes ./$< > $@ 2>&1
 	@# -echo "DUMMY" > $@ 2>&1 # For FLP30
 
 valgrind: $(valgrind_results)
