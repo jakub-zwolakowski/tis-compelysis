@@ -5,25 +5,9 @@
 ```
 ### gcc
 ```
-example_compliant.c: In function ‘main’:
-example_compliant.c:85:40: error: ISO C forbids conversion of function pointer to object pointer type [-Wpedantic]
-   if (pthread_create(&thread[1], NULL, (void *)& thread_bar, NULL) != 0) {
-                                        ^
-example_compliant.c:85:40: error: ISO C forbids passing argument 3 of ‘pthread_create’ between function pointer and ‘void *’ [-Wpedantic]
-In file included from example_compliant.c:1:0:
-/usr/include/pthread.h:234:12: note: expected ‘void * (*)(void *)’ but argument is of type ‘void *’
- extern int pthread_create (pthread_t *__restrict __newthread,
-            ^~~~~~~~~~~~~~
 ```
 ### clang
 ```
-example_compliant.c:85:40: error: passing 'void *' to parameter of type 'void *(*)(void *)' converts between void pointer and function pointer [-Werror,-Wpedantic]
-  if (pthread_create(&thread[1], NULL, (void *)& thread_bar, NULL) != 0) {
-                                       ^~~~~~~~~~~~~~~~~~~~
-/usr/include/pthread.h:236:15: note: passing argument to parameter '__start_routine' here
-                           void *(*__start_routine) (void *),
-                                   ^
-1 error generated.
 ```
 ### UBSan
 ```
@@ -51,39 +35,9 @@ example_compliant.c:85:40: error: passing 'void *' to parameter of type 'void *(
 ```
 ### gcc
 ```
-example_noncompliant.c: In function ‘main’:
-example_noncompliant.c:81:39: error: ISO C forbids conversion of function pointer to object pointer type [-Wpedantic]
-   if (pthread_create(&thread[0], NULL,(void *)& thread_foo, NULL) != 0) {
-                                       ^
-example_noncompliant.c:81:39: error: ISO C forbids passing argument 3 of ‘pthread_create’ between function pointer and ‘void *’ [-Wpedantic]
-In file included from example_noncompliant.c:1:0:
-/usr/include/pthread.h:234:12: note: expected ‘void * (*)(void *)’ but argument is of type ‘void *’
- extern int pthread_create (pthread_t *__restrict __newthread,
-            ^~~~~~~~~~~~~~
-example_noncompliant.c:85:39: error: ISO C forbids conversion of function pointer to object pointer type [-Wpedantic]
-   if (pthread_create(&thread[1], NULL,(void *)& thread_bar, NULL) != 0) {
-                                       ^
-example_noncompliant.c:85:39: error: ISO C forbids passing argument 3 of ‘pthread_create’ between function pointer and ‘void *’ [-Wpedantic]
-In file included from example_noncompliant.c:1:0:
-/usr/include/pthread.h:234:12: note: expected ‘void * (*)(void *)’ but argument is of type ‘void *’
- extern int pthread_create (pthread_t *__restrict __newthread,
-            ^~~~~~~~~~~~~~
 ```
 ### clang
 ```
-example_noncompliant.c:81:39: error: passing 'void *' to parameter of type 'void *(*)(void *)' converts between void pointer and function pointer [-Werror,-Wpedantic]
-  if (pthread_create(&thread[0], NULL,(void *)& thread_foo, NULL) != 0) {
-                                      ^~~~~~~~~~~~~~~~~~~~
-/usr/include/pthread.h:236:15: note: passing argument to parameter '__start_routine' here
-                           void *(*__start_routine) (void *),
-                                   ^
-example_noncompliant.c:85:39: error: passing 'void *' to parameter of type 'void *(*)(void *)' converts between void pointer and function pointer [-Werror,-Wpedantic]
-  if (pthread_create(&thread[1], NULL,(void *)& thread_bar, NULL) != 0) {
-                                      ^~~~~~~~~~~~~~~~~~~~
-/usr/include/pthread.h:236:15: note: passing argument to parameter '__start_routine' here
-                           void *(*__start_routine) (void *),
-                                   ^
-2 errors generated.
 ```
 ### UBSan
 ```
