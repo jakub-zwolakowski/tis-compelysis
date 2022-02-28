@@ -49,7 +49,7 @@ POS47-C : DONE -- Problem - deadlock!
 POS48-C : DONE - same as CON31-C
 POS49-C : DONE - same as CON32-C
 POS50-C : DONE -- DETECTED! - same as CON34-C
-POS51-C : _TODO_
+POS51-C : DONE - same as CON35-C
 POS52-C : _TODO_
 POS53-C : _TODO_
 POS54-C : _TODO_
