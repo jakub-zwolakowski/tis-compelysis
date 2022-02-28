@@ -1,9 +1,14 @@
 #include <stdio.h>
 
 void f_noncompliant(void) {
+  float old_x = -1;
   for (float x = 100000001.0f; x <= 100000010.0f; x += 1.0f) {
-    printf("f_noncompliant, x = %f\n", x);
     /* Loop may not terminate */
+    if (x != old_x) {
+      /* This conditional was added in order to avoid creating enormous output files. */
+      printf("f_noncompliant, x = %f\n", x);
+      old_x = x;
+    }
   }
 }
 

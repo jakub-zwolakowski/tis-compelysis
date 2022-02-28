@@ -2,46 +2,15 @@
 ## example1
 ### Test
 ```
-f_compliant, x = 100000000.000000
-f_compliant, x = 100000000.000000
-f_compliant, x = 100000000.000000
-f_compliant, x = 100000000.000000
-f_compliant, x = 100000008.000000
-f_compliant, x = 100000008.000000
-f_compliant, x = 100000008.000000
-f_compliant, x = 100000008.000000
-f_compliant, x = 100000008.000000
-f_compliant, x = 100000008.000000
 ```
 ### gcc
 ```
-example1.c:18:6: warning: return type of ‘main’ is not ‘int’ [-Wmain]
- void main(void) {
-      ^~~~
 ```
 ### clang
 ```
-example1.c:18:1: warning: return type of 'main' is not 'int' [-Wmain-return-type]
-void main(void) {
-^
-example1.c:18:1: note: change return type to 'int'
-void main(void) {
-^~~~
-int
-1 warning generated.
 ```
 ### UBSan
 ```
-f_compliant, x = 100000000.000000
-f_compliant, x = 100000000.000000
-f_compliant, x = 100000000.000000
-f_compliant, x = 100000000.000000
-f_compliant, x = 100000008.000000
-f_compliant, x = 100000008.000000
-f_compliant, x = 100000008.000000
-f_compliant, x = 100000008.000000
-f_compliant, x = 100000008.000000
-f_compliant, x = 100000008.000000
 ```
 ### Valgrind
 ```
@@ -50,6 +19,10 @@ f_compliant, x = 100000008.000000
 ==12345== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
 ==12345== Command: ./example1.out
 ==12345== 
+==12345== 
+==12345== Process terminating with default action of signal 15 (SIGTERM)
+==12345==    at 0x424242424242: f_noncompliant (example1.c:7)
+==12345==    by 0x424242424242: main (example1.c:25)
 f_compliant, x = 100000000.000000
 f_compliant, x = 100000000.000000
 f_compliant, x = 100000000.000000
@@ -60,10 +33,11 @@ f_compliant, x = 100000008.000000
 f_compliant, x = 100000008.000000
 f_compliant, x = 100000008.000000
 f_compliant, x = 100000008.000000
+f_noncompliant, x = 100000000.000000
 ==12345== 
 ==12345== HEAP SUMMARY:
 ==12345==     in use at exit: 0 bytes in 0 blocks
-==12345==   total heap usage: 1 allocs, 1 frees, 4,096 bytes allocated
+==12345==   total heap usage: 1 allocs, 1 frees, 123,456 bytes allocated
 ==12345== 
 ==12345== All heap blocks were freed -- no leaks are possible
 ==12345== 
