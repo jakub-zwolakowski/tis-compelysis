@@ -28,7 +28,7 @@ test_results = $(patsubst %.out, %.test-result, $(executables))
 	@echo ""
 	@echo "--- Running test '$<' ---"
 	@echo ""
-	-timeout 5 ./$< > $@ 2>&1
+	-timeout 42 ./$< > $@ 2>&1
 
 test: $(test_results)
 
@@ -70,7 +70,7 @@ UBSan_results = $(patsubst %.UBSan-out, %.UBSan-run, $(UBSan_executables))
 	@echo ""
 	@echo "--- UBSan on '$<' ---"
 	@echo ""
-	-timeout 5 ./$< > $@ 2>&1
+	-timeout 42 ./$< > $@ 2>&1
 
 ubsan: $(UBSan_results)
 
@@ -82,7 +82,7 @@ valgrind_results = $(patsubst %.out, %.valgrind-run, $(executables))
 	@echo ""
 	@echo "--- Valgrind on '$<' ---"
 	@echo ""
-	-timeout 5 valgrind --leak-check=yes ./$< > $@ 2>&1
+	-timeout 42 valgrind --leak-check=yes ./$< > $@ 2>&1
 
 valgrind: $(valgrind_results)
 
