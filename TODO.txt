@@ -43,12 +43,12 @@ POS35-C : DONE
 POS36-C : DONE
 POS37-C : DONE
 POS38-C : DONE -- fork not implemented
-POS39-C : _TODO_
-POS44-C : _TODO_
-POS47-C : _TODO_
-POS48-C : _TODO_
-POS49-C : _TODO_
-POS50-C : _TODO_
+POS39-C : _TODO_ -- CANNOT DO IT (socket)...
+POS44-C : DONE
+POS47-C : DONE -- Problem - deadlock!
+POS48-C : DONE - same as CON31-C
+POS49-C : DONE - same as CON32-C
+POS50-C : DONE -- DETECTED! - same as CON34-C
 POS51-C : _TODO_
 POS52-C : _TODO_
 POS53-C : _TODO_
