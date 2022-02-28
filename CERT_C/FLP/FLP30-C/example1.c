@@ -7,6 +7,7 @@ void f_noncompliant(void) {
     if (x != old_x) {
       /* This conditional was added in order to avoid creating enormous output files. */
       printf("f_noncompliant, x = %f\n", x);
+      fflush(stdout);
       old_x = x;
     }
   }
