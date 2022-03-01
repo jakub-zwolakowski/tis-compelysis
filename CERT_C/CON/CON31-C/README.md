@@ -2,13 +2,11 @@
 ## example_compliant
 ### Test
 ```
-compliant beginning
 compliant 1
 compliant 2
 compliant 3
 compliant 4
 compliant 5
-compliant end
 ```
 ### gcc
 ```
@@ -18,13 +16,11 @@ compliant end
 ```
 ### UBSan
 ```
-compliant beginning
 compliant 1
 compliant 2
 compliant 3
 compliant 4
 compliant 5
-compliant end
 ```
 ### Valgrind
 ```
@@ -33,13 +29,11 @@ compliant end
 ==12345== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
 ==12345== Command: ./example_compliant.out
 ==12345== 
-compliant beginning
 compliant 1
 compliant 2
 compliant 3
 compliant 4
 compliant 5
-compliant end
 ==12345== 
 ==12345== HEAP SUMMARY:
 ==12345==     in use at exit: 0 bytes in 0 blocks
@@ -53,13 +47,11 @@ compliant end
 ## example_noncompliant
 ### Test
 ```
-noncompliant beginning
 noncompliant X, Creation|Worker|Destruction X
 noncompliant X, Creation|Worker|Destruction X
 noncompliant X, Creation|Worker|Destruction X
 noncompliant X, Creation|Worker|Destruction X
 noncompliant X, Creation|Worker|Destruction X
-noncompliant end
 ```
 ### gcc
 ```
@@ -69,13 +61,11 @@ noncompliant end
 ```
 ### UBSan
 ```
-noncompliant beginning
 noncompliant X, Creation|Worker|Destruction X
 noncompliant X, Creation|Worker|Destruction X
 noncompliant X, Creation|Worker|Destruction X
 noncompliant X, Creation|Worker|Destruction X
 noncompliant X, Creation|Worker|Destruction X
-noncompliant end
 ```
 ### Valgrind
 ```
@@ -84,13 +74,11 @@ noncompliant end
 ==12345== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
 ==12345== Command: ./example_noncompliant.out
 ==12345== 
-noncompliant beginning
 noncompliant X, Creation|Worker|Destruction X
 noncompliant X, Creation|Worker|Destruction X
 noncompliant X, Creation|Worker|Destruction X
 noncompliant X, Creation|Worker|Destruction X
 noncompliant X, Creation|Worker|Destruction X
-noncompliant end
 ==12345== 
 ==12345== HEAP SUMMARY:
 ==12345==     in use at exit: 0 bytes in 0 blocks

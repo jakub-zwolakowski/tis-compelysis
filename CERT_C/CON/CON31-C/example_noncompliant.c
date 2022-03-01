@@ -1,73 +1,73 @@
 #include <stdatomic.h>
 #include <stddef.h>
-#include <pthread.h>
 #include <stdio.h>
-  
-pthread_mutex_t lock;
+
+#ifdef C11_THREADS
+#include <thread.h>
+#else
+#include "../c11threads.h"
+#endif
+
+mtx_t lock;
 /* Atomic so multiple threads can modify safely */
 atomic_int completed = ATOMIC_VAR_INIT(0);
 enum { max_threads = 5 };
 
-void *do_work(void *arg) {
+int do_work(void *arg) {
   int *i = (int *)arg;
  
   if (*i == 0) { /* Creation thread */
-    if (0 != pthread_mutex_init(&lock, NULL)) {
+    if (thrd_success != mtx_init(&lock, mtx_plain)) {
       /* Handle error */
-      return NULL;
+      return thrd_error;
     }
     atomic_store(&completed, 1);
   #ifndef __TRUSTINSOFT_ANALYZER__
     printf("noncompliant %d, Creation %d\n", *i, completed);
   #endif
   } else if (*i < max_threads - 1) { /* Worker thread */
-    if (0 != pthread_mutex_lock(&lock)) {
+    if (thrd_success != mtx_lock(&lock)) {
       /* Handle error */
-      return NULL;
+      return thrd_error;
     }
     /* Access data protected by the lock */
     atomic_fetch_add(&completed, 1);
   #ifndef __TRUSTINSOFT_ANALYZER__
     printf("noncompliant %d, Worker %d\n", *i, completed);
   #endif
-    if (0 != pthread_mutex_unlock(&lock)) {
+    if (thrd_success != mtx_unlock(&lock)) {
       /* Handle error */
-      return NULL;
+      return thrd_error;
     }
   } else { /* Destruction thread */
-    pthread_mutex_destroy(&lock);
+    mtx_destroy(&lock);
   #ifndef __TRUSTINSOFT_ANALYZER__
     printf("noncompliant %d, Destruction %d\n", *i, completed);
   #endif
   }
-  return NULL;
+  return 0;
 }
-  
-int main(void) {
-  pthread_t threads[max_threads];
 
-#ifndef __TRUSTINSOFT_ANALYZER__
-  printf("noncompliant beginning\n");
-#endif
+int main(void) {
+  thrd_t threads[max_threads];
+
   for (size_t i = 0; i < max_threads; i++) {
-    if (0 != pthread_create(&threads[i], NULL, do_work, &i)) {
+    if (thrd_success != thrd_create(&threads[i], do_work, &i)) {
       /* Handle error */
-      return 0;
+      return 1;
     }
   }
   for (size_t i = 0; i < max_threads; i++) {
-    if (0 != pthread_join(threads[i], 0)) {
+    if (thrd_success != thrd_join(threads[i], 0)) {
       /* Handle error */
-      return 0;
+      return 2;
     }
   }
-#ifndef __TRUSTINSOFT_ANALYZER__
-  printf("noncompliant end\n");
-#endif
+
   return 0;
 }
 
 // NOT DETECTED
 // Does not match creating and joining a thread.
-// CMD: tis-analyzer -val -slevel 1000 -mthread -mt-write-races test_CON31-C_noncompliant.c
+// CMD: tis-analyzer -val -slevel 1000 -mthread -mt-write-races -val-continue-on-pointer-library-function example_noncompliant.c
 // COMPILE: gcc -lpthread

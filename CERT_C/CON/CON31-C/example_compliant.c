@@ -1,64 +1,61 @@
 #include <stdatomic.h>
 #include <stddef.h>
-#include <pthread.h>
 #include <stdio.h>
 
-pthread_mutex_t lock;
+#ifdef C11_THREADS
+#include <thread.h>
+#else
+#include "../c11threads.h"
+#endif
+
+mtx_t lock;
 /* Atomic so multiple threads can increment safely */
 atomic_int completed = ATOMIC_VAR_INIT(0);
 enum { max_threads = 5 };
 
-void *do_work(void *dummy) {
-  /* Lock */
-  if (0 != pthread_mutex_lock(&lock)) {
+int do_work(void *dummy) {
+  if (thrd_success != mtx_lock(&lock)) {
     /* Handle error */
-    return NULL;
+    return thrd_error;
   }
   /* Access data protected by the lock */
   atomic_fetch_add(&completed, 1);
 #ifndef __TRUSTINSOFT_ANALYZER__
   printf("compliant %d\n", completed);
 #endif
-  /* Unlock */
-  if (0 != pthread_mutex_unlock(&lock)) {
+  if (thrd_success != mtx_unlock(&lock)) {
     /* Handle error */
-    return NULL;
+    return thrd_error;
   }
  
-  return NULL;
+  return 0;
 }
 
 int main(void) {
-  pthread_t threads[max_threads];
- 
-#ifndef __TRUSTINSOFT_ANALYZER__
-  printf("compliant beginning\n");
-#endif
-  if (0 != pthread_mutex_init(&lock, NULL)) {
+  thrd_t threads[max_threads];
+   
+  if (thrd_success != mtx_init(&lock, mtx_plain)) {
     /* Handle error */
-    return 0;
+    return 1;
   }
   for (size_t i = 0; i < max_threads; i++) {
-    if (0 != pthread_create(&threads[i], NULL, do_work, NULL)) {
+    if (thrd_success != thrd_create(&threads[i], do_work, NULL)) {
       /* Handle error */
-      return 0;
+      return 2;
     }
   }
   for (size_t i = 0; i < max_threads; i++) {
-    if (0 != pthread_join(threads[i], 0)) {
+    if (thrd_success != thrd_join(threads[i], 0)) {
       /* Handle error */
-      return 0;
+      return 3;
     }
   }
  
-  pthread_mutex_destroy(&lock);
-#ifndef __TRUSTINSOFT_ANALYZER__
-  printf("compliant end\n");
-#endif
+  mtx_destroy(&lock);
   return 0;
 }
 
 // NOT DETECTED
 // Does not match creating and joining a thread.
-// CMD: tis-analyzer -val -slevel 1000 -mthread -mt-write-races test_CON31-C_compliant.c
+// CMD: tis-analyzer -val -slevel 1000 -mthread -mt-write-races -val-continue-on-pointer-library-function example_compliant.c
 // COMPILE: gcc -lpthread
