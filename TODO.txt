@@ -43,9 +43,9 @@ POS35-C : DONE
 POS36-C : DONE
 POS37-C : DONE
 POS38-C : DONE -- fork not implemented
-POS39-C : _TODO_ -- CANNOT DO IT (socket)...
+POS39-C : DONE -- BUG "[mt] failure: In compute_for_funspec with kf = ntohl"
 POS44-C : DONE
-POS47-C : DONE -- Problem - deadlock!
+POS47-C : DONE
 POS48-C : DONE - same as CON31-C
 POS49-C : DONE - same as CON32-C
 POS50-C : DONE -- DETECTED! - same as CON34-C
@@ -54,4 +54,4 @@ POS52-C : DONE
 POS53-C : DONE
 POS54-C : DONE -- fmemopen and open_memstream not implemented
 
-WIN30-C : _TODO_
+WIN30-C : NOPE
