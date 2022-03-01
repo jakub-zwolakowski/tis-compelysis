@@ -51,7 +51,7 @@ POS49-C : DONE - same as CON32-C
 POS50-C : DONE -- DETECTED! - same as CON34-C
 POS51-C : DONE - same as CON35-C
 POS52-C : DONE
-POS53-C : _TODO_
-POS54-C : _TODO_
+POS53-C : DONE
+POS54-C : DONE -- fmemopen and open_memstream not implemented
 
 WIN30-C : _TODO_
