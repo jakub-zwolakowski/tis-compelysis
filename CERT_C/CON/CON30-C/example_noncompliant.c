@@ -1,10 +1,14 @@
-#include "../c11threads.h"
 #include <stdlib.h>
+#include <stdio.h>
+
 #ifdef __TRUSTINSOFT_ANALYZER__
-#include "../c11threads.h"
 #include "tis_builtin.h"
-#else
+#endif
+
+#ifdef C11_THREADS
 #include <thread.h>
+#else
+#include "../c11threads.h"
 #endif
  
 /* Global key to the thread-specific storage */
@@ -40,6 +44,9 @@ void print_data(void) {
  
   if (data != NULL) {
     /* Print data */
+  #ifndef __TRUSTINSOFT_TMPBUG__
+    printf("Data = %d\n", *data);
+  #endif
   }
 }
  
