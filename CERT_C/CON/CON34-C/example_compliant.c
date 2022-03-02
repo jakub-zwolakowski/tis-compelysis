@@ -22,6 +22,7 @@ void create_thread(thrd_t *tid, int *value) {
   if (thrd_success != thrd_create(tid, child_thread,
                                   value)) {
     /* Handle error */
+    return;
   }
 }
   
