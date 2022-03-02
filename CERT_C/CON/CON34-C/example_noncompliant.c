@@ -1,37 +1,43 @@
-#include <pthread.h>
 #include <stdio.h>
 
-void *child_thread(void *val) {
+#ifdef C11_THREADS
+#include <thread.h>
+#else
+#include "../c11threads.h"
+#endif
+
+int child_thread(void *val) {
   int *res = (int *)val;
 #ifndef __TRUSTINSOFT_ANALYZER__
+  /* Bug (probably) in mthread - backtrace if printf is used here. */
   printf("Result: %d\n", *res);
 #else
   *res + 0;
 #endif
-  return NULL;
+  return 0;
 }
 
-void create_thread(pthread_t *tid) {
+void create_thread(thrd_t *tid) {
   int val = 1;
-  if (0 != pthread_create(tid, NULL, child_thread, &val)) {
+  if (thrd_success != thrd_create(tid, child_thread, &val)) {
     /* Handle error */
     return;
   }
 }
 
 int main(void) {
-  pthread_t tid;
+  thrd_t tid;
   create_thread(&tid);
    
-  if (0 != pthread_join(tid, NULL)) {
+  if (thrd_success != thrd_join(tid, NULL)) {
     /* Handle error */
-    return 0;
+    return 1;
   }
   return 0;
 }
 
 // DETECTED!
-// CMD: tis-analyzer -val -slevel 1000 -mthread -mt-write-races test_CON34-C_noncompliant.c
+// CMD: tis-analyzer -val -slevel 1000 -mthread -mt-write-races example_noncompliant.c
 // C17: ?
 // UB: This is not an UB directly, but causes an access to an invalid memory location UB.
 // COMPILE: gcc -lpthread
