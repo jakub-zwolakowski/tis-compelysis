@@ -134,6 +134,7 @@ markdown_files = $(patsubst %.c, %.md, $(main_C_files))
 	ls *.md | xargs -n 1 sed -i -E 's/noncompliant [0-9], (Creation|Worker|Destruction) [0-9]/noncompliant X, Creation|Worker|Destruction X/g' # Uniformize sequencing
 	ls *.md | xargs -n 1 sed -i -E 's/([^\n])```/\1\n```/g' # Fix the messages not ending by newline
 	ls *.md | xargs -n 1 sed -i -E 's/^-?(0|42|84|126|168|210|252|294)$$/0/g' # Uniformize sequencing
+	ls *.md | xargs -n 1 sed -i -E 's/^errnum = [0-9 ][0-9] : .*/errnum = XX : Some error message/g' # Uniformize sequences of errno printing
 
 README.md: $(markdown_files)
 	echo "# Examples" > README.md
