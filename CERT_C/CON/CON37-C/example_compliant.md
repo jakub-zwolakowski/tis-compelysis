@@ -29,7 +29,8 @@
 ==12345==    by 0x424242424242: _dl_allocate_tls (dl-tls.c:530)
 ==12345==    by 0x424242424242: allocate_stack (allocatestack.c:627)
 ==12345==    by 0x424242424242: pthread_create@@GLIBC_2.2.5 (pthread_create.c:644)
-==12345==    by 0x424242424242: main (example_compliant.c:19)
+==12345==    by 0x424242424242: thrd_create (c11threads.h:52)
+==12345==    by 0x424242424242: main (example_compliant.c:24)
 ==12345== 
 ==12345== LEAK SUMMARY:
 ==12345==    definitely lost: 0 bytes in 0 blocks

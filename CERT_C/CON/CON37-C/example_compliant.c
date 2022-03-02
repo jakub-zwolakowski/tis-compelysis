@@ -1,24 +1,29 @@
 #include <signal.h>
 #include <stddef.h>
-#include <pthread.h>
 #include <stdatomic.h>
 #include <stdbool.h>
 
+#ifdef C11_THREADS
+#include <thread.h>
+#else
+#include "../c11threads.h"
+#endif
+
 atomic_bool flag = ATOMIC_VAR_INIT(false);
  
-void *func(void *data) {
+int func(void *data) {
   while (!flag) {
     /* ... */
   }
-  return NULL;
+  return 0;
 }
  
 int main(void) {
-  pthread_t tid;
+  thrd_t tid;
    
-  if (0 != pthread_create(&tid, NULL, func, NULL)) {
+  if (thrd_success != thrd_create(&tid, func, NULL)) {
     /* Handle error */
-    return 0;
+    return 1;
   }
   /* ... */
   /* Set flag when done */
@@ -28,7 +33,7 @@ int main(void) {
 }
 
 // NOT DETECTED
-// CMD: tis-analyzer --interpreter test_CON37-C_compliant.c
+// CMD: tis-analyzer --interpreter example_compliant.c
 // C17: https://cigix.me/c17#7.14.1.1.p7
 // UB: "The signal function is used in a multi-threaded program"
 // COMPILE: gcc -lpthread

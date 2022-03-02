@@ -1,6 +1,11 @@
 #include <signal.h>
 #include <stddef.h>
-#include <pthread.h>
+
+#ifdef C11_THREADS
+#include <thread.h>
+#else
+#include "../c11threads.h"
+#endif
   
 volatile sig_atomic_t flag = 0;
  
@@ -9,7 +14,7 @@ void handler(int signum) {
 }
  
 /* Runs until user sends SIGUSR1 */
-void *func(void *data) {
+int func(void *data) {
   while (!flag) {
     /* ... */
   }
@@ -18,18 +23,22 @@ void *func(void *data) {
  
 int main(void) {
   signal(SIGUSR1, handler); /* Undefined behavior */
-  pthread_t tid;
-  flag = 0;
-  if (0 != pthread_create(&tid, NULL, func, NULL)) {
+  thrd_t tid;
+   
+  if (thrd_success != thrd_create(&tid, func, NULL)) {
     /* Handle error */
-    return 0;
+    return 1;
   }
   /* ... */
+  raise(SIGUSR1);
+
+  thrd_join(tid, NULL);
+
   return 0;
 }
 
 // NOT DETECTED
-// CMD: tis-analyzer --interpreter test_CON37-C_noncompliant.c
+// CMD: tis-analyzer --interpreter example_noncompliant.c
 // C17: https://cigix.me/c17#7.14.1.1.p7
 // UB: "The signal function is used in a multi-threaded program"
 // COMPILE: gcc -lpthread
