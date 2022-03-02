@@ -131,10 +131,12 @@ markdown_files = $(patsubst %.c, %.md, $(main_C_files))
 	ls *.md | xargs -n 1 sed -i -E 's/T[0-9]{3,5}/T4242/g'
 	ls *.md | xargs -n 1 sed -i -E 's/ [0-9]+,[0-9,]+ bytes/ 123,456 bytes/g' # Uniformize big sizes that may change
 	ls *.md | xargs -n 1 sed -i -E 's/Result: [0-9]+/Result: 12345/g' # Uniformize printed "Result"
+	ls *.md | xargs -n 1 sed -i -E 's/Thread [0-9]+:/Thread 42:/g' # Uniformize printed "Thread"
 	ls *.md | xargs -n 1 sed -i -E 's/noncompliant [0-9], (Creation|Worker|Destruction) [0-9]/noncompliant X, Creation|Worker|Destruction X/g' # Uniformize sequencing
 	ls *.md | xargs -n 1 sed -i -E 's/([^\n])```/\1\n```/g' # Fix the messages not ending by newline
 	ls *.md | xargs -n 1 sed -i -E 's/^-?(0|42|84|126|168|210|252|294)$$/0/g' # Uniformize sequencing
 	ls *.md | xargs -n 1 sed -i -E 's/^errnum = [0-9 ][0-9] : .*/errnum = XX : Some error message/g' # Uniformize sequences of errno printing
+	ls *.md | xargs -n 1 sed -i -E 's/^Node = [0-9][0-9]/Node = 42/g' # Uniformize sequences of "Node = XX"
 
 README.md: $(markdown_files)
 	echo "# Examples" > README.md
