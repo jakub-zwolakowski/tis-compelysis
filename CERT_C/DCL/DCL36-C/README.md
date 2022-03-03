@@ -2,7 +2,7 @@
 ## example
 ### Test
 ```
-/bin/sh: 1: ./example.out: not found
+timeout: failed to run command ‘./example.out’: No such file or directory
 ```
 ### gcc
 ```
@@ -44,7 +44,7 @@ static int i5;       /* Tentative definition, internal linkage */
 ```
 ### UBSan
 ```
-/bin/sh: 1: ./example.UBSan-out: not found
+timeout: failed to run command ‘./example.UBSan-out’: No such file or directory
 ```
 ### Valgrind
 ```
