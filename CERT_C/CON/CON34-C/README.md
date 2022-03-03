@@ -54,7 +54,7 @@ Result: 12345
 ==12345== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
 ==12345== Command: ./example_noncompliant.out
 ==12345== 
-==12345== Thread 2:
+==12345== Thread 42:
 ==12345== Conditional jump or move depends on uninitialised value(s)
 ==12345==    at 0x424242424242: vfprintf (vfprintf.c:1642)
 ==12345==    by 0x424242424242: printf (printf.c:33)

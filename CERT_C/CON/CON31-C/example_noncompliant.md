@@ -1,11 +1,11 @@
 ## example_noncompliant
 ### Test
 ```
-noncompliant X, Creation|Worker|Destruction X
-noncompliant X, Creation|Worker|Destruction X
-noncompliant X, Creation|Worker|Destruction X
-noncompliant X, Creation|Worker|Destruction X
-noncompliant X, Creation|Worker|Destruction X
+noncompliant X, Y Z
+noncompliant X, Y Z
+noncompliant X, Y Z
+noncompliant X, Y Z
+noncompliant X, Y Z
 ```
 ### gcc
 ```
@@ -15,11 +15,11 @@ noncompliant X, Creation|Worker|Destruction X
 ```
 ### UBSan
 ```
-noncompliant X, Creation|Worker|Destruction X
-noncompliant X, Creation|Worker|Destruction X
-noncompliant X, Creation|Worker|Destruction X
-noncompliant X, Creation|Worker|Destruction X
-noncompliant X, Creation|Worker|Destruction X
+noncompliant X, Y Z
+noncompliant X, Y Z
+noncompliant X, Y Z
+noncompliant X, Y Z
+noncompliant X, Y Z
 ```
 ### Valgrind
 ```
@@ -28,11 +28,11 @@ noncompliant X, Creation|Worker|Destruction X
 ==12345== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
 ==12345== Command: ./example_noncompliant.out
 ==12345== 
-noncompliant X, Creation|Worker|Destruction X
-noncompliant X, Creation|Worker|Destruction X
-noncompliant X, Creation|Worker|Destruction X
-noncompliant X, Creation|Worker|Destruction X
-noncompliant X, Creation|Worker|Destruction X
+noncompliant X, Y Z
+noncompliant X, Y Z
+noncompliant X, Y Z
+noncompliant X, Y Z
+noncompliant X, Y Z
 ==12345== 
 ==12345== HEAP SUMMARY:
 ==12345==     in use at exit: 0 bytes in 0 blocks

@@ -10,14 +10,10 @@ Data = 10
 ```
 ### clang
 ```
-In file included from example_noncompliant.c:11:
-./../c11threads.h:266:27: error: no newline at end of file [-Werror,-Wnewline-eof]
-#endif  /* C11THREADS_H_ */
-                           ^
 example_noncompliant.c:99:26: error: no newline at end of file [-Werror,-Wnewline-eof]
 // COMPILE: gcc -lpthread
                          ^
-2 errors generated.
+1 error generated.
 ```
 ### UBSan
 ```

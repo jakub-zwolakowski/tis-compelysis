@@ -9,11 +9,11 @@ compliant 4
 compliant 5
 compliant end
 noncompliant beginning
-noncompliant X, Creation|Worker|Destruction X
-noncompliant X, Creation|Worker|Destruction X
-noncompliant X, Creation|Worker|Destruction X
-noncompliant X, Creation|Worker|Destruction X
-noncompliant X, Creation|Worker|Destruction X
+noncompliant X, Y Z
+noncompliant X, Y Z
+noncompliant X, Y Z
+noncompliant X, Y Z
+noncompliant X, Y Z
 noncompliant end
 ```
 ### gcc
@@ -32,11 +32,11 @@ compliant 4
 compliant 5
 compliant end
 noncompliant beginning
-noncompliant X, Creation|Worker|Destruction X
-noncompliant X, Creation|Worker|Destruction X
-noncompliant X, Creation|Worker|Destruction X
-noncompliant X, Creation|Worker|Destruction X
-noncompliant X, Creation|Worker|Destruction X
+noncompliant X, Y Z
+noncompliant X, Y Z
+noncompliant X, Y Z
+noncompliant X, Y Z
+noncompliant X, Y Z
 noncompliant end
 ```
 ### Valgrind
@@ -54,11 +54,11 @@ compliant 4
 compliant 5
 compliant end
 noncompliant beginning
-noncompliant X, Creation|Worker|Destruction X
-noncompliant X, Creation|Worker|Destruction X
-noncompliant X, Creation|Worker|Destruction X
-noncompliant X, Creation|Worker|Destruction X
-noncompliant X, Creation|Worker|Destruction X
+noncompliant X, Y Z
+noncompliant X, Y Z
+noncompliant X, Y Z
+noncompliant X, Y Z
+noncompliant X, Y Z
 noncompliant end
 ==12345== 
 ==12345== HEAP SUMMARY:

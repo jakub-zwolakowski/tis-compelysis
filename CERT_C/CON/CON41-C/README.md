@@ -2,11 +2,11 @@
 ## example_compliant
 ### Test
 ```
-Thread 0 result 1
-Thread 1 result 1
-Thread 2 result 1
-Thread 3 result 1
-Thread 4 result 1
+Thread X something something...
+Thread X something something...
+Thread X something something...
+Thread X something something...
+Thread X something something...
 ```
 ### gcc
 ```
@@ -16,11 +16,11 @@ Thread 4 result 1
 ```
 ### UBSan
 ```
-Thread 0 result 1
-Thread 1 result 1
-Thread 2 result 1
-Thread 3 result 1
-Thread 4 result 1
+Thread X something something...
+Thread X something something...
+Thread X something something...
+Thread X something something...
+Thread X something something...
 ```
 ### Valgrind
 ```
@@ -68,11 +68,11 @@ Thread 4 result 1
 ==12345==    by 0x424242424242: printf (printf.c:33)
 ==12345==    by 0x424242424242: main (example_compliant.c:48)
 ==12345== 
-Thread 0 result 1
-Thread 1 result 1
-Thread 2 result 1
-Thread 3 result 1
-Thread 4 result 1
+Thread X something something...
+Thread X something something...
+Thread X something something...
+Thread X something something...
+Thread X something something...
 ==12345== 
 ==12345== HEAP SUMMARY:
 ==12345==     in use at exit: 0 bytes in 0 blocks
@@ -87,11 +87,11 @@ Thread 4 result 1
 ## example_noncompliant
 ### Test
 ```
-Thread 0 result 1
-Thread 1 result 1
-Thread 2 result 1
-Thread 3 result 1
-Thread 4 result 1
+Thread X something something...
+Thread X something something...
+Thread X something something...
+Thread X something something...
+Thread X something something...
 ```
 ### gcc
 ```
@@ -101,11 +101,11 @@ Thread 4 result 1
 ```
 ### UBSan
 ```
-Thread 0 result 1
-Thread 1 result 1
-Thread 2 result 1
-Thread 3 result 1
-Thread 4 result 1
+Thread X something something...
+Thread X something something...
+Thread X something something...
+Thread X something something...
+Thread X something something...
 ```
 ### Valgrind
 ```
@@ -153,11 +153,11 @@ Thread 4 result 1
 ==12345==    by 0x424242424242: printf (printf.c:33)
 ==12345==    by 0x424242424242: main (example_noncompliant.c:47)
 ==12345== 
-Thread 0 result 1
-Thread 1 result 1
-Thread 2 result 1
-Thread 3 result 1
-Thread 4 result 1
+Thread X something something...
+Thread X something something...
+Thread X something something...
+Thread X something something...
+Thread X something something...
 ==12345== 
 ==12345== HEAP SUMMARY:
 ==12345==     in use at exit: 0 bytes in 0 blocks
