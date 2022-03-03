@@ -70,8 +70,8 @@ UndefinedBehaviorSanitizer:DEADLYSIGNAL
 ==12345==The signal is caused by a READ memory access.
 ==12345==Hint: address points to the zero page.
     #0 0x424242424242 in consume_list_element (/home/qba/git/tis-compelysis/CERT_C/CON/CON36-C/example_noncompliant.UBSan-out+0x424242424242)
-    #1 0x424242424242 in start_thread /build/glibc-uZu3wS/glibc-2.27/nptl/pthread_create.c:463
-    #2 0x424242424242 in clone /build/glibc-uZu3wS/glibc-2.27/misc/../sysdeps/unix/sysv/linux/x86_64/clone.S:95
+    #1 0x424242424242 in start_thread /build/glibc-XXXXXX/glibc-XXXXXX.27/nptl/pthread_create.c:463
+    #2 0x424242424242 in clone /build/glibc-XXXXXX/glibc-XXXXXX.27/misc/../sysdeps/unix/sysv/linux/x86_64/clone.S:95
 
 UndefinedBehaviorSanitizer can not provide additional info.
 SUMMARY: UndefinedBehaviorSanitizer: SEGV (/home/qba/git/tis-compelysis/CERT_C/CON/CON36-C/example_noncompliant.UBSan-out+0x424242424242) in consume_list_element
