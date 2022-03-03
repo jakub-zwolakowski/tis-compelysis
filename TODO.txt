@@ -24,37 +24,37 @@ ERR30-C : DONE
 ERR32-C : DONE
 
 CON30-C : DONE
-CON31-C : DONE - same as POS48-C
-CON32-C : DONE
+CON31-C : DONE -- same as POS48-C
+CON32-C : DONE -- same as POS49-C
 CON33-C : DONE
-CON34-C : DONE
-CON35-C : DONE
+CON34-C : DONE -- same as POS50-C
+CON35-C : DONE -- same as POS51-C
 CON36-C : DONE
 CON37-C : DONE
 CON38-C : DONE -- BUG (printf again)
 CON39-C : DONE -- pthread_detach not implemented
 CON40-C : DONE
 CON41-C : DONE
-CON42-C : UNDER CONSTRUCTION
-CON43-C : DONE -- DETECTED!
+CON42-C : DONE -- UNDER CONSTRUCTION
+CON43-C : DONE -- DETECTED!!!
 
 MSC30-C : DONE -- timespec_get not implemented
 MSC32-C : DONE -- timespec_get not implemented
 MSC41-C : DONE
 
-POS30-C : DONE -- DETECTED!
-POS34-C : DONE -- DETECTED! (locals escaping)
+POS30-C : DONE -- DETECTED!!!
+POS34-C : DONE -- DETECTED!!! (locals escaping)
 POS35-C : DONE
 POS36-C : DONE
 POS37-C : DONE
 POS38-C : DONE -- fork not implemented
-POS39-C : DONE -- BUG "[mt] failure: In compute_for_funspec with kf = ntohl"
+POS39-C : DONE -- BUG ("[mt] failure: In compute_for_funspec with kf = ntohl")
 POS44-C : DONE
 POS47-C : DONE
-POS48-C : DONE - same as CON31-C
-POS49-C : DONE - same as CON32-C
-POS50-C : DONE -- DETECTED! - same as CON34-C
-POS51-C : DONE - same as CON35-C
+POS48-C : DONE -- same as CON31-C
+POS49-C : DONE -- same as CON32-C
+POS50-C : DONE -- same as CON34-C -- DETECTED!!!
+POS51-C : DONE -- same as CON35-C
 POS52-C : DONE
 POS53-C : DONE
 POS54-C : DONE -- fmemopen and open_memstream not implemented
