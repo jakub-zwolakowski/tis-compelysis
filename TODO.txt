@@ -33,7 +33,7 @@ CON36-C : DONE
 CON37-C : DONE
 CON38-C : DONE -- BUG (printf again)
 CON39-C : DONE -- pthread_detach not implemented
-CON40-C : _TODO_
+CON40-C : DONE
 CON41-C : _TODO_
 CON42-C : _TODO_
 CON43-C : _TODO_
