@@ -40,7 +40,7 @@ CON43-C : DONE -- DETECTED!
 
 MSC30-C : DONE -- timespec_get not implemented
 MSC32-C : DONE -- timespec_get not implemented
-MSC41-C : _TODO_
+MSC41-C : DONE
 
 POS30-C : DONE -- DETECTED!
 POS34-C : DONE -- DETECTED! (locals escaping)
