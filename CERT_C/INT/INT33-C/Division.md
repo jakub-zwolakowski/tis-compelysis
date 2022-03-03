@@ -1,7 +1,8 @@
 ## Division
 ### Test
 ```
-Floating point exception (core dumped)
+timeout: the monitored command dumped core
+Floating point exception
 ```
 ### gcc
 ```
@@ -17,7 +18,7 @@ UndefinedBehaviorSanitizer:DEADLYSIGNAL
 ==12345==ERROR: UndefinedBehaviorSanitizer: FPE on unknown address 0x424242424242 (pc 0x424242424242 bp 0x424242424242 sp 0x424242424242 T4242)
     #0 0x424242424242 in f_noncompliant (/home/qba/git/tis-compelysis/CERT_C/INT/INT33-C/Division.UBSan-out+0x424242424242)
     #1 0x424242424242 in main (/home/qba/git/tis-compelysis/CERT_C/INT/INT33-C/Division.UBSan-out+0x424242424242)
-    #2 0x424242424242 in __libc_start_main /build/glibc-S9d2JN/glibc-2.27/csu/../csu/libc-start.c:310
+    #2 0x424242424242 in __libc_start_main /build/glibc-XXXXXX/glibc-XXXXXX.27/csu/../csu/libc-start.c:310
     #3 0x424242424242 in _start (/home/qba/git/tis-compelysis/CERT_C/INT/INT33-C/Division.UBSan-out+0x424242424242)
 
 UndefinedBehaviorSanitizer can not provide additional info.
@@ -45,5 +46,6 @@ SUMMARY: UndefinedBehaviorSanitizer: FPE (/home/qba/git/tis-compelysis/CERT_C/IN
 ==12345== 
 ==12345== For counts of detected and suppressed errors, rerun with: -v
 ==12345== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
-Floating point exception (core dumped)
+timeout: the monitored command dumped core
+Floating point exception
 ```
