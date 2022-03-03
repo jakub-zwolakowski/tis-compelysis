@@ -38,7 +38,7 @@ CON41-C : DONE
 CON42-C : UNDER CONSTRUCTION
 CON43-C : DONE -- DETECTED!
 
-MSC30-C : _TODO_
+MSC30-C : DONE -- timespec_get not implemented
 MSC32-C : _TODO_
 MSC41-C : _TODO_
 
