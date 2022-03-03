@@ -2,7 +2,8 @@
 ### Test
 ```
 free(): double free detected in tcache 2
-Aborted (core dumped)
+timeout: the monitored command dumped core
+Aborted
 ```
 ### gcc
 ```
@@ -13,7 +14,8 @@ Aborted (core dumped)
 ### UBSan
 ```
 free(): double free detected in tcache 2
-Aborted (core dumped)
+timeout: the monitored command dumped core
+Aborted
 ```
 ### Valgrind
 ```

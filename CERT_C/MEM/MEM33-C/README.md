@@ -43,7 +43,8 @@
 ### Test
 ```
 *** stack smashing detected ***: <unknown> terminated
-Aborted (core dumped)
+timeout: the monitored command dumped core
+Aborted
 ```
 ### gcc
 ```
@@ -92,13 +93,15 @@ SUMMARY: UndefinedBehaviorSanitizer: SEGV (<unknown module>)
 ==12345== 
 ==12345== For counts of detected and suppressed errors, rerun with: -v
 ==12345== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
-Aborted (core dumped)
+timeout: the monitored command dumped core
+Aborted
 ```
 ## example
 ### Test
 ```
 *** stack smashing detected ***: <unknown> terminated
-Aborted (core dumped)
+timeout: the monitored command dumped core
+Aborted
 ```
 ### gcc
 ```
@@ -157,5 +160,6 @@ SUMMARY: UndefinedBehaviorSanitizer: SEGV (<unknown module>)
 ==12345== 
 ==12345== For counts of detected and suppressed errors, rerun with: -v
 ==12345== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
-Aborted (core dumped)
+timeout: the monitored command dumped core
+Aborted
 ```

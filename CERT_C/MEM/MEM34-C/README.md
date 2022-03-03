@@ -3,7 +3,8 @@
 ### Test
 ```
 munmap_chunk(): invalid pointer
-Aborted (core dumped)
+timeout: the monitored command dumped core
+Aborted
 ```
 ### gcc
 ```
@@ -17,14 +18,14 @@ UndefinedBehaviorSanitizer:DEADLYSIGNAL
 ==12345==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x424242424242 (pc 0x424242424242 bp 0x424242424242ff90 sp 0x424242424242 T4242)
 ==12345==The signal is caused by a READ memory access.
 ==12345==Hint: address points to the zero page.
-    #0 0x424242424242 in free /build/glibc-S9d2JN/glibc-2.27/malloc/malloc.c:3133
+    #0 0x424242424242 in free /build/glibc-XXXXXX/glibc-XXXXXX.27/malloc/malloc.c:3133
     #1 0x424242424242 in f_noncompliant (/home/qba/git/tis-compelysis/CERT_C/MEM/MEM34-C/example.UBSan-out+0x424242424242)
     #2 0x424242424242 in main (/home/qba/git/tis-compelysis/CERT_C/MEM/MEM34-C/example.UBSan-out+0x424242424242)
-    #3 0x424242424242 in __libc_start_main /build/glibc-S9d2JN/glibc-2.27/csu/../csu/libc-start.c:310
+    #3 0x424242424242 in __libc_start_main /build/glibc-XXXXXX/glibc-XXXXXX.27/csu/../csu/libc-start.c:310
     #4 0x424242424242 in _start (/home/qba/git/tis-compelysis/CERT_C/MEM/MEM34-C/example.UBSan-out+0x424242424242)
 
 UndefinedBehaviorSanitizer can not provide additional info.
-SUMMARY: UndefinedBehaviorSanitizer: SEGV /build/glibc-S9d2JN/glibc-2.27/malloc/malloc.c:3133 in free
+SUMMARY: UndefinedBehaviorSanitizer: SEGV /build/glibc-XXXXXX/glibc-XXXXXX.27/malloc/malloc.c:3133 in free
 ==12345==ABORTING
 ```
 ### Valgrind
