@@ -1,29 +1,35 @@
 #include <stddef.h>
-#include <pthread.h>
+#include <unistd.h>
 
-void *thread_func(void *arg) {
+#ifdef C11_THREADS
+#include <thread.h>
+#else
+#include "../c11threads.h"
+#endif
+  
+int thread_func(void *arg) {
   /* Do work */
-  return NULL;
+  sleep(1);
+  thrd_detach(thrd_current());
+  return 0;
 }
-
+ 
 int main(void) {
-  pthread_t t;
-  if (0 != pthread_create(&t, NULL, thread_func, NULL)) {
+  thrd_t t;
+ 
+  if (thrd_success != thrd_create(&t, thread_func, NULL)) {
     /* Handle error */
-    return 0;
+    return 1;
   }
-  if (0 != pthread_join(t, 0)) {
+  sleep(2);
+  if (thrd_success != thrd_join(t, 0)) {
     /* Handle error */
-    return 0;
-  }
-  if (0 != pthread_join(t, 0)) {
-    /* Handle error */
-    return 0;
+    return 2;
   }
   return 0;
 }
 
 // NOT DETECTED
 // Does not match creating and joining a thread.
-// CMD: tis-analyzer --interpreter test_CON39-C_noncompliant.c
+// CMD: tis-analyzer -val -slevel 1000 -mthread -mt-write-races example_noncompliant.c
 // COMPILE: gcc -lpthread
