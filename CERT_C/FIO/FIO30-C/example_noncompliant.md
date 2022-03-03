@@ -1,8 +1,8 @@
 ## example_noncompliant
 ### Test
 ```
-password cannot be authenticated.
-password -1201159584 cannot be authenticated.
+password 42 be authenticated.
+password 42 cannot be authenticated.
 ```
 ### gcc
 ```
@@ -25,8 +25,8 @@ example_noncompliant.c:23:19: note: treat the string as an argument to avoid thi
 ```
 ### UBSan
 ```
-password cannot be authenticated.
-password 0 cannot be authenticated.
+password 42 be authenticated.
+password 42 cannot be authenticated.
 ```
 ### Valgrind
 ```
@@ -35,8 +35,8 @@ password 0 cannot be authenticated.
 ==12345== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
 ==12345== Command: ./example_noncompliant.out
 ==12345== 
-password cannot be authenticated.
-password 86175920 cannot be authenticated.
+password 42 be authenticated.
+password 42 cannot be authenticated.
 ==12345== 
 ==12345== HEAP SUMMARY:
 ==12345==     in use at exit: 0 bytes in 0 blocks

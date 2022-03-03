@@ -2,7 +2,8 @@
 ## example
 ### Test
 ```
-Segmentation fault (core dumped)
+timeout: the monitored command dumped core
+Segmentation fault
 ```
 ### gcc
 ```
@@ -35,16 +36,16 @@ UndefinedBehaviorSanitizer:DEADLYSIGNAL
 ==12345==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x424242424242 (pc 0x424242424242 bp 0x424242424242 sp 0x424242424242 T4242)
 ==12345==The signal is caused by a READ memory access.
 ==12345==Hint: address points to the zero page.
-    #0 0x424242424242  /build/glibc-S9d2JN/glibc-2.27/string/../sysdeps/x86_64/multiarch/strlen-avx2.S:65
-    #1 0x424242424242 in vfprintf /build/glibc-S9d2JN/glibc-2.27/stdio-common/vfprintf.c:1643
-    #2 0x424242424242 in printf /build/glibc-S9d2JN/glibc-2.27/stdio-common/printf.c:33
+    #0 0x424242424242  /build/glibc-XXXXXX/glibc-XXXXXX.27/string/../sysdeps/x86_64/multiarch/strlen-avx2.S:65
+    #1 0x424242424242 in vfprintf /build/glibc-XXXXXX/glibc-XXXXXX.27/stdio-common/vfprintf.c:1643
+    #2 0x424242424242 in printf /build/glibc-XXXXXX/glibc-XXXXXX.27/stdio-common/printf.c:33
     #3 0x424242424242 in func_noncompliant (/home/qba/git/tis-compelysis/CERT_C/FIO/FIO47-C/example.UBSan-out+0x424242424242)
     #4 0x424242424242 in main (/home/qba/git/tis-compelysis/CERT_C/FIO/FIO47-C/example.UBSan-out+0x424242424242)
-    #5 0x424242424242 in __libc_start_main /build/glibc-S9d2JN/glibc-2.27/csu/../csu/libc-start.c:310
+    #5 0x424242424242 in __libc_start_main /build/glibc-XXXXXX/glibc-XXXXXX.27/csu/../csu/libc-start.c:310
     #6 0x424242424242 in _start (/home/qba/git/tis-compelysis/CERT_C/FIO/FIO47-C/example.UBSan-out+0x424242424242)
 
 UndefinedBehaviorSanitizer can not provide additional info.
-SUMMARY: UndefinedBehaviorSanitizer: SEGV /build/glibc-S9d2JN/glibc-2.27/string/../sysdeps/x86_64/multiarch/strlen-avx2.S:65 
+SUMMARY: UndefinedBehaviorSanitizer: SEGV /build/glibc-XXXXXX/glibc-XXXXXX.27/string/../sysdeps/x86_64/multiarch/strlen-avx2.S:65 
 ==12345==ABORTING
 ```
 ### Valgrind
@@ -85,5 +86,6 @@ Error (type ==12345==
 ==12345== 
 ==12345== For counts of detected and suppressed errors, rerun with: -v
 ==12345== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
-Segmentation fault (core dumped)
+timeout: the monitored command dumped core
+Segmentation fault
 ```
