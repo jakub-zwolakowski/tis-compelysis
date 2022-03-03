@@ -1,7 +1,7 @@
 ## example
 ### Test
 ```
-/bin/sh: 1: ./example.out: not found
+timeout: failed to run command ‘./example.out’: No such file or directory
 ```
 ### gcc
 ```
@@ -31,7 +31,7 @@ void execute_handler(handler_type handler, int value) {
 ```
 ### UBSan
 ```
-/bin/sh: 1: ./example.UBSan-out: not found
+timeout: failed to run command ‘./example.UBSan-out’: No such file or directory
 ```
 ### Valgrind
 ```

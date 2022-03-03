@@ -3,7 +3,8 @@
 ### Test
 ```
 example_compliant.out: example_compliant.c:10: assert_handler: Assertion `value' failed.
-Aborted (core dumped)
+timeout: the monitored command dumped core
+Aborted
 ```
 ### gcc
 ```
@@ -14,7 +15,8 @@ Aborted (core dumped)
 ### UBSan
 ```
 example_compliant.UBSan-out: example_compliant.c:10: void assert_handler(int): Assertion `value' failed.
-Aborted (core dumped)
+timeout: the monitored command dumped core
+Aborted
 ```
 ### Valgrind
 ```
@@ -43,12 +45,13 @@ example_compliant.out: example_compliant.c:10: assert_handler: Assertion `value'
 ==12345== 
 ==12345== For counts of detected and suppressed errors, rerun with: -v
 ==12345== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
-Aborted (core dumped)
+timeout: the monitored command dumped core
+Aborted
 ```
 ## example_noncompliant
 ### Test
 ```
-/bin/sh: 1: ./example_noncompliant.out: not found
+timeout: failed to run command ‘./example_noncompliant.out’: No such file or directory
 ```
 ### gcc
 ```
@@ -78,7 +81,7 @@ void execute_handler(handler_type handler, int value) {
 ```
 ### UBSan
 ```
-/bin/sh: 1: ./example_noncompliant.UBSan-out: not found
+timeout: failed to run command ‘./example_noncompliant.UBSan-out’: No such file or directory
 ```
 ### Valgrind
 ```
@@ -87,7 +90,7 @@ valgrind: ./example_noncompliant.out: No such file or directory
 ## example
 ### Test
 ```
-/bin/sh: 1: ./example.out: not found
+timeout: failed to run command ‘./example.out’: No such file or directory
 ```
 ### gcc
 ```
@@ -117,7 +120,7 @@ void execute_handler(handler_type handler, int value) {
 ```
 ### UBSan
 ```
-/bin/sh: 1: ./example.UBSan-out: not found
+timeout: failed to run command ‘./example.UBSan-out’: No such file or directory
 ```
 ### Valgrind
 ```

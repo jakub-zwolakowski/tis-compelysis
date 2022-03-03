@@ -2,7 +2,8 @@
 ### Test
 ```
 example_compliant.out: example_compliant.c:10: assert_handler: Assertion `value' failed.
-Aborted (core dumped)
+timeout: the monitored command dumped core
+Aborted
 ```
 ### gcc
 ```
@@ -13,7 +14,8 @@ Aborted (core dumped)
 ### UBSan
 ```
 example_compliant.UBSan-out: example_compliant.c:10: void assert_handler(int): Assertion `value' failed.
-Aborted (core dumped)
+timeout: the monitored command dumped core
+Aborted
 ```
 ### Valgrind
 ```
@@ -42,5 +44,6 @@ example_compliant.out: example_compliant.c:10: assert_handler: Assertion `value'
 ==12345== 
 ==12345== For counts of detected and suppressed errors, rerun with: -v
 ==12345== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
-Aborted (core dumped)
+timeout: the monitored command dumped core
+Aborted
 ```
