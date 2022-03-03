@@ -2,7 +2,8 @@
 ## example1
 ### Test
 ```
-Segmentation fault (core dumped)
+timeout: the monitored command dumped core
+Segmentation fault
 ```
 ### gcc
 ```
@@ -17,7 +18,7 @@ UndefinedBehaviorSanitizer:DEADLYSIGNAL
 ==12345==The signal is caused by a WRITE memory access.
     #0 0x424242424242 in f_noncompliant (/home/qba/git/tis-compelysis/CERT_C/STR/STR30-C/example1.UBSan-out+0x424242424242)
     #1 0x424242424242 in main (/home/qba/git/tis-compelysis/CERT_C/STR/STR30-C/example1.UBSan-out+0x424242424242)
-    #2 0x424242424242 in __libc_start_main /build/glibc-S9d2JN/glibc-2.27/csu/../csu/libc-start.c:310
+    #2 0x424242424242 in __libc_start_main /build/glibc-XXXXXX/glibc-XXXXXX.27/csu/../csu/libc-start.c:310
     #3 0x424242424242 in _start (/home/qba/git/tis-compelysis/CERT_C/STR/STR30-C/example1.UBSan-out+0x424242424242)
 
 UndefinedBehaviorSanitizer can not provide additional info.
@@ -45,5 +46,6 @@ SUMMARY: UndefinedBehaviorSanitizer: SEGV (/home/qba/git/tis-compelysis/CERT_C/S
 ==12345== 
 ==12345== For counts of detected and suppressed errors, rerun with: -v
 ==12345== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
-Segmentation fault (core dumped)
+timeout: the monitored command dumped core
+Segmentation fault
 ```
