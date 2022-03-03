@@ -2,7 +2,8 @@
 ## example
 ### Test
 ```
-Illegal instruction (core dumped)
+timeout: the monitored command dumped core
+Illegal instruction
 ```
 ### gcc
 ```
@@ -64,5 +65,6 @@ example.c:8:34: error: second argument to 'va_arg' is of promotable type 'unsign
 ==12345== 
 ==12345== For counts of detected and suppressed errors, rerun with: -v
 ==12345== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
-Illegal instruction (core dumped)
+timeout: the monitored command dumped core
+Illegal instruction
 ```

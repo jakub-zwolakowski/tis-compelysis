@@ -1,7 +1,8 @@
 ## custom_example
 ### Test
 ```
-Segmentation fault (core dumped)
+timeout: the monitored command dumped core
+Segmentation fault
 ```
 ### gcc
 ```
@@ -19,7 +20,7 @@ UndefinedBehaviorSanitizer:DEADLYSIGNAL
 ==12345==Hint: address points to the zero page.
     #0 0x424242424242 in f_noncompliant (/home/qba/git/tis-compelysis/CERT_C/EXP/EXP34-C/custom_example.UBSan-out+0x424242424242)
     #1 0x424242424242 in main (/home/qba/git/tis-compelysis/CERT_C/EXP/EXP34-C/custom_example.UBSan-out+0x424242424242)
-    #2 0x424242424242 in __libc_start_main /build/glibc-S9d2JN/glibc-2.27/csu/../csu/libc-start.c:310
+    #2 0x424242424242 in __libc_start_main /build/glibc-XXXXXX/glibc-XXXXXX.27/csu/../csu/libc-start.c:310
     #3 0x424242424242 in _start (/home/qba/git/tis-compelysis/CERT_C/EXP/EXP34-C/custom_example.UBSan-out+0x424242424242)
 
 UndefinedBehaviorSanitizer can not provide additional info.
@@ -57,5 +58,6 @@ SUMMARY: UndefinedBehaviorSanitizer: SEGV (/home/qba/git/tis-compelysis/CERT_C/E
 ==12345== 
 ==12345== For counts of detected and suppressed errors, rerun with: -v
 ==12345== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
-Segmentation fault (core dumped)
+timeout: the monitored command dumped core
+Segmentation fault
 ```

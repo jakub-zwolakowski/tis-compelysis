@@ -1,7 +1,8 @@
 ## example_strchr
 ### Test
 ```
-Segmentation fault (core dumped)
+timeout: the monitored command dumped core
+Segmentation fault
 ```
 ### gcc
 ```
@@ -15,14 +16,14 @@ UndefinedBehaviorSanitizer:DEADLYSIGNAL
 ==12345==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x424242424242 (pc 0x424242424242 bp 0x424242424242 sp 0x424242424242 T4242)
 ==12345==The signal is caused by a READ memory access.
 ==12345==Hint: address points to the zero page.
-    #0 0x424242424242  /build/glibc-S9d2JN/glibc-2.27/string/../sysdeps/x86_64/multiarch/strchr-avx2.S:76
+    #0 0x424242424242  /build/glibc-XXXXXX/glibc-XXXXXX.27/string/../sysdeps/x86_64/multiarch/strchr-avx2.S:76
     #1 0x424242424242 in f_noncompliant (/home/qba/git/tis-compelysis/CERT_C/EXP/EXP37-C/example_strchr.UBSan-out+0x424242424242)
     #2 0x424242424242 in main (/home/qba/git/tis-compelysis/CERT_C/EXP/EXP37-C/example_strchr.UBSan-out+0x424242424242)
-    #3 0x424242424242 in __libc_start_main /build/glibc-S9d2JN/glibc-2.27/csu/../csu/libc-start.c:310
+    #3 0x424242424242 in __libc_start_main /build/glibc-XXXXXX/glibc-XXXXXX.27/csu/../csu/libc-start.c:310
     #4 0x424242424242 in _start (/home/qba/git/tis-compelysis/CERT_C/EXP/EXP37-C/example_strchr.UBSan-out+0x424242424242)
 
 UndefinedBehaviorSanitizer can not provide additional info.
-SUMMARY: UndefinedBehaviorSanitizer: SEGV /build/glibc-S9d2JN/glibc-2.27/string/../sysdeps/x86_64/multiarch/strchr-avx2.S:76 
+SUMMARY: UndefinedBehaviorSanitizer: SEGV /build/glibc-XXXXXX/glibc-XXXXXX.27/string/../sysdeps/x86_64/multiarch/strchr-avx2.S:76 
 ==12345==ABORTING
 ```
 ### Valgrind
@@ -59,5 +60,6 @@ ello
 ==12345== 
 ==12345== For counts of detected and suppressed errors, rerun with: -v
 ==12345== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
-Segmentation fault (core dumped)
+timeout: the monitored command dumped core
+Segmentation fault
 ```
