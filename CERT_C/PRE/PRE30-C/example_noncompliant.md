@@ -1,7 +1,7 @@
 ## example_noncompliant
 ### Test
 ```
-/bin/sh: 1: ./example_noncompliant.out: not found
+timeout: failed to run command ‘./example_noncompliant.out’: No such file or directory
 ```
 ### gcc
 ```
@@ -35,7 +35,7 @@ example_noncompliant.c:6:10: error: expected expression
 ```
 ### UBSan
 ```
-/bin/sh: 1: ./example_noncompliant.UBSan-out: not found
+timeout: failed to run command ‘./example_noncompliant.UBSan-out’: No such file or directory
 ```
 ### Valgrind
 ```

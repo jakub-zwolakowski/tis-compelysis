@@ -1,7 +1,7 @@
 ## example
 ### Test
 ```
-/bin/sh: 1: ./example.out: not found
+timeout: failed to run command ‘./example.out’: No such file or directory
 ```
 ### gcc
 ```
@@ -35,7 +35,7 @@ example.c:6:23: error: expected expression
 ```
 ### UBSan
 ```
-/bin/sh: 1: ./example.UBSan-out: not found
+timeout: failed to run command ‘./example.UBSan-out’: No such file or directory
 ```
 ### Valgrind
 ```
