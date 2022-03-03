@@ -134,11 +134,12 @@ markdown_files = $(patsubst %.c, %.md, $(main_C_files))
 	ls *.md | xargs -n 1 sed -i -E 's/glibc-[[:alnum:]]+/glibc-XXXXXX/g'                                             # Valgrind / UBSan : glibc-??????
 	ls *.md | xargs -n 1 sed -i -E 's/^Generated identifier = \"ID[0-9]+\"/Generated identifier = \"ID42\"/g'        # MSC30-C : Generated identifier
 	ls *.md | xargs -n 1 sed -i -E 's/^random\(\) = [0-9]+/random\(\) = 42/g'                                        # MSC32-C : random()
-	ls *.md | xargs -n 1 sed -i -E 's/^password (-)?[[:alnum:]]+/password 42/g'                                        # MSC32-C : random()
+	ls *.md | xargs -n 1 sed -i -E 's/^a: [0-9]+ \| b: [0-9]+/a: 42 \| b:42/g'                                         # POS47-C : a b
+	ls *.md | xargs -n 1 sed -i -E 's/^password (-)?[[:alnum:]]+/password 42/g'                                      # ?????-C : password
 	ls *.md | xargs -n 1 sed -i -E 's/^-?(0|42|84|126|168|210|252|294)$$/0/g'                                        # ?????-C : Uniformize sequencing?
 	ls *.md | xargs -n 1 sed -i -E 's/noncompliant [0-9], (Creation|Worker|Destruction) [0-9]/noncompliant X, Y Z/g' # CON31-C : Creation|Worker|Destruction
 	ls *.md | xargs -n 1 sed -i -E 's/^errnum = [0-9 ][0-9] : .*/errnum = XX : Some error message/g'                 # CON33-C : errnum
-	ls *.md | xargs -n 1 sed -i -E 's/Result: [0-9]+/Result: 12345/g'                                                # CON34-C, POS50-C : Result
+	ls *.md | xargs -n 1 sed -i -E 's/Result: (-)?[0-9]+/Result: 12345/g'                                            # CON34-C, POS50-C : Result
 	ls *.md | xargs -n 1 sed -i -E 's/^Node = [0-9][0-9]/Node = 42/g'                                                # CON36-C : Node
 	ls *.md | xargs -n 1 sed -i -E 's/^Thread [0-9] .*/Thread X something something.../g'                            # CON38-C : Thread XX
 	ls *.md | xargs -n 1 sed -i -E 's/^flag = (true|false)/flag = something/g'                                       # CON??-C : flag

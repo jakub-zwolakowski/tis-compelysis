@@ -2,7 +2,7 @@
 ## example_compliant
 ### Test
 ```
-a: 5 | b: 10
+a: 42 | b:42
 ```
 ### gcc
 ```
@@ -12,7 +12,7 @@ a: 5 | b: 10
 ```
 ### UBSan
 ```
-a: 10 | b: 5
+a: 42 | b:42
 ```
 ### Valgrind
 ```
@@ -21,7 +21,7 @@ a: 10 | b: 5
 ==12345== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
 ==12345== Command: ./example_compliant.out
 ==12345== 
-a: 10 | b: 5==12345== 
+a: 42 | b:42==12345== 
 ==12345== HEAP SUMMARY:
 ==12345==     in use at exit: 0 bytes in 0 blocks
 ==12345==   total heap usage: 7 allocs, 7 frees, 123,456 bytes allocated
@@ -34,7 +34,6 @@ a: 10 | b: 5==12345==
 ## example_noncompliant
 ### Test
 ```
-a: 10 | b: 5
 ```
 ### gcc
 ```
@@ -44,7 +43,7 @@ a: 10 | b: 5
 ```
 ### UBSan
 ```
-a: 5 | b: 10
+a: 42 | b:42
 ```
 ### Valgrind
 ```
@@ -53,10 +52,15 @@ a: 5 | b: 10
 ==12345== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
 ==12345== Command: ./example_noncompliant.out
 ==12345== 
-a: 5 | b: 10==12345== 
+==12345== 
+==12345== Process terminating with default action of signal 15 (SIGTERM)
+==12345==    at 0x424242424242: __lll_lock_wait (lowlevellock.S:135)
+==12345==    by 0x424242424242: pthread_mutex_lock (pthread_mutex_lock.c:80)
+==12345==    by 0x424242424242: main (example_noncompliant.c:59)
+==12345== 
 ==12345== HEAP SUMMARY:
 ==12345==     in use at exit: 0 bytes in 0 blocks
-==12345==   total heap usage: 7 allocs, 7 frees, 123,456 bytes allocated
+==12345==   total heap usage: 6 allocs, 6 frees, 123,456 bytes allocated
 ==12345== 
 ==12345== All heap blocks were freed -- no leaks are possible
 ==12345== 

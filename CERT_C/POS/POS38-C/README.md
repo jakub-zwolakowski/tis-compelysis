@@ -101,30 +101,3 @@ child:c
 ==12345== For counts of detected and suppressed errors, rerun with: -v
 ==12345== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 ```
-## __vfs-config-1
-### Test
-```
-/bin/sh: 1: ./__vfs-config-1.out: not found
-```
-### gcc
-```
-__vfs-config-1.c:2:10: fatal error: __tis_mkfs.h: No such file or directory
- #include "__tis_mkfs.h"
-          ^~~~~~~~~~~~~~
-compilation terminated.
-```
-### clang
-```
-__vfs-config-1.c:2:10: fatal error: '__tis_mkfs.h' file not found
-#include "__tis_mkfs.h"
-         ^~~~~~~~~~~~~~
-1 error generated.
-```
-### UBSan
-```
-/bin/sh: 1: ./__vfs-config-1.UBSan-out: not found
-```
-### Valgrind
-```
-valgrind: ./__vfs-config-1.out: No such file or directory
-```

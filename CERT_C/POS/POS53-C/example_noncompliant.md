@@ -32,25 +32,25 @@ signaling
 ### UBSan
 ```
 signaling
-count2 = 1
-signaling
 count1 = 1
 signaling
-count2 = 2
+count2 = 1
 signaling
 count1 = 2
 signaling
-count2 = 3
+count2 = 2
 signaling
 count1 = 3
 signaling
-count2 = 4
+count2 = 3
 signaling
 count1 = 4
 signaling
-count2 = 5
+count2 = 4
 signaling
 count1 = 5
+signaling
+count2 = 5
 signaling
 ```
 ### Valgrind
