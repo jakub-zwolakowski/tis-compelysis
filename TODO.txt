@@ -34,9 +34,9 @@ CON37-C : DONE
 CON38-C : DONE -- BUG (printf again)
 CON39-C : DONE -- pthread_detach not implemented
 CON40-C : DONE
-CON41-C : _TODO_
-CON42-C : _TODO_
-CON43-C : _TODO_
+CON41-C : DONE
+CON42-C : UNDER CONSTRUCTION
+CON43-C : DONE -- DETECTED!
 
 MSC30-C : _TODO_
 MSC32-C : _TODO_

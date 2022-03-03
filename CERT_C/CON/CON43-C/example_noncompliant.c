@@ -1,63 +1,72 @@
-#include <pthread.h>
 #include <stdio.h>
+
+#ifdef C11_THREADS
+#include <thread.h>
+#else
+#include "../c11threads.h"
+#endif
  
 static volatile int account_balance;
  
 void debit(int amount) {
   account_balance -= amount;
 #ifndef __TRUSTINSOFT_ANALYZER__
-  printf("%d\n", account_balance);
+  printf("account_balance = %3d\n", account_balance);
 #endif
 }
  
 void credit(int amount) {
   account_balance += amount;
 #ifndef __TRUSTINSOFT_ANALYZER__
-  printf("%d\n", account_balance);
+  printf("account_balance = %3d\n", account_balance);
 #endif
 }
 
-void *do_debit(void *arg) {
-  debit(42);
-  return NULL;
+int do_debit(void *arg) {
+  int amount = *((int *) arg);
+  debit(amount);
+  return thrd_success;
 }
 
-void *do_credit(void *arg) {
-  credit(42);
-  return NULL;
+int do_credit(void *arg) {
+  int amount = *((int *) arg);
+  credit(amount);
+  return thrd_success;
 }
 
 enum { max_threads = 5 };
 
 int main(void) {
   /* ... */
-  pthread_t threads_debit[max_threads];
-  pthread_t threads_credit[max_threads];
+  thrd_t threads_debit[max_threads];
+  thrd_t threads_credit[max_threads];
   for (size_t i = 0; i < max_threads; i++) {
-    if (0 != pthread_create(&threads_debit[i], NULL, do_debit, NULL)) {
+    int amount = (int) 1;
+    if (thrd_success != thrd_create(&threads_debit[i], do_debit, &amount)) {
       /* Handle error */
-      return 0;
+      return 1;
     }
-    if (0 != pthread_create(&threads_credit[i], NULL, do_credit, NULL)) {
+    if (thrd_success != thrd_create(&threads_credit[i], do_credit, &amount)) {
       /* Handle error */
-      return 0;
+      return 2;
     }
   }
   for (size_t i = 0; i < max_threads; i++) {
-    if (0 != pthread_join(threads_debit[i], 0)) {
+    if (thrd_success != thrd_join(threads_debit[i], NULL)) {
       /* Handle error */
-      return 0;
+      return 3;
     }
-    if (0 != pthread_join(threads_credit[i], 0)) {
+    if (thrd_success != thrd_join(threads_credit[i], NULL)) {
       /* Handle error */
-      return 0;
+      return 4;
     }
   }
+  printf("account_balance = %3d\n", account_balance);
   return 0;
 }
 
 // DETECTED!
-// CMD: tis-analyzer -val -slevel 1000 -mthread test_CON43-C_noncompliant.c
+// CMD: tis-analyzer -val -slevel 1000 -mthread example_noncompliant.c
 // C17: https://cigix.me/c17#5.1.2.4.p35
 // UB: "The execution of a program contains a data race"
 // COMPILE: gcc -lpthread

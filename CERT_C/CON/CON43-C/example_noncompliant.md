@@ -1,16 +1,17 @@
 ## example_noncompliant
 ### Test
 ```
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
+account_balance = XXX
+account_balance = XXX
+account_balance = XXX
+account_balance = XXX
+account_balance = XXX
+account_balance = XXX
+account_balance = XXX
+account_balance = XXX
+account_balance = XXX
+account_balance = XXX
+account_balance = XXX
 ```
 ### gcc
 ```
@@ -20,16 +21,17 @@
 ```
 ### UBSan
 ```
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
+account_balance = XXX
+account_balance = XXX
+account_balance = XXX
+account_balance = XXX
+account_balance = XXX
+account_balance = XXX
+account_balance = XXX
+account_balance = XXX
+account_balance = XXX
+account_balance = XXX
+account_balance = XXX
 ```
 ### Valgrind
 ```
@@ -38,16 +40,17 @@
 ==12345== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
 ==12345== Command: ./example_noncompliant.out
 ==12345== 
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
+account_balance = XXX
+account_balance = XXX
+account_balance = XXX
+account_balance = XXX
+account_balance = XXX
+account_balance = XXX
+account_balance = XXX
+account_balance = XXX
+account_balance = XXX
+account_balance = XXX
+account_balance = XXX
 ==12345== 
 ==12345== HEAP SUMMARY:
 ==12345==     in use at exit: 0 bytes in 0 blocks
