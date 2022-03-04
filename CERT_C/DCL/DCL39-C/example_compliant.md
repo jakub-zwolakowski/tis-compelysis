@@ -5,13 +5,13 @@ timeout: failed to run command ‘./example_compliant.out’: No such file or di
 ```
 ### gcc
 ```
-/tmp/ccUECVcr.o: In function `do_stuff':
+/tmp/XXX.o: In function `do_stuff':
 /home/qba/git/tis-compelysis/CERT_C/DCL/DCL39-C/example_compliant.c:28: undefined reference to `copy_to_user'
 collect2: error: ld returned 1 exit status
 ```
 ### clang
 ```
-/tmp/example_compliant-347d92.o: In function `do_stuff':
+/tmp/XXX.o: In function `do_stuff':
 /home/qba/git/tis-compelysis/CERT_C/DCL/DCL39-C/example_compliant.c:28: undefined reference to `copy_to_user'
 clang-12: error: linker command failed with exit code 1 (use -v to see invocation)
 ```

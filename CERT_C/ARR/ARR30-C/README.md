@@ -61,14 +61,14 @@ UndefinedBehaviorSanitizer:DEADLYSIGNAL
 ==12345==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x424242424242 (pc 0x424242424242 bp 0x424242424242 sp 0x424242424242 T4242)
 ==12345==The signal is caused by a WRITE memory access.
 ==12345==Hint: address points to the zero page.
-    #0 0x424242424242  /build/glibc-uZu3wS/glibc-2.27/string/../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S:316
+    #0 0x424242424242  /build/glibc-XXXXXX/glibc-XXXXXX.27/string/../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S:316
     #1 0x424242424242 in init_block_noncompliant (/home/qba/git/tis-compelysis/CERT_C/ARR/ARR30-C/Null_Pointer_Arithmetic.UBSan-out+0x424242424242)
     #2 0x424242424242 in main (/home/qba/git/tis-compelysis/CERT_C/ARR/ARR30-C/Null_Pointer_Arithmetic.UBSan-out+0x424242424242)
-    #3 0x424242424242 in __libc_start_main /build/glibc-uZu3wS/glibc-2.27/csu/../csu/libc-start.c:310
+    #3 0x424242424242 in __libc_start_main /build/glibc-XXXXXX/glibc-XXXXXX.27/csu/../csu/libc-start.c:310
     #4 0x424242424242 in _start (/home/qba/git/tis-compelysis/CERT_C/ARR/ARR30-C/Null_Pointer_Arithmetic.UBSan-out+0x424242424242)
 
 UndefinedBehaviorSanitizer can not provide additional info.
-SUMMARY: UndefinedBehaviorSanitizer: SEGV /build/glibc-uZu3wS/glibc-2.27/string/../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S:316 
+SUMMARY: UndefinedBehaviorSanitizer: SEGV /build/glibc-XXXXXX/glibc-XXXXXX.27/string/../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S:316 
 ==12345==ABORTING
 ```
 ### Valgrind

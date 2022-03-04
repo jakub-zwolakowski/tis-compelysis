@@ -17,7 +17,7 @@ UndefinedBehaviorSanitizer:DEADLYSIGNAL
 ==12345==ERROR: UndefinedBehaviorSanitizer: stack-overflow on address 0x424242424242 (pc 0x424242424242 bp 0x424242424242 sp 0x424242424242 T4242)
     #0 0x424242424242 in f_noncompliant (/home/qba/git/tis-compelysis/CERT_C/ARR/ARR32-C/example1.UBSan-out+0x424242424242)
     #1 0x424242424242 in main (/home/qba/git/tis-compelysis/CERT_C/ARR/ARR32-C/example1.UBSan-out+0x424242424242)
-    #2 0x424242424242 in __libc_start_main /build/glibc-uZu3wS/glibc-2.27/csu/../csu/libc-start.c:310
+    #2 0x424242424242 in __libc_start_main /build/glibc-XXXXXX/glibc-XXXXXX.27/csu/../csu/libc-start.c:310
     #3 0x424242424242 in _start (/home/qba/git/tis-compelysis/CERT_C/ARR/ARR32-C/example1.UBSan-out+0x424242424242)
 
 SUMMARY: UndefinedBehaviorSanitizer: stack-overflow (/home/qba/git/tis-compelysis/CERT_C/ARR/ARR32-C/example1.UBSan-out+0x424242424242) in f_noncompliant

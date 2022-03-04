@@ -1,6 +1,7 @@
 ## example_noncompliant
 ### Test
 ```
+a: 42 | b:42
 ```
 ### gcc
 ```
