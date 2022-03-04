@@ -132,7 +132,7 @@ markdown_files = $(patsubst %.c, %.md, $(main_C_files))
 	ls *.md | xargs -n 1 sed -i -E 's/ [0-9]+,[0-9,]+ bytes/ 123,456 bytes/g'                                        # Valgrind : Uniformize big sizes that may change
 	ls *.md | xargs -n 1 sed -i -E 's/Thread [0-9]+:/Thread 42:/g'                                                   # Valgrind : Thread XX
 	ls *.md | xargs -n 1 sed -i -E 's/glibc-[[:alnum:]]+/glibc-XXXXXX/g'                                             # Valgrind / UBSan : glibc-??????
-	ls *.md | xargs -n 1 sed -i -E 's/\/tmp\/[[:alnum:][:punct:]]+.o:/\/tmp\/XXX.o:/g'                                      # gcc / clang : tmp/XXXXX.o
+	ls *.md | xargs -n 1 sed -i -E 's/\/tmp\/[[:alnum:][:punct:]]+.o:/\/tmp\/XXX.o:/g'                               # gcc / clang : tmp/XXXXX.o
 	ls *.md | xargs -n 1 sed -i -E 's/^Generated identifier = \"ID[0-9]+\"/Generated identifier = \"ID42\"/g'        # MSC30-C : Generated identifier
 	ls *.md | xargs -n 1 sed -i -E 's/^random\(\) = [0-9]+/random\(\) = 42/g'                                        # MSC32-C : random()
 	ls *.md | xargs -n 1 sed -i -E 's/^a: [0-9]+ \| b: [0-9]+/a: 42 \| b:42/g'                                         # POS47-C : a b
