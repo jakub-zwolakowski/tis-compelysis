@@ -33,6 +33,7 @@ int main(void) {
   struct S *s = (struct S *)malloc(sizeof(struct S));
   if (s == NULL) {
     /* Handle error */
+    return 1;
   }
   s->len = 0;
   find_compliant(s, 'a');

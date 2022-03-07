@@ -14,6 +14,7 @@ int f(const char *filename, const char *userbuf, const unsigned int userlen) {
     /* Handle error */
     return 2;
   }
+  close(fd);
   
   return 0;
 }

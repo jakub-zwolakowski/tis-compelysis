@@ -35,7 +35,7 @@ void *thread_foo(void *ptr) {
 }
 
 void *thread_bar(void *ptr) {
-  uint32_t num;
+  uint32_t num = 42;
   int result;
   int sock;
 

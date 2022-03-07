@@ -82,7 +82,7 @@ valgrind_results = $(patsubst %.out, %.valgrind-run, $(executables))
 	@echo ""
 	@echo "--- Valgrind on '$<' ---"
 	@echo ""
-	-timeout 42 valgrind --leak-check=yes ./$< > $@ 2>&1
+	-timeout 42 valgrind --leak-check=yes --track-origins=yes --trace-children=yes --log-file="$@" ./$<
 
 valgrind: $(valgrind_results)
 
@@ -129,8 +129,9 @@ markdown_files = $(patsubst %.c, %.md, $(main_C_files))
 	ls *.md | xargs -n 1 sed -i -E 's/0x[a-zA-Z0-9]{6,12}/0x424242424242/g'                                          # Uniformize hex numbers (addresses?)
 	ls *.md | xargs -n 1 sed -i -E 's/==[0-9]+==/==12345==/g'                                                        # Valgrind : Uniformize Valgrind's line beginnings
 	ls *.md | xargs -n 1 sed -i -E 's/T[0-9]{3,5}/T4242/g'                                                           # ???
-	ls *.md | xargs -n 1 sed -i -E 's/ [0-9]+,[0-9,]+ bytes/ 123,456 bytes/g'                                        # Valgrind : Uniformize big sizes that may change
+	ls *.md | xargs -n 1 sed -i -E 's/ ([0-9]+[,]?)+ bytes/ 123,456 bytes/g'                                        # Valgrind : Uniformize big sizes that may change
 	ls *.md | xargs -n 1 sed -i -E 's/Thread [0-9]+:/Thread 42:/g'                                                   # Valgrind : Thread XX
+	ls *.md | xargs -n 1 sed -i -E 's/Parent PID: [0-9]+/Parent PID: 12345/g'                                        # Valgrind : Parent PID
 	ls *.md | xargs -n 1 sed -i -E 's/glibc-[[:alnum:]]+/glibc-XXXXXX/g'                                             # Valgrind / UBSan : glibc-??????
 	ls *.md | xargs -n 1 sed -i -E 's/\/tmp\/[[:alnum:][:punct:]]+.o:/\/tmp\/XXX.o:/g'                               # gcc / clang : tmp/XXXXX.o
 	ls *.md | xargs -n 1 sed -i -E 's/^Generated identifier = \"ID[0-9]+\"/Generated identifier = \"ID42\"/g'        # MSC30-C : Generated identifier

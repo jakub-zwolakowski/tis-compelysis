@@ -17,9 +17,10 @@ int f(const char *filename, const char *userbuf, const unsigned int userlen) {
     if (fd == -1) {
       return 2;
     }
-  }
-  if (write(fd, userbuf, userlen) < userlen) {
-    return 3;
+    if (write(fd, userbuf, userlen) < userlen) {
+      return 3;
+    }
+    close(fd);
   }
 
   return 0;

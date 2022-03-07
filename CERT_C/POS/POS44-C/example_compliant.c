@@ -4,10 +4,10 @@
 
 void *func(void *foo) {
   /* Execution of thread */
-  return NULL;
   while (1) {
     sleep(10);
   }
+  return NULL;
 }
  
 int main(void) {

@@ -20,7 +20,8 @@
 export SONAR_TOKEN=XXX
 
 # build-wrapper-linux-x86-64 --out-dir bw-output <insert_your_clean_build_command>
-build-wrapper-linux-x86-64 --out-dir bw-output make clean all
+make clean
+build-wrapper-linux-x86-64 --out-dir bw-output make all
 
 sonar-scanner \
   -Dsonar.organization=jakub-zwolakowski \
