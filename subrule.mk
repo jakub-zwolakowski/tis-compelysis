@@ -107,29 +107,30 @@ markdown_files = $(patsubst %.c, %.md, $(main_C_files))
 	echo "## $*" > $@
 	echo "### Test" >> $@
 	echo '```' >> $@
-	cat $*.test-result >> $@
+	-cat $*.test-result >> $@
 	echo '```' >> $@
 	echo "### gcc" >> $@
 	echo '```' >> $@
-	cat $*.gcc-result >> $@
+	-cat $*.gcc-result >> $@
 	echo '```' >> $@
 	echo "### clang" >> $@
 	echo '```' >> $@
-	cat $*.clang-result >> $@
+	-cat $*.clang-result >> $@
 	echo '```' >> $@
 	echo "### UBSan" >> $@
 	echo '```' >> $@
-	cat $*.UBSan-run >> $@
+	-cat $*.UBSan-run >> $@
 	echo '```' >> $@
 	echo "### Valgrind" >> $@
 	echo '```' >> $@
-	cat $*.valgrind-run >> $@
+	-cat $*.valgrind-run >> $@
 	echo '```' >> $@
 	ls *.md | xargs -n 1 sed -i -E 's/[^[[:alnum:]][[:blank:]][[:punct:]][[:space:]]]/\?/g'                          # Uniformize unprintable characters
 	ls *.md | xargs -n 1 sed -i -E 's/0x[a-zA-Z0-9]{6,12}/0x424242424242/g'                                          # Uniformize hex numbers (addresses?)
 	ls *.md | xargs -n 1 sed -i -E 's/==[0-9]+==/==12345==/g'                                                        # Valgrind : Uniformize Valgrind's line beginnings
 	ls *.md | xargs -n 1 sed -i -E 's/T[0-9]{3,5}/T4242/g'                                                           # ???
-	ls *.md | xargs -n 1 sed -i -E 's/ ([0-9]+[,]?)+ bytes/ 123,456 bytes/g'                                        # Valgrind : Uniformize big sizes that may change
+	ls *.md | xargs -n 1 sed -i -E 's/ [1-9][0-9][0-9] bytes/ 123 bytes/g'                                           # Valgrind : Uniformize big sizes that may change
+	ls *.md | xargs -n 1 sed -i -E 's/ [0-9]+(,[0-9]+)+ bytes/ 123,456 bytes/g'                                      # Valgrind : Uniformize big sizes that may change
 	ls *.md | xargs -n 1 sed -i -E 's/Thread [0-9]+:/Thread 42:/g'                                                   # Valgrind : Thread XX
 	ls *.md | xargs -n 1 sed -i -E 's/Parent PID: [0-9]+/Parent PID: 12345/g'                                        # Valgrind : Parent PID
 	ls *.md | xargs -n 1 sed -i -E 's/glibc-[[:alnum:]]+/glibc-XXXXXX/g'                                             # Valgrind / UBSan : glibc-??????

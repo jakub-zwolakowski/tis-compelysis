@@ -28,6 +28,8 @@ int main(void) {
   /* ... */
   /* Set flag when done */
   flag = true;
+
+  thrd_join(tid, NULL);
  
   return 0;
 }

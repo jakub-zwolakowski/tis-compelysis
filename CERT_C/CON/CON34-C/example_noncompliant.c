@@ -26,7 +26,7 @@ void create_thread(thrd_t *tid) {
 }
 
 int main(void) {
-  thrd_t tid;
+  thrd_t tid = 0;
   create_thread(&tid);
    
   if (thrd_success != thrd_join(tid, NULL)) {

@@ -18,6 +18,7 @@
 ==12345== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
 ==12345== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
 ==12345== Command: ./Pointer_Past_Flexible_Array_Member.out
+==12345== Parent PID: 12345
 ==12345== 
 ==12345== 
 ==12345== HEAP SUMMARY:
@@ -77,6 +78,7 @@ SUMMARY: UndefinedBehaviorSanitizer: SEGV /build/glibc-XXXXXX/glibc-XXXXXX.27/st
 ==12345== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
 ==12345== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
 ==12345== Command: ./Null_Pointer_Arithmetic.out
+==12345== Parent PID: 12345
 ==12345== 
 ==12345== Invalid write of size 2
 ==12345==    at 0x424242424242: memmove (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
@@ -104,8 +106,6 @@ SUMMARY: UndefinedBehaviorSanitizer: SEGV /build/glibc-XXXXXX/glibc-XXXXXX.27/st
 ==12345== 
 ==12345== For counts of detected and suppressed errors, rerun with: -v
 ==12345== ERROR SUMMARY: 2 errors from 1 contexts (suppressed: 0 from 0)
-timeout: the monitored command dumped core
-Segmentation fault
 ```
 ## Forming_Out-of-Bounds_Pointer
 ### Test
@@ -128,6 +128,7 @@ SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior Forming_Out-of-Bounds_Po
 ==12345== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
 ==12345== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
 ==12345== Command: ./Forming_Out-of-Bounds_Pointer.out
+==12345== Parent PID: 12345
 ==12345== 
 ==12345== 
 ==12345== HEAP SUMMARY:
@@ -158,6 +159,7 @@ SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior Forming_Out-of-Bounds_Po
 ==12345== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
 ==12345== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
 ==12345== Command: ./Using_Past-the-End_Index.out
+==12345== Parent PID: 12345
 ==12345== 
 ==12345== Invalid write of size 4
 ==12345==    at 0x424242424242: insert_in_table (Using_Past-the-End_Index.c:38)
@@ -207,8 +209,8 @@ Aborted
 ==12345== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
 ==12345== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
 ==12345== Command: ./Dereferencing_Past-the-End_Pointer.out
+==12345== Parent PID: 12345
 ==12345== 
-*** stack smashing detected ***: <unknown> terminated
 ==12345== 
 ==12345== Process terminating with default action of signal 6 (SIGABRT)
 ==12345==    at 0x424242424242: raise (raise.c:51)
@@ -228,8 +230,6 @@ Aborted
 ==12345== 
 ==12345== For counts of detected and suppressed errors, rerun with: -v
 ==12345== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
-timeout: the monitored command dumped core
-Aborted
 ```
 ## Apparently_Accessible_Out-of-Range_Index
 ### Test
@@ -252,6 +252,7 @@ SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior Apparently_Accessible_Ou
 ==12345== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
 ==12345== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
 ==12345== Command: ./Apparently_Accessible_Out-of-Range_Index.out
+==12345== Parent PID: 12345
 ==12345== 
 ==12345== 
 ==12345== HEAP SUMMARY:

@@ -21,5 +21,4 @@ timeout: failed to run command ‘./example_memset_compliant.UBSan-out’: No su
 ```
 ### Valgrind
 ```
-valgrind: ./example_memset_compliant.out: No such file or directory
 ```

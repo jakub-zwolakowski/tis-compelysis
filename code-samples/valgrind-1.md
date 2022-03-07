@@ -21,6 +21,7 @@ valgrind-1.c:13:2: error: no newline at end of file [-Werror,-Wnewline-eof]
 ==12345== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
 ==12345== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
 ==12345== Command: ./valgrind-1.out
+==12345== Parent PID: 12345
 ==12345== 
 ==12345== Invalid write of size 4
 ==12345==    at 0x424242424242: f (valgrind-1.c:6)

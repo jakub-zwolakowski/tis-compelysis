@@ -27,10 +27,8 @@ Data = 10
 ==12345== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
 ==12345== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
 ==12345== Command: ./example_noncompliant.out
+==12345== Parent PID: 12345
 ==12345== 
-Data = 10
-Data = 10
-Data = 10
 ==12345== 
 ==12345== HEAP SUMMARY:
 ==12345==     in use at exit: 24 bytes in 3 blocks

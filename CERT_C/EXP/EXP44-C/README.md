@@ -26,9 +26,8 @@ example_sizeof.c:5:17: error: expression with side effects has no effect in an u
 ==12345== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
 ==12345== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
 ==12345== Command: ./example_sizeof.out
+==12345== Parent PID: 12345
 ==12345== 
-15, 4
-14, 4
 ==12345== 
 ==12345== HEAP SUMMARY:
 ==12345==     in use at exit: 0 bytes in 0 blocks

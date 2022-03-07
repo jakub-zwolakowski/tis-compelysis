@@ -21,5 +21,4 @@ timeout: failed to run command ‘./example_memset_noncompliant.UBSan-out’: No
 ```
 ### Valgrind
 ```
-valgrind: ./example_memset_noncompliant.out: No such file or directory
 ```

@@ -21,5 +21,4 @@ timeout: failed to run command ‘./example_compliant.UBSan-out’: No such file
 ```
 ### Valgrind
 ```
-valgrind: ./example_compliant.out: No such file or directory
 ```

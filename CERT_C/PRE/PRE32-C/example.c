@@ -15,6 +15,7 @@ void func_noncompliant(const char *src) {
     #endif
   );
   /* ... */
+  free(dest);
 }
 
 void func_compliant(const char *src) {
@@ -29,6 +30,7 @@ void func_compliant(const char *src) {
     memcpy(dest, src, 24);
   #endif
   /* ... */
+  free(dest);
 }
 
 int main(void) {

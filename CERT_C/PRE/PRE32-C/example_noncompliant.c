@@ -15,6 +15,7 @@ void func(const char *src) {
     #endif
   );
   /* ... */
+  free(dest);
 }
 
 int main(void) {

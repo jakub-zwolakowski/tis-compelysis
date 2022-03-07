@@ -34,6 +34,7 @@ SUMMARY: UndefinedBehaviorSanitizer: SEGV /build/glibc-XXXXXX/glibc-XXXXXX.27/ma
 ==12345== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
 ==12345== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
 ==12345== Command: ./example.out
+==12345== Parent PID: 12345
 ==12345== 
 ==12345== Invalid free() / delete / delete[] / realloc()
 ==12345==    at 0x424242424242: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
@@ -41,8 +42,6 @@ SUMMARY: UndefinedBehaviorSanitizer: SEGV /build/glibc-XXXXXX/glibc-XXXXXX.27/ma
 ==12345==    by 0x424242424242: main (example.c:62)
 ==12345==  Address 0x424242424242 is in a r-x mapped file /home/qba/git/tis-compelysis/CERT_C/MEM/MEM34-C/example.out segment
 ==12345== 
-usage: $>a.exe [string]
-usage: $>a.exe [string]
 ==12345== 
 ==12345== HEAP SUMMARY:
 ==12345==     in use at exit: 0 bytes in 0 blocks

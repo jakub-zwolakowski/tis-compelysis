@@ -22,6 +22,7 @@ int main(void) {
     /* Handle Error */
     return 2;
   }
+  pthread_join(thread, NULL);
   
   /* This point is not reached because the process terminates in pthread_kill() */
   return 0;

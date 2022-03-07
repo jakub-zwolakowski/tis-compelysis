@@ -32,8 +32,8 @@ SUMMARY: UndefinedBehaviorSanitizer: SEGV (<unknown module>)
 ==12345== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
 ==12345== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
 ==12345== Command: ./example_noncompliant.out
+==12345== Parent PID: 12345
 ==12345== 
-*** stack smashing detected ***: <unknown> terminated
 ==12345== 
 ==12345== Process terminating with default action of signal 6 (SIGABRT)
 ==12345==    at 0x424242424242: raise (raise.c:51)
@@ -52,6 +52,4 @@ SUMMARY: UndefinedBehaviorSanitizer: SEGV (<unknown module>)
 ==12345== 
 ==12345== For counts of detected and suppressed errors, rerun with: -v
 ==12345== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
-timeout: the monitored command dumped core
-Aborted
 ```

@@ -22,6 +22,7 @@ int main(void) {
     /* Handle Error */
     return 2;
   }
+  pthread_join(thread, NULL);
  
   /* Continue executing */
   return 0;

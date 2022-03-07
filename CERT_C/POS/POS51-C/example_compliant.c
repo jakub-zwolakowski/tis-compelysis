@@ -130,6 +130,11 @@ int main(void) {
     /* Handle error */
     return 4;
   }
+  
+  pthread_join(thr1, NULL);
+  pthread_join(thr2, NULL);
+  free(ba1);
+  free(ba2);
  
   pthread_exit(NULL);
   return 0;

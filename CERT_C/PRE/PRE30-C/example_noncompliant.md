@@ -39,5 +39,4 @@ timeout: failed to run command ‘./example_noncompliant.UBSan-out’: No such f
 ```
 ### Valgrind
 ```
-valgrind: ./example_noncompliant.out: No such file or directory
 ```

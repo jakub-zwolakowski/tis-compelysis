@@ -13,6 +13,7 @@ void func(const char *src) {
     memcpy(dest, src, 24);
   #endif
   /* ... */
+  free(dest);
 }
 
 int main(void) {

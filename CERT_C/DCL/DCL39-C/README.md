@@ -22,7 +22,6 @@ timeout: failed to run command ‘./example_memset_compliant.UBSan-out’: No su
 ```
 ### Valgrind
 ```
-valgrind: ./example_memset_compliant.out: No such file or directory
 ```
 ## example_memset_noncompliant
 ### Test
@@ -47,7 +46,6 @@ timeout: failed to run command ‘./example_memset_noncompliant.UBSan-out’: No
 ```
 ### Valgrind
 ```
-valgrind: ./example_memset_noncompliant.out: No such file or directory
 ```
 ## example_compliant
 ### Test
@@ -72,7 +70,6 @@ timeout: failed to run command ‘./example_compliant.UBSan-out’: No such file
 ```
 ### Valgrind
 ```
-valgrind: ./example_compliant.out: No such file or directory
 ```
 ## example_noncompliant
 ### Test
@@ -97,5 +94,4 @@ timeout: failed to run command ‘./example_noncompliant.UBSan-out’: No such f
 ```
 ### Valgrind
 ```
-valgrind: ./example_noncompliant.out: No such file or directory
 ```

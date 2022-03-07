@@ -34,6 +34,7 @@ SUMMARY: UndefinedBehaviorSanitizer: SEGV (/home/qba/git/tis-compelysis/CERT_C/C
 ==12345== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
 ==12345== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
 ==12345== Command: ./example_noncompliant.out
+==12345== Parent PID: 12345
 ==12345== 
 ==12345== Thread 42:
 ==12345== Invalid read of size 8
@@ -53,9 +54,6 @@ SUMMARY: UndefinedBehaviorSanitizer: SEGV (/home/qba/git/tis-compelysis/CERT_C/C
 ==12345==  possible), you can try to increase the size of the
 ==12345==  main thread stack using the --main-stacksize= flag.
 ==12345==  The main thread stack size used in this run was 8388608.
-Node = 42
-Node = 42
-Node = 42
 ==12345== 
 ==12345== HEAP SUMMARY:
 ==12345==     in use at exit: 123,456 bytes in 6 blocks
@@ -80,6 +78,4 @@ Node = 42
 ==12345== 
 ==12345== For counts of detected and suppressed errors, rerun with: -v
 ==12345== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
-timeout: the monitored command dumped core
-Segmentation fault
 ```

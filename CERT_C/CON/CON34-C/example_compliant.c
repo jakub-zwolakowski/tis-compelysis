@@ -27,7 +27,7 @@ void create_thread(thrd_t *tid, int *value) {
 }
   
 int main(void) {
-  thrd_t tid;
+  thrd_t tid = 0;
   int *value = (int *)malloc(sizeof(int));
   if (!value) {
     /* Handle error */

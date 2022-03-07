@@ -24,10 +24,8 @@ exit1
 ==12345== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
 ==12345== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
 ==12345== Command: ./example_compliant.out
+==12345== Parent PID: 12345
 ==12345== 
-exit2
-exit2 : some_condition
-exit1
 ==12345== 
 ==12345== HEAP SUMMARY:
 ==12345==     in use at exit: 0 bytes in 0 blocks
@@ -63,10 +61,8 @@ exit1
 ==12345== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
 ==12345== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
 ==12345== Command: ./example_noncompliant.out
+==12345== Parent PID: 12345
 ==12345== 
-exit2
-exit2 : some_condition
-exit1
 ==12345== 
 ==12345== HEAP SUMMARY:
 ==12345==     in use at exit: 0 bytes in 0 blocks
@@ -106,12 +102,8 @@ exit1
 ==12345== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
 ==12345== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
 ==12345== Command: ./example.out
+==12345== Parent PID: 12345
 ==12345== 
-exit2_compliant
-exit2_compliant : some_condition
-exit2_noncompliant
-exit2_noncompliant : some_condition
-exit1
 ==12345== 
 ==12345== HEAP SUMMARY:
 ==12345==     in use at exit: 0 bytes in 0 blocks
