@@ -53,6 +53,7 @@ int deposit(void *ptr) {
   mtx_t *second;
  
   if (args->from->id == args->to->id) {
+    free(ptr);
     return -1; /* Indicate error */
   }
  
@@ -66,10 +67,12 @@ int deposit(void *ptr) {
   }
   if (thrd_success != mtx_lock(first)) {
     /* Handle error */
+    free(ptr);
     return thrd_error;
   }
   if (thrd_success != mtx_lock(second)) {
     /* Handle error */
+    free(ptr);
     return thrd_error;
   }
  
@@ -82,11 +85,11 @@ int deposit(void *ptr) {
  
   if (thrd_success != mtx_unlock(second)) {
     /* Handle error */
-    return thrd_error;
+    result = thrd_error;
   }
   if (thrd_success != mtx_unlock(first)) {
     /* Handle error */
-    return thrd_error;
+    result = thrd_error;
   }
   free(ptr);
   return result;
