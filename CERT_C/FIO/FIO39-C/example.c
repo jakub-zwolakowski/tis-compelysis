@@ -22,13 +22,14 @@ void func_noncompliant(const char *file_name) {
  
   if (fwrite(append_data, 1, BUFFERSIZE, file) != BUFFERSIZE) {
     /* Handle error */
-    return;
+    goto close_file_noncompliant;
   }
   if (fread(data, 1, BUFFERSIZE, file) < BUFFERSIZE) {
     /* Handle there not being data */
-    return;
+    goto close_file_noncompliant;
   }
- 
+
+close_file_noncompliant:
   if (fclose(file) == EOF) {
     /* Handle error */
     return;
@@ -49,19 +50,20 @@ void func_compliant(const char *file_name) {
   initialize_data(append_data, BUFFERSIZE);
   if (fwrite(append_data, BUFFERSIZE, 1, file) != BUFFERSIZE) {
     /* Handle error */
-    return;
+    goto close_file_compliant;
   }
  
   if (fseek(file, 0L, SEEK_SET) != 0) {
     /* Handle error */
-    return;
+    goto close_file_compliant;
   }
  
   if (fread(data, BUFFERSIZE, 1, file) != 0) {
     /* Handle there not being data */
-    return;
+    goto close_file_compliant;
   }
  
+close_file_compliant:
   if (fclose(file) == EOF) {
     /* Handle error */
     return;

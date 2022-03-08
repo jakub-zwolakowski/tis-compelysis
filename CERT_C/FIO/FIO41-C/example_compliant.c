@@ -12,10 +12,11 @@ void func(const char *file_name) {
   while (c <= 'z') {
     if (putc(c++, fptr) == EOF) {
       /* Handle error */
-      return;
+      goto close_fptr;
     }
   }
- 
+
+close_fptr:
   if (fclose(fptr) == EOF) {
     /* Handle error */
     return;

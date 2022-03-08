@@ -26,16 +26,20 @@ void func(const char *file_name) {
   fd = open(file_name, OPEN_FLAGS | O_WRONLY);
   if (fd == -1) {
     /* Handle error */
+    return;
   }
  
   if (fstat(fd, &open_st) != 0) {
     /* Handle error */
+    close(fd);
+    return;
   }
  
   if ((orig_st.st_mode != open_st.st_mode) ||
       (orig_st.st_ino  != open_st.st_ino) ||
       (orig_st.st_dev  != open_st.st_dev)) {
     /* The file was tampered with */
+    close(fd);
     return;
   }
  
@@ -45,11 +49,13 @@ void func(const char *file_name) {
    */
   if ((flags = fcntl(fd, F_GETFL)) == -1) {
     /* Handle error */
+    close(fd);
     return;
   }
  
   if (fcntl(fd, F_SETFL, flags & ~O_NONBLOCK) == -1) {
     /* Handle error */
+    close(fd);
     return;
   }
  

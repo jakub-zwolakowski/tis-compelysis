@@ -18,6 +18,7 @@ int f(const char *filename, const char *userbuf, const unsigned int userlen) {
       return 2;
     }
     if (write(fd, userbuf, userlen) < userlen) {
+      close(fd);
       return 3;
     }
     close(fd);

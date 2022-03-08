@@ -22,13 +22,14 @@ void func(const char *file_name) {
  
   if (fwrite(append_data, 1, BUFFERSIZE, file) != BUFFERSIZE) {
     /* Handle error */
-    return;
+    goto close_file;
   }
   if (fread(data, 1, BUFFERSIZE, file) < BUFFERSIZE) {
     /* Handle there not being data */
-    return;
+    goto close_file;
   }
  
+close_file:
   if (fclose(file) == EOF) {
     /* Handle error */
     return;

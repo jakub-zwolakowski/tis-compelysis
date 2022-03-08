@@ -30,7 +30,7 @@ attacker
 ==12345== 
 ==12345== For counts of detected and suppressed errors, rerun with: -v
 ==12345== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
-  still reachable: 123,456 bytes in 86 blocks
+  still reachable: 123,456 bytes in 88 blocks
 ==12345==         suppressed: 0 bytes in 0 blocks
 ==12345== Reachable blocks (those to which a pointer was found) are not shown.
 ==12345== To see them, rerun with: --leak-check=full --show-leak-kinds=all

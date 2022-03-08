@@ -21,6 +21,7 @@ struct mtf_mutex flags;
 int thread1(void *arg) {
   if (thrd_success != mtx_lock(&flags.mutex)) {
     /* Handle error */
+    mtx_unlock(&flags.mutex);
     return thrd_error;
   }
   flags.s.flag1 = 1;
@@ -34,6 +35,7 @@ int thread1(void *arg) {
 int thread2(void *arg) {
   if (thrd_success != mtx_lock(&flags.mutex)) {
     /* Handle error */
+    mtx_unlock(&flags.mutex);
     return thrd_error;
   }
   flags.s.flag2 = 2;

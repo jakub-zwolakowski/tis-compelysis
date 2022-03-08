@@ -8,10 +8,11 @@ void func(const char *file_name) {
     if (putc(c++, fptr ? fptr :
          (fptr = fopen(file_name, "w"))) == EOF) {
       /* Handle error */
-      return;
+      goto close_fptr;
     }
   }
- 
+
+close_fptr:
   if (fclose(fptr) == EOF) {
     /* Handle error */
     return;

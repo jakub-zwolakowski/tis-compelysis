@@ -28,6 +28,7 @@ int do_work(void *arg) {
   } else if (*i < max_threads - 1) { /* Worker thread */
     if (thrd_success != mtx_lock(&lock)) {
       /* Handle error */
+      mtx_unlock(&lock);
       return thrd_error;
     }
     /* Access data protected by the lock */

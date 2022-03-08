@@ -4,6 +4,7 @@ void open_some_file(const char *file) {
   FILE *f = fopen(file, "r");
   if (NULL != f) {
     /* File exists, handle error */
+    fclose(f);
     return;
   } else {
     if (fclose(f) == EOF) {

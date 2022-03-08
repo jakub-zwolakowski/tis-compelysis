@@ -13,6 +13,7 @@ void func(void) {
       strcpy(tmpvar, temp);
     } else {
       /* Handle error */
+      free(tmpvar);
       return;
     }
   } else {
@@ -27,10 +28,13 @@ void func(void) {
       strcpy(tempvar, temp);
     } else {
       /* Handle error */
+      free(tmpvar);
+      free(tempvar);
       return;
     }
   } else {
     /* Handle error */
+    free(tmpvar);
     return;
   }
  

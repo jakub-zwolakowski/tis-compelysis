@@ -93,10 +93,10 @@ int deposit(void *ptr) {
  
 int main(void) {
   thrd_t thr1, thr2;
-  transaction *arg1;
-  transaction *arg2;
-  bank_account *ba1;
-  bank_account *ba2;
+  transaction *arg1 = NULL;
+  transaction *arg2 = NULL;
+  bank_account *ba1 = NULL;
+  bank_account *ba2 = NULL;
  
   if (0 != create_bank_account(&ba1, 1000)) {
     /* Handle error */
@@ -117,7 +117,6 @@ int main(void) {
   arg2 = (transaction *)malloc(sizeof(transaction));
   if (arg2 == NULL) {
     /* Handle error */
-    free(arg1);
     goto cleanup;
   }
   arg1->from = ba1;

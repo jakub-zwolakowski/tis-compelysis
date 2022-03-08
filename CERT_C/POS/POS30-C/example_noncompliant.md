@@ -2,7 +2,7 @@
 ### Test
 ```
 -1
-ðì‘Cþ
+`‡Óyþ
 ```
 ### gcc
 ```
@@ -15,7 +15,7 @@
 example_noncompliant.c:8:3: runtime error: index -1 out of bounds for type 'char [1024]'
 SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior example_noncompliant.c:8:3 in 
 -1
-pÄ)Ø
+pQÉ.
 ```
 ### Valgrind
 ```

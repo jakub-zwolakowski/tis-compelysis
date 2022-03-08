@@ -46,6 +46,7 @@ int prepare_file(void) {
     memset(data, 42, BUFFERSIZE);
     if (fwrite(data, BUFFERSIZE, 1, file) != 1) {
         /* Handle error */
+        fclose(file);
         return 2;
     }
     fclose(file);

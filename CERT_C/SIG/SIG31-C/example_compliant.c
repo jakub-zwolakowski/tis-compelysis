@@ -22,6 +22,7 @@ int main(void) {
   if (e_flag) {
     strcpy(err_msg, "SIGINT received.");
   }
+  free(err_msg);
   return 0;
 }
 

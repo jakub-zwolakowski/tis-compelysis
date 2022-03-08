@@ -19,6 +19,7 @@ int main(void) {
   }
   strcpy(err_msg, "No errors yet.");
   /* Main code loop */
+  free(err_msg);
   return 0;
 }
 

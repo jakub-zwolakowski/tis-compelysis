@@ -12,22 +12,25 @@ typedef struct {
   int amount;
 } deposit_thr_args;
 
-void create_bank_account(bank_account **ba, int initial_amount) {
+int create_bank_account(bank_account **ba, int initial_amount) {
   int result;
   bank_account *nba = malloc(sizeof(bank_account));
   if (nba == NULL) {
     /* Handle error */
-    return;
+    return 1;
   }
  
   nba->balance = initial_amount;
   result = pthread_mutex_init(&nba->balance_mutex, NULL);
   if (result) {
     /* Handle error */
-    return;
+    free(nba);
+    return 1;
   }
  
   *ba = nba;
+
+  return 0;
 }
 
 void *deposit(void *ptr) {
@@ -36,6 +39,7 @@ void *deposit(void *ptr) {
  
   if ((result = pthread_mutex_lock(&(args->from->balance_mutex))) != 0) {
     /* Handle error */
+    pthread_mutex_unlock(&(args->from->balance_mutex));
     return NULL;
   }
  
@@ -50,6 +54,7 @@ void *deposit(void *ptr) {
  
   if ((result = pthread_mutex_lock(&(args->to->balance_mutex))) != 0) {
     /* Handle error */
+    pthread_mutex_unlock(&(args->to->balance_mutex));
     return NULL;
   }
  
@@ -58,36 +63,46 @@ void *deposit(void *ptr) {
  
   if ((result = pthread_mutex_unlock(&(args->from->balance_mutex))) != 0) {
     /* Handle error */
+    pthread_mutex_unlock(&(args->from->balance_mutex));
     return NULL;
   }
   if ((result = pthread_mutex_unlock(&(args->to->balance_mutex))) != 0) {
     /* Handle error */
+    pthread_mutex_unlock(&(args->to->balance_mutex));
     return NULL;
   }
  
-  free(ptr);
   return NULL;
 }
  
 int main(void) {
- 
   pthread_t thr1, thr2;
   int result;
- 
-  bank_account *ba1;
-  bank_account *ba2;
-  create_bank_account(&ba1, 1000);
-  create_bank_account(&ba2, 1000);
- 
-  deposit_thr_args *arg1 = malloc(sizeof(deposit_thr_args));
-  if (arg1 == NULL) {
+  deposit_thr_args *arg1 = NULL;
+  deposit_thr_args *arg2 = NULL;
+  bank_account *ba1 = NULL;
+  bank_account *ba2 = NULL;
+
+  if (0 != create_bank_account(&ba1, 1000)) {
     /* Handle error */
     return 1;
   }
-  deposit_thr_args *arg2 = malloc(sizeof(deposit_thr_args));
+  if (0 != create_bank_account(&ba2, 1000)) {
+    /* Handle error */
+    pthread_mutex_destroy(&ba1->balance_mutex);
+    free(ba1);
+    return 1;
+  }
+ 
+  arg1 = malloc(sizeof(deposit_thr_args));
+  if (arg1 == NULL) {
+    /* Handle error */
+    goto cleanup;
+  }
+  arg2 = malloc(sizeof(deposit_thr_args));
   if (arg2 == NULL) {
     /* Handle error */
-    return 2;
+    goto cleanup;
   }
  
   arg1->from = ba1;
@@ -101,20 +116,26 @@ int main(void) {
   /* Perform the deposits */
   if ((result = pthread_create(&thr1, NULL, deposit, (void *)arg1)) != 0) {
     /* Handle error */
-    return 3;
+    goto cleanup1;
   }
   if ((result = pthread_create(&thr2, NULL, deposit, (void *)arg2)) != 0) {
     /* Handle error */
-    return 4;
+    goto cleanup2;
   }
   
-  pthread_join(thr1, NULL);
+cleanup2:
   pthread_join(thr2, NULL);
+cleanup1:
+  pthread_join(thr1, NULL);
+cleanup:
+  pthread_mutex_destroy(&ba1->balance_mutex);
+  pthread_mutex_destroy(&ba2->balance_mutex);
   free(ba1);
   free(ba2);
+  free(arg1);
+  free(arg2);
 
   pthread_exit(NULL);
-  return 0;
 }
 
 // NOT DETECTED

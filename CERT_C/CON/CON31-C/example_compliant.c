@@ -16,6 +16,7 @@ enum { max_threads = 5 };
 int do_work(void *dummy) {
   if (thrd_success != mtx_lock(&lock)) {
     /* Handle error */
+    mtx_unlock(&lock);
     return thrd_error;
   }
   /* Access data protected by the lock */

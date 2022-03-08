@@ -23,6 +23,7 @@ static int i = 0;
 int consume_list_element(void *arg) {
   if (thrd_success != mtx_lock(&lock)) {
     /* Handle error */
+    mtx_unlock(&lock);
     return thrd_error;
   }
   
@@ -51,6 +52,7 @@ int consume_list_element(void *arg) {
 void broadcast(void) {
   if (thrd_success != mtx_lock(&lock)) {
     /* Handle error */
+    mtx_unlock(&lock);
     return;
   }
 

@@ -17,9 +17,11 @@ void f_noncompliant(size_t num_of_records, size_t temp_num,
     return;
   } else if (temp_num > num_of_records) {
     /* Handle error */
+    free(start);
     return;
   } else if (tmp2_size_bytes < SIG_DESC_SIZE) {
     /* Handle error */
+    free(start);
     return;
   }
 
@@ -39,12 +41,15 @@ void f_compliant(size_t num_of_records, size_t temp_num,
     return;
   } else if (tmp2 == NULL) {
     /* Handle error */
+    free(start);
     return;
   } else if (temp_num > num_of_records) {
     /* Handle error */
+    free(start);
     return;
   } else if (tmp2_size_bytes < SIG_DESC_SIZE) {
     /* Handle error */
+    free(start);
     return;
   }
 

@@ -21,19 +21,20 @@ void func(const char *file_name) {
   initialize_data(append_data, BUFFERSIZE);
   if (fwrite(append_data, BUFFERSIZE, 1, file) != BUFFERSIZE) {
     /* Handle error */
-    return;
+    goto close_file;
   }
  
   if (fseek(file, 0L, SEEK_SET) != 0) {
     /* Handle error */
-    return;
+    goto close_file;
   }
  
   if (fread(data, BUFFERSIZE, 1, file) != 0) {
     /* Handle there not being data */
-    return;
+    goto close_file;
   }
- 
+
+close_file:
   if (fclose(file) == EOF) {
     /* Handle error */
     return;

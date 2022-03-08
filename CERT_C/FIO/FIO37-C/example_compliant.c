@@ -33,6 +33,7 @@ int main(void) {
   dup2(fileno(file), STDIN_FILENO);
   // Test
   func();
+  fclose(file);
   return 0;
 }
 

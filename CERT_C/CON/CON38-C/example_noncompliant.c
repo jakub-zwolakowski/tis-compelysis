@@ -17,6 +17,7 @@ int run_step(void *t) {
  
   if (thrd_success != mtx_lock(&mutex)) {
     /* Handle error */
+    mtx_unlock(&mutex);
     return thrd_error;
   }
  
@@ -26,6 +27,7 @@ int run_step(void *t) {
  
     if (thrd_success != cnd_wait(&cond, &mutex)) {
       /* Handle error */
+      mtx_unlock(&mutex);
       return thrd_error;
     }
  

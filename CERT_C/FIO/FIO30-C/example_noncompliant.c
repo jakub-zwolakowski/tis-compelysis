@@ -15,12 +15,13 @@ void incorrect_password(const char *user) {
   ret = snprintf(msg, len, msg_format, user);
   if (ret < 0) { 
     /* Handle error */
-    return; 
+    goto cleanup;
   } else if (ret >= len) { 
     /* Handle truncated output */
-    return; 
+    goto cleanup;
   }
   fprintf(stderr, msg);
+cleanup:
   free(msg);
 }
 

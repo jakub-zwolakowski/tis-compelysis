@@ -1,11 +1,6 @@
 ## example_noncompliant
 ### Test
 ```
-noncompliant X, Y Z
-noncompliant X, Y Z
-noncompliant X, Y Z
-noncompliant X, Y Z
-noncompliant X, Y Z
 ```
 ### gcc
 ```

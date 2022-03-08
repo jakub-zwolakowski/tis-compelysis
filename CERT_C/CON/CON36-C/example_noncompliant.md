@@ -12,10 +12,10 @@ Segmentation fault
 ```
 ### UBSan
 ```
-example_noncompliant.c:38:38: runtime error: member access within null pointer of type 'struct node_t'
-SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior example_noncompliant.c:38:38 in 
-example_noncompliant.c:38:38: runtime error: load of null pointer of type 'void *'
-SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior example_noncompliant.c:38:38 in 
+example_noncompliant.c:39:38: runtime error: member access within null pointer of type 'struct node_t'
+SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior example_noncompliant.c:39:38 in 
+example_noncompliant.c:39:38: runtime error: load of null pointer of type 'void *'
+SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior example_noncompliant.c:39:38 in 
 UndefinedBehaviorSanitizer:DEADLYSIGNAL
 ==12345==ERROR: UndefinedBehaviorSanitizer: SEGV on unknown address 0x424242424242 (pc 0x424242424242 bp 0x424242424242 sp 0x424242424242 T4242)
 ==12345==The signal is caused by a READ memory access.
@@ -38,7 +38,7 @@ SUMMARY: UndefinedBehaviorSanitizer: SEGV (/home/qba/git/tis-compelysis/CERT_C/C
 ==12345== 
 ==12345== Thread 42:
 ==12345== Invalid read of size 8
-==12345==    at 0x424242424242: consume_list_element (example_noncompliant.c:38)
+==12345==    at 0x424242424242: consume_list_element (example_noncompliant.c:39)
 ==12345==    by 0x424242424242: start_thread (pthread_create.c:463)
 ==12345==    by 0x424242424242: clone (clone.S:95)
 ==12345==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
@@ -46,7 +46,7 @@ SUMMARY: UndefinedBehaviorSanitizer: SEGV (/home/qba/git/tis-compelysis/CERT_C/C
 ==12345== 
 ==12345== Process terminating with default action of signal 11 (SIGSEGV)
 ==12345==  Access not within mapped region at address 0x0
-==12345==    at 0x424242424242: consume_list_element (example_noncompliant.c:38)
+==12345==    at 0x424242424242: consume_list_element (example_noncompliant.c:39)
 ==12345==    by 0x424242424242: start_thread (pthread_create.c:463)
 ==12345==    by 0x424242424242: clone (clone.S:95)
 ==12345==  If you believe this happened as a result of a stack
@@ -67,7 +67,7 @@ SUMMARY: UndefinedBehaviorSanitizer: SEGV (/home/qba/git/tis-compelysis/CERT_C/C
 ==12345==    by 0x424242424242: allocate_stack (allocatestack.c:627)
 ==12345==    by 0x424242424242: pthread_create@@GLIBC_2.2.5 (pthread_create.c:644)
 ==12345==    by 0x424242424242: thrd_create (c11threads.h:52)
-==12345==    by 0x424242424242: main (example_noncompliant.c:85)
+==12345==    by 0x424242424242: main (example_noncompliant.c:87)
 ==12345== 
 ==12345== LEAK SUMMARY:
 ==12345==    definitely lost: 0 bytes in 0 blocks

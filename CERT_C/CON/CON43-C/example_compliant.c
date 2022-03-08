@@ -11,6 +11,7 @@ static mtx_t account_lock;
   
 int debit(int amount) {
   if (mtx_lock(&account_lock) != 0) {
+    mtx_unlock(&account_lock);
     return -1;   /* Indicate error to caller */
   }
   account_balance -= amount;
@@ -25,6 +26,7 @@ int debit(int amount) {
  
 int credit(int amount) {
   if (mtx_lock(&account_lock) != 0) {
+    mtx_unlock(&account_lock);
     return -1;   /* Indicate error to caller */
   }
   account_balance += amount;
@@ -81,6 +83,7 @@ int main(void) {
     }
   }
   if (mtx_lock(&account_lock) != 0) {
+    mtx_unlock(&account_lock);
     /* Handle error */
     return 5;
   }
