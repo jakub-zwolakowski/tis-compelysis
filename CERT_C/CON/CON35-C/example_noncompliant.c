@@ -45,7 +45,6 @@ int deposit(void *ptr) {
  
   if (thrd_success != mtx_lock(&args->from->balance_mutex)) {
     /* Handle error */
-    free(ptr);
     return thrd_error;
   }
  
@@ -54,15 +53,12 @@ int deposit(void *ptr) {
     if (thrd_success
         != mtx_unlock(&args->from->balance_mutex)) {
       /* Handle error */
-      free(ptr);
       return thrd_error;
     }
-    free(ptr);
     return -1; /* Indicate error */
   }
   if (thrd_success != mtx_lock(&args->to->balance_mutex)) {
     /* Handle error */
-    free(ptr);
     return thrd_error;
   }
  
@@ -72,18 +68,15 @@ int deposit(void *ptr) {
   if (thrd_success
       != mtx_unlock(&args->from->balance_mutex)) {
     /* Handle error */
-    free(ptr);
     return thrd_error;
   }
  
   if (thrd_success
       != mtx_unlock(&args->to->balance_mutex)) {
     /* Handle error */
-    free(ptr);
     return thrd_error;
   }
  
-  free(ptr);
   return 0;
 }
  
@@ -145,6 +138,8 @@ cleanup:
   mtx_destroy(&ba2->balance_mutex);
   free(ba1);
   free(ba2);
+  free(arg1);
+  free(arg2);
 
   return 0;
 }
