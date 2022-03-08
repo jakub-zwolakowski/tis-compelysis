@@ -22,25 +22,28 @@ typedef struct {
  
 unsigned int global_id = 1;
  
-void create_bank_account(bank_account **ba,
+int create_bank_account(bank_account **ba,
                          int initial_amount) {
   bank_account *nba = (bank_account *)malloc(
     sizeof(bank_account)
   );
   if (nba == NULL) {
     /* Handle error */
-    return;
+    return 1;
   }
  
   nba->balance = initial_amount;
   if (thrd_success
       != mtx_init(&nba->balance_mutex, mtx_plain)) {
     /* Handle error */
-    return;
+    free(nba);
+    return 1;
   }
  
   nba->id = global_id++;
   *ba = nba;
+
+  return 0;
 }
  
 int deposit(void *ptr) {
@@ -96,18 +99,27 @@ int main(void) {
   bank_account *ba1;
   bank_account *ba2;
  
-  create_bank_account(&ba1, 1000);
-  create_bank_account(&ba2, 1000);
+  if (0 != create_bank_account(&ba1, 1000)) {
+    /* Handle error */
+    return 1;
+  }
+  if (0 != create_bank_account(&ba2, 1000)) {
+    /* Handle error */
+    mtx_destroy(&ba1->balance_mutex);
+    free(ba1);
+    return 1;
+  }
  
   arg1 = (transaction *)malloc(sizeof(transaction));
   if (arg1 == NULL) {
     /* Handle error */
-    return 1;
+    return 2;
   }
   arg2 = (transaction *)malloc(sizeof(transaction));
   if (arg2 == NULL) {
     /* Handle error */
-    return 1;
+    free(arg1);
+    return 2;
   }
   arg1->from = ba1;
   arg1->to = ba2;
@@ -121,14 +133,15 @@ int main(void) {
   if (thrd_success
      != thrd_create(&thr1, deposit, (void *)arg1)) {
     /* Handle error */
-    return 2;
+    goto cleanup;
   }
   if (thrd_success
       != thrd_create(&thr2, deposit, (void *)arg2)) {
     /* Handle error */
-    return 2;
+    goto cleanup;
   }
 
+cleanup:
   thrd_join(thr1, NULL);
   thrd_join(thr2, NULL);
   mtx_destroy(&ba1->balance_mutex);
