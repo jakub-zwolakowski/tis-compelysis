@@ -3,7 +3,9 @@
 #include <unistd.h>
 #include <errno.h>
 #include <stdlib.h>
-  
+
+char *the_env[1] = { NULL };
+
 void func(char *input) {
   pid_t pid;
   int status;
@@ -30,6 +32,7 @@ void func(char *input) {
     }
   } else {
     /* ... Initialize env as a sanitized copy of environ ... */
+    env = the_env;
     if (execve("/usr/bin/any_cmd", args, env) == -1) {
       /* Handle error */
       _Exit(127);
