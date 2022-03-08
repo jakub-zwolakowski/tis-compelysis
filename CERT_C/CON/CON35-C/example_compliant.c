@@ -141,9 +141,9 @@ int main(void) {
     goto cleanup2;
   }
 
-cleanup1:
-  thrd_join(thr2, NULL);
 cleanup2:
+  thrd_join(thr2, NULL);
+cleanup1:
   thrd_join(thr1, NULL);
 cleanup:
   mtx_destroy(&ba1->balance_mutex);
