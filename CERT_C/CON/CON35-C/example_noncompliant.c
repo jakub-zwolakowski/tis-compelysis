@@ -101,13 +101,13 @@ int main(void) {
   arg1 = (transaction *)malloc(sizeof(transaction));
   if (arg1 == NULL) {
     /* Handle error */
-    return 2;
+    goto cleanup;
   }
   arg2 = (transaction *)malloc(sizeof(transaction));
   if (arg2 == NULL) {
     /* Handle error */
     free(arg1);
-    return 2;
+    goto cleanup;
   }
   arg1->from = ba1;
   arg1->to = ba2;
@@ -121,17 +121,19 @@ int main(void) {
   if (thrd_success
      != thrd_create(&thr1, deposit, (void *)arg1)) {
     /* Handle error */
-    goto cleanup;
+    goto cleanup1;
   }
   if (thrd_success
       != thrd_create(&thr2, deposit, (void *)arg2)) {
     /* Handle error */
-    goto cleanup;
+    goto cleanup2;
   }
 
-cleanup:
-  thrd_join(thr1, NULL);
+cleanup1:
   thrd_join(thr2, NULL);
+cleanup2:
+  thrd_join(thr1, NULL);
+cleanup:
   mtx_destroy(&ba1->balance_mutex);
   mtx_destroy(&ba2->balance_mutex);
   free(ba1);
