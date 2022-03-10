@@ -25,6 +25,8 @@ void func(void) {
   for (size_t i = 0; i < array_size; ++i) {
     flex_struct->data[i] = 0;
   }
+
+  free(flex_struct);
 }
 
 int main(void) {

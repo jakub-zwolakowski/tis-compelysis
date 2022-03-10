@@ -29,7 +29,7 @@ void func(const char *file_name) {
     goto close_file;
   }
  
-  if (fread(data, BUFFERSIZE, 1, file) != 0) {
+  if (fread(data, BUFFERSIZE, 1, file) < BUFFERSIZE) {
     /* Handle there not being data */
     goto close_file;
   }

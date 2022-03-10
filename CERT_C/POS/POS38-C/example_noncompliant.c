@@ -14,21 +14,30 @@ int main(void) {
     /* Handle error */
     return 1;
   }
-  read(fd, &c, 1);
+  if (read(fd, &c, 1) < 0) {
+    close(fd);
+    return 2;
+  }
   printf("root process:%c\n",c);
   
   pid = fork();
   if (pid == -1) {
     /* Handle error */
-    return 2;
+    return 3;
   }
   
   if (pid == 0) { /*child*/
-    read(fd, &c, 1);
+    if (read(fd, &c, 1) < 0) {
+      close(fd);
+      return 4;
+    }
     printf("child:%c\n",c);
   }
   else { /*parent*/
-    read(fd, &c, 1);
+    if (read(fd, &c, 1) < 0) {
+      close(fd);
+      return 5;
+    }
     printf("parent:%c\n",c);
   }
 

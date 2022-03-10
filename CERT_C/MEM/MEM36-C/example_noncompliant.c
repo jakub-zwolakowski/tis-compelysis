@@ -15,6 +15,8 @@ void func(void) {
     /* Handle error */
     return;
   }
+
+  free(ptr1);
 }
 
 int main(void) {

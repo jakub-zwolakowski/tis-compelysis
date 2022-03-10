@@ -1,4 +1,7 @@
 #include <stdio.h>
+#include <string.h>
+
+#define BUFFERSIZE 3
 
 void open_some_file(const char *file) {
   FILE *f = fopen(file, "r");
@@ -18,6 +21,14 @@ void open_some_file(const char *file) {
     }
   
     /* Write to file */
+    char data[BUFFERSIZE];
+    memset(data, 81, BUFFERSIZE);
+    if (fwrite(data, BUFFERSIZE, 1, f) < BUFFERSIZE) {
+      /* Handle error */
+      fclose(f);
+      return;
+    }
+
     if (fclose(f) == EOF) {
       /* Handle error */
       return;

@@ -32,6 +32,7 @@ int contains_zero_compliant(size_t count, va_list *ap) {
   va_copy(ap1, *ap);
   for (size_t i = 1; i < count; ++i) {
     if (va_arg(ap1, double) == 0.0) {
+      va_end(ap1);
       return 1;
     }
   }

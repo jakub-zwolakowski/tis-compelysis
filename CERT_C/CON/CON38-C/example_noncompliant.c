@@ -40,6 +40,7 @@ int run_step(void *t) {
   /* Signal awaiting task */
   if (thrd_success != cnd_signal(&cond)) {
     /* Handle error */
+    mtx_unlock(&mutex);
     return thrd_error;
   }
  

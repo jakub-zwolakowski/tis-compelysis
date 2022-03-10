@@ -35,13 +35,16 @@ int main(void) {
 
   /* file is good, operate on fd */
 
-  read(fd,&c,1);
+  if (read(fd, &c, 1) < 0) {
+    close(fd);
+    return 4;
+  }
   printf("root process:%c\n",c);
 
   pid = fork();
   if (pid == -1) {
     /* Handle error */
-    return 4;
+    return 5;
   }
 
   if (pid == 0){ /*child*/
@@ -51,26 +54,37 @@ int main(void) {
     fd = open(filename, O_RDONLY);
     if (fd == -1) {
       /* Handle error */
-      return 5;
+      return 6;
     }
     if (fstat(fd, &new_st) != 0) {
       /* handle error */
-      return 6;
+      return 7;
     }
     if (orig_st.st_dev != new_st.st_dev ||
         orig_st.st_ino != new_st.st_ino) {
       /* file was tampered with between opens */
-      return 7;
+      return 8;
     }
 
-    read(fd, &c, 1);
-    read(fd, &c, 1);
+    if (read(fd, &c, 1) < 0) {
+      close(fd);
+      return 9;
+    }
+    if (read(fd, &c, 1) < 0) {
+      close(fd);
+      return 10;
+    }
+
     printf("child:%c\n", c);
     close(fd);
   }
 
   else { /*parent*/
-    read(fd, &c, 1);
+    if (read(fd, &c, 1) < 0) {
+      close(fd);
+      return 11;
+    }
+
     printf("parent:%c\n", c);
     close(fd);
   }

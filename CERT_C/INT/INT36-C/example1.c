@@ -13,7 +13,7 @@ struct ptrflag {
 } ptrflag;
 
 void func_compliant(unsigned int flag) {
-  char *ptr;
+  char *ptr = 0;
   /* ... */
   ptrflag.pointer = ptr;
   ptrflag.flag = flag;

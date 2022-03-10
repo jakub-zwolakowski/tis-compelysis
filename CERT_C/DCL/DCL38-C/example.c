@@ -25,6 +25,8 @@ void f_noncompliant(size_t array_size) {
   for (size_t i = 0; i < array_size; ++i) {
     structP->data[i] = 1;
   }
+
+  free(structP);
 }
 
 struct flexArrayStruct_compliant {
@@ -40,6 +42,7 @@ void f_compliant(size_t array_size) {
          + sizeof(int) * array_size);
   if (structP == NULL) {
     /* Handle malloc failure */
+    return;
   }
 
   structP->num = array_size;
@@ -51,6 +54,8 @@ void f_compliant(size_t array_size) {
   for (size_t i = 0; i < array_size; ++i) {
     structP->data[i] = 1;
   }
+
+  free(structP);
 }
 
 int main(void) {

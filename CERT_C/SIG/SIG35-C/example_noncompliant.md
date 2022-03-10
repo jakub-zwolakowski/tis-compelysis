@@ -10,6 +10,8 @@
 ```
 ### UBSan
 ```
+example_noncompliant.c:32:21: runtime error: division by zero
+SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior example_noncompliant.c:32:21 in 
 ```
 ### Valgrind
 ```

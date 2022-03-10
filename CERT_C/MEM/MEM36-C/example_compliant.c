@@ -27,6 +27,7 @@ void func(void) {
   }
    
   free(ptr);
+  free(ptr1);
 }
 
 int main(void) {

@@ -27,6 +27,7 @@ struct node *make_list(int elts) {
     current_node = malloc(sizeof (struct node));
     current_node->value = i;
     current_node->next = previous_node;
+    previous_node = current_node;
   }
   return current_node;
 }

@@ -12,9 +12,9 @@ void sighandle(int s) {
   }
 }
  
-int main(int argc, char *argv[]) {
+int f(int argc, const char *argv[]) {
   if (argc < 2) {
-    return 0;
+    return 1;
   }
   
   char *end = NULL;
@@ -23,12 +23,25 @@ int main(int argc, char *argv[]) {
   if (end == argv[1] || 0 != *end ||
       ((LONG_MIN == temp || LONG_MAX == temp) && errno == ERANGE)) {
     /* Handle error */
+    return 2;
   }
   
   denom = (sig_atomic_t)temp;
   signal(SIGFPE, sighandle);
  
   long result = 100 / (long)denom;
+  return 0;
+}
+
+int main(void) {
+  const char *argv_one[2];
+  argv_one[0] = "program";
+  argv_one[1] = "1";
+  f(2, argv_one);
+  const char *argv_two[2];
+  argv_two[0] = "program";
+  argv_two[1] = "0";
+  f(2, argv_two);
   return 0;
 }
 

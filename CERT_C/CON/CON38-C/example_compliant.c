@@ -43,6 +43,7 @@ int run_step(void *t) {
   /* Signal ALL waiting tasks */
   if (thrd_success != cnd_broadcast(&cond)) {
     /* Handle error */
+    mtx_unlock(&mutex);
     return thrd_error;
   }
  
